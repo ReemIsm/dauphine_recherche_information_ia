@@ -1,0 +1,998 @@
+@article{bleiLatentDirichletAllocation2003,
+  title = {Latent {{Dirichlet Allocation}}},
+  author = {Blei, David M. and Ng, Andrew Y. and Jordan, Michael I.},
+  date = {2003-01},
+  journaltitle = {Journal of Machine Learning Research},
+  volume = {3},
+  pages = {993--1022},
+  issn = {1532-4435}
+}
+
+@article{mikolovEfficientEstimationWord2013,
+  title = {Efficient Estimation of Word Representations in Vector Space},
+  author = {Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeff},
+  date = {2013},
+  journaltitle = {arXiv preprint arXiv:1301.3781}
+}
+
+@inproceedings{devlinBERTPretrainingDeep2019,
+  title = {{{BERT}}: Pre-Training of Deep Bidirectional Transformers for Language Understanding},
+  booktitle = {Proceedings of the 2019 {{Conference}} of the {{North American Chapter}} of the {{Association}} for {{Computational Linguistics}}: {{Human Language Technologies}}, {{Volume}} 1 ({{Long}} and {{Short Papers}})},
+  author = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  date = {2019},
+  pages = {4171--4186},
+  doi = {10.18653/v1/N19-1423}
+}
+
+@book{firth1957papers,
+  title     = {Papers in Linguistics 1934–1951},
+  author    = {Firth, John Rupert},
+  year      = {1957},
+  publisher = {Oxford University Press},
+  address   = {London},
+}
+
+@article{harris1954distributional,
+  title={Distributional structure},
+  author={Harris, Zellig S},
+  journal={Word},
+  volume={10},
+  number={2-3},
+  pages={146--162},
+  year={1954},
+  publisher={Taylor \& Francis}
+}
+
+@inproceedings{penningtonGloveGlobalVectors2014a,
+  title = {Glove: {{Global Vectors}} for {{Word Representation}}},
+  shorttitle = {Glove},
+  booktitle = {Proceedings of the 2014 {{Conference}} on {{Empirical Methods}} in {{Natural Language Processing}} ({{EMNLP}})},
+  author = {Pennington, Jeffrey and Socher, Richard and Manning, Christopher},
+  year = {2014},
+  pages = {1532--1543},
+  publisher = {Association for Computational Linguistics},
+  address = {Doha, Qatar},
+  doi = {10.3115/v1/D14-1162},
+  urldate = {2025-09-13},
+  abstract = {Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new global logbilinear regression model that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by training only on the nonzero elements in a word-word cooccurrence matrix, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75\% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\5NR7YAB8\Pennington et al. - 2014 - Glove Global Vectors for Word Representation.pdf}
+}
+
+
+@article{bojanowskiEnrichingWordVectors2017,
+  title = {Enriching {{Word Vectors}} with {{Subword Information}}},
+  author = {Bojanowski, Piotr and Grave, Edouard and Joulin, Armand and Mikolov, Tomas},
+  year = {2017},
+  month = dec,
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume = {5},
+  pages = {135--146},
+  issn = {2307-387X},
+  doi = {10.1162/tacl_a_00051},
+  urldate = {2025-09-13},
+  abstract = {Continuous word representations, trained on large unlabeled corpora are useful for many natural language processing tasks. Popular models that learn such representations ignore the morphology of words, by assigning a distinct vector to each word. This is a limitation, especially for languages with large vocabularies and many rare words. In this paper, we propose a new approach based on the skipgram model, where each word is represented as a bag of character n-grams. A vector representation is associated to each character n-gram; words being represented as the sum of these representations. Our method is fast, allowing to train models on large corpora quickly and allows us to compute word representations for words that did not appear in the training data. We evaluate our word representations on nine different languages, both on word similarity and analogy tasks. By comparing to recently proposed morphological word representations, we show that our vectors achieve state-of-the-art performance on these tasks.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\MHE828S4\Bojanowski et al. - 2017 - Enriching Word Vectors with Subword Information.pdf}
+}
+
+@inproceedings{petersDeepContextualizedWord2018,
+  title = {Deep {{Contextualized Word Representations}}},
+  booktitle = {Proceedings of the 2018 {{Conference}} of the {{North American Chapter}} of           the {{Association}} for {{Computational Linguistics}}: {{Human Language}}           {{Technologies}}, {{Volume}} 1 ({{Long Papers}})},
+  author = {Peters, Matthew and Neumann, Mark and Iyyer, Mohit and Gardner, Matt and Clark, Christopher and Lee, Kenton and Zettlemoyer, Luke},
+  year = {2018},
+  pages = {2227--2237},
+  publisher = {Association for Computational Linguistics},
+  address = {New Orleans, Louisiana},
+  doi = {10.18653/v1/N18-1202},
+  urldate = {2025-09-13},
+  abstract = {We introduce a new type of deep contextualized word representation that models both (1) complex characteristics of word use (e.g., syntax and semantics), and (2) how these uses vary across linguistic contexts (i.e., to model polysemy). Our word vectors are learned functions of the internal states of a deep bidirectional language model (biLM), which is pretrained on a large text corpus. We show that these representations can be easily added to existing models and significantly improve the state of the art across six challenging NLP problems, including question answering, textual entailment and sentiment analysis. We also present an analysis showing that exposing the deep internals of the pre-trained network is crucial, allowing downstream models to mix different types of semi-supervision signals.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\5Z6NW4R9\Peters et al. - 2018 - Deep Contextualized Word Representations.pdf}
+}
+
+@inproceedings{roberts2013structural,
+  title={The structural topic model and applied social science},
+  author={Roberts, Margaret E and Stewart, Brandon M and Tingley, Dustin and Airoldi, Edoardo M and others},
+  booktitle={Advances in neural information processing systems workshop on topic models: computation, application, and evaluation},
+  volume={4},
+  number={1},
+  pages={1--20},
+  year={2013},
+  organization={Lake Tahoe, UT}
+}
+
+@article{grootendorst2022bertopic,
+  title={BERTopic: Neural topic modeling with a class-based TF-IDF procedure},
+  author={Grootendorst, Maarten},
+  journal={arXiv preprint arXiv:2203.05794},
+  year={2022}
+}
+
+@article{reisenbichlerTopicModelingMarketing2019,
+  title = {Topic Modeling in Marketing: Recent Advances and Research Opportunities},
+  shorttitle = {Topic Modeling in Marketing},
+  author = {Reisenbichler, Martin and Reutterer, Thomas},
+  year = {2019},
+  month = apr,
+  journal = {Journal of Business Economics},
+  volume = {89},
+  number = {3},
+  pages = {327--356},
+  issn = {0044-2372, 1861-8928},
+  doi = {10.1007/s11573-018-0915-7},
+  urldate = {2025-09-13},
+  abstract = {Using a probabilistic approach for exploring latent patterns in high-dimensional co-occurrence data, topic models offer researchers a flexible and open framework for soft-clustering large data sets. In recent years, there has been a growing interest among marketing scholars and practitioners to adopt topic models in various marketing application domains. However, to this date, there is no comprehensive overview of this rapidly evolving field. By analyzing a set of 61 published papers along with conceptual contributions, we systematically review this highly heterogeneous area of research. In doing so, we characterize extant contributions employing topic models in marketing along the dimensions data structures and retrieval of input data, implementation and extensions of basic topic models, and model performance evaluation. Our findings confirm that there is considerable progress done in various marketing sub-areas. However, there is still scope for promising future research, in particular with respect to integrating multiple, dynamic data sources, including time-varying covariates and the combination of exploratory topic models with powerful predictive marketing models.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\VADZ73QU\Reisenbichler et Reutterer - 2019 - Topic modeling in marketing recent advances and research opportunities.pdf}
+}
+
+@article{balech2019,
+	title = {NLP text mining V4.0 - une introduction - cours programme doctoral},
+	author = {Balech, Sophie and Benavent, Christophe},
+	year = {2019},
+	date = {2019},
+	doi = {10.13140/RG.2.2.34248.06405},
+	url = {http://rgdoi.net/10.13140/RG.2.2.34248.06405},
+	note = {Publisher: Unpublished},
+	langid = {en}
+}
+
+@article{albalawiUsingTopicModeling2020,
+  title = {Using {{Topic Modeling Methods}} for {{Short-Text Data}}: {{A Comparative Analysis}}},
+  shorttitle = {Using {{Topic Modeling Methods}} for {{Short-Text Data}}},
+  author = {Albalawi, Rania and Yeap, Tet Hin and Benyoucef, Morad},
+  year = {2020},
+  month = jul,
+  journal = {Frontiers in Artificial Intelligence},
+  volume = {3},
+  pages = {42},
+  issn = {2624-8212},
+  doi = {10.3389/frai.2020.00042},
+  urldate = {2025-09-16},
+  abstract = {With the growth of online social network platforms and applications, large amounts of textual user-generated content are created daily in the form of comments, reviews, and short-text messages. As a result, users often find it challenging to discover useful information or more on the topic being discussed from such content. Machine learning and natural language processing algorithms are used to analyze the massive amount of textual social media data available online, including topic modeling techniques that have gained popularity in recent years. This paper investigates the topic modeling subject and its common application areas, methods, and tools. Also, we examine and compare five frequently used topic modeling methods, as applied to short textual social data, to show their benefits practically in detecting important topics. These methods are latent semantic analysis, latent Dirichlet allocation, non-negative matrix factorization, random projection, and principal component analysis. Two textual datasets were selected to evaluate the performance of included topic modeling methods based on the topic quality and some standard statistical evaluation metrics, like recall, precision, F-score, and topic coherence. As a result, latent Dirichlet allocation and non-negative matrix factorization methods delivered more meaningful extracted topics and obtained good results. The paper sheds light on some common topic modeling methods in a short-text context and provides direction for researchers who seek to apply these methods.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\G6KQ6D8D\Albalawi et al. - 2020 - Using Topic Modeling Methods for Short-Text Data A Comparative Analysis.pdf}
+}
+
+@article{anMarketingInsightsReviews2023,
+  title = {Marketing {{Insights}} from {{Reviews Using Topic Modeling}} with {{BERTopic}} and {{Deep Clustering Network}}},
+  author = {An, Yusung and Oh, Hayoung and Lee, Joosik},
+  year = {2023},
+  month = aug,
+  journal = {Applied Sciences},
+  volume = {13},
+  number = {16},
+  pages = {9443},
+  issn = {2076-3417},
+  doi = {10.3390/app13169443},
+  urldate = {2025-09-16},
+  abstract = {The feedback shared by consumers on e-commerce platforms holds immense value in mar-keting, as it offers insights into their opinions and preferences, which are readily accessible. How-ever, analyzing a large volume of reviews manually is impractical. Therefore, automating the extrac-tion of essential insights from these data can provide more comprehensive and efficient information. This research focuses on leveraging clustering algorithms to automate the extraction of consumer intentions, related products, and the pros and cons of products from review data. To achieve this, a review dataset was created by performing web crawling on the Naver Shopping platform. The find-ings are expected to contribute to a more precise understanding of consumer sentiments, enabling marketers to make informed decisions across a wide range of products and services.},
+  copyright = {https://creativecommons.org/licenses/by/4.0/},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\2BAUYQEC\An et al. - 2023 - Marketing Insights from Reviews Using Topic Modeling with BERTopic and Deep Clustering Network.pdf}
+}
+
+@article{eggerTopicModelingComparison2022,
+  title = {A {{Topic Modeling Comparison Between LDA}}, {{NMF}}, {{Top2Vec}}, and {{BERTopic}} to {{Demystify Twitter Posts}}},
+  author = {Egger, Roman and Yu, Joanne},
+  year = {2022},
+  month = may,
+  journal = {Frontiers in Sociology},
+  volume = {7},
+  pages = {886498},
+  issn = {2297-7775},
+  doi = {10.3389/fsoc.2022.886498},
+  urldate = {2025-09-16},
+  abstract = {The richness of social media data has opened a new avenue for social science research to gain insights into human behaviors and experiences. In particular, emerging data-driven approaches relying on topic models provide entirely new perspectives on interpreting social phenomena. However, the short, text-heavy, and unstructured nature of social media content often leads to methodological challenges in both data collection and analysis. In order to bridge the developing field of computational science and empirical social research, this study aims to evaluate the performance of four topic modeling techniques; namely latent Dirichlet allocation (LDA), non-negative matrix factorization (NMF), Top2Vec, and BERTopic. In view of the interplay between human relations and digital media, this research takes Twitter posts as the reference point and assesses the performance of different algorithms concerning their strengths and weaknesses in a social science context. Based on certain details during the analytical procedures and on quality issues, this research sheds light on the efficacy of using BERTopic and NMF to analyze Twitter data.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\IAVZR5VV\Egger et Yu - 2022 - A Topic Modeling Comparison Between LDA, NMF, Top2Vec, and BERTopic to Demystify Twitter Posts.pdf}
+}
+
+@article{fresnedaStructuralTopicModelling2021,
+  title = {Structural Topic Modelling Segmentation: A Segmentation Method Combining Latent Content and Customer Context},
+  shorttitle = {Structural Topic Modelling Segmentation},
+  author = {Fresneda, Jorge E. and Burnham, Thomas A. and Hill, Chelsey H.},
+  year = {2021},
+  month = may,
+  journal = {Journal of Marketing Management},
+  volume = {37},
+  number = {7-8},
+  pages = {792--812},
+  issn = {0267-257X, 1472-1376},
+  doi = {10.1080/0267257X.2021.1880464},
+  urldate = {2025-09-16},
+  abstract = {This research introduces a method for segmenting customers using Structural Topic Modelling (STM), a text analysis tool capable of capturing topical content and topical prevalence differences across customers while incorporating metadata. This approach is particularly suitable for contexts in which textual data is either a critical component or is the only data available for segmentation. The ability to incorporate metadata by using STM provides better clustering solutions and supports richer segment profiles than can be produced with typical topic modelling approaches. We empirically illustrate the application of this method in two contexts: 1) a context in which related metadata is readily available; and 2) a context in which metadata is virtually non-existent. The second context exemplifies how ad-hoc generated metadata can increase the utility of the method for identifying distinct segments.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\RP376FNE\Fresneda et al. - 2021 - Structural topic modelling segmentation a segmentation method combining latent content and customer.pdf}
+}
+
+@article{papadiaComparisonDifferentTopic2023,
+  title = {A {{Comparison}} of {{Different Topic Modeling Methods}} through a {{Real Case Study}} of {{Italian Customer Care}}},
+  author = {Papadia, Gabriele and Pacella, Massimo and Perrone, Massimiliano and Giliberti, Vincenzo},
+  year = {2023},
+  month = feb,
+  journal = {Algorithms},
+  volume = {16},
+  number = {2},
+  pages = {94},
+  issn = {1999-4893},
+  doi = {10.3390/a16020094},
+  urldate = {2025-09-16},
+  abstract = {The paper deals with the analysis of conversation transcriptions between customers and agents in a call center of a customer care service. The objective is to support the analysis of text transcription of human-to-human conversations, to obtain reports on customer problems and complaints, and on the way an agent has solved them. The aim is to provide customer care service with a high level of efficiency and user satisfaction. To this aim, topic modeling is considered since it facilitates insightful analysis from large documents and datasets, such as a summarization of the main topics and topic characteristics. This paper presents a performance comparison of four topic modeling algorithms: (i) Latent Dirichlet Allocation (LDA); (ii) Non-negative Matrix Factorization (NMF); (iii) Neural-ProdLDA (Neural LDA) and Contextualized Topic Models (CTM). The comparison study is based on a database containing real conversation transcriptions in Italian Natural Language. Experimental results and different topic evaluation metrics are analyzed in this paper to determine the most suitable model for the case study. The gained knowledge can be exploited by practitioners to identify the optimal strategy and to perform and evaluate topic modeling on Italian natural language transcriptions of human-to-human conversations. This work can be an asset for grounding applications of topic modeling and can be inspiring for similar case studies in the domain of customer care quality.},
+  copyright = {https://creativecommons.org/licenses/by/4.0/},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\EHQALLWZ\Papadia et al. - 2023 - A Comparison of Different Topic Modeling Methods through a Real Case Study of Italian Customer Care.pdf}
+}
+
+@article{vaswani2017attention,
+  title={Attention is all you need},
+  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  journal={Advances in neural information processing systems},
+  volume={30},
+  year={2017}
+}
+
+@article{chatterjiHowPeopleUse,
+  title = {How {{People Use ChatGPT}}},
+  author = {Chatterji, Aaron and Cunningham, Tom and Deming, David and Hitzig, Zoe and Ong, Christopher and Shan, Carl and Wadman, Kevin},
+  abstract = {Despite the rapid adoption of LLM chatbots, little is known about how they are used. We document the growth of ChatGPT’s consumer product from its launch in November 2022 through July 2025, when it had been adopted by around 10\% of the world’s adult population. Early adopters were disproportionately male but the gender gap has narrowed dramatically, and we find higher growth rates in lower-income countries. Using a privacy-preserving automated pipeline, we classify usage patterns within a representative sample of ChatGPT conversations. We find steady growth in work-related messages but even faster growth in non-work-related messages, which have grown from 53\% to more than 70\% of all usage. Work usage is more common for educated users in highly-paid professional occupations. We classify messages by conversation topic and find that “Practical Guidance,” “Seeking Information,” and “Writing” are the three most common topics and collectively account for nearly 80\% of all conversations. Writing dominates work-related tasks, highlighting chatbots’ unique ability to generate digital outputs compared to traditional search engines. Computer programming and self-expression both represent relatively small shares of use. Overall, we find that ChatGPT provides economic value through decision support, which is especially important in knowledge-intensive jobs.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\BF8QKCE9\Chatterji et al. - How People Use ChatGPT.pdf},
+  year={2025}
+}
+
+@article{ghojoghAttentionMechanismTransformers,
+  title = {Attention {{Mechanism}}, {{Transformers}}, {{BERT}}, and {{GPT}}: {{Tutorial}} and {{Survey}}},
+  author = {Ghojogh, Benyamin and Ghodsi, Ali},
+  abstract = {This is a tutorial and survey paper on the attention mechanism, transformers, BERT, and GPT. We first explain attention mechanism, sequenceto-sequence model without and with attention, self-attention, and attention in different areas such as natural language processing and computer vision. Then, we explain transformers which do not use any recurrence. We explain all the parts of encoder and decoder in the transformer, including positional encoding, multihead self-attention and cross-attention, and masked multihead attention. Thereafter, we introduce the Bidirectional Encoder Representations from Transformers (BERT) and Generative Pre-trained Transformer (GPT) as the stacks of encoders and decoders of transformer, respectively. We explain their characteristics and how they work.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\FDD8M4MG\Ghojogh et Ghodsi - Attention Mechanism, Transformers, BERT, and GPT Tutorial and Survey.pdf}
+}
+
+@article{bleiLatentDirichletAllocation2003,
+  title = {Latent {{Dirichlet Allocation}}},
+  author = {Blei, David M. and Ng, Andrew Y. and Jordan, Michael I.},
+  date = {2003-01},
+  journaltitle = {Journal of Machine Learning Research},
+  volume = {3},
+  pages = {993--1022},
+  issn = {1532-4435}
+}
+
+@article{mikolovEfficientEstimationWord2013,
+  title = {Efficient Estimation of Word Representations in Vector Space},
+  author = {Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeff},
+  date = {2013},
+  journaltitle = {arXiv preprint arXiv:1301.3781}
+}
+
+@inproceedings{devlinBERTPretrainingDeep2019,
+  title = {{{BERT}}: Pre-Training of Deep Bidirectional Transformers for Language Understanding},
+  booktitle = {Proceedings of the 2019 {{Conference}} of the {{North American Chapter}} of the {{Association}} for {{Computational Linguistics}}: {{Human Language Technologies}}, {{Volume}} 1 ({{Long}} and {{Short Papers}})},
+  author = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  date = {2019},
+  pages = {4171--4186},
+  doi = {10.18653/v1/N19-1423}
+}
+
+@book{firth1957papers,
+  title     = {Papers in Linguistics 1934–1951},
+  author    = {Firth, John Rupert},
+  year      = {1957},
+  publisher = {Oxford University Press},
+  address   = {London},
+}
+
+@article{harris1954distributional,
+  title={Distributional structure},
+  author={Harris, Zellig S},
+  journal={Word},
+  volume={10},
+  number={2-3},
+  pages={146--162},
+  year={1954},
+  publisher={Taylor \& Francis}
+}
+
+@inproceedings{penningtonGloveGlobalVectors2014a,
+  title = {Glove: {{Global Vectors}} for {{Word Representation}}},
+  shorttitle = {Glove},
+  booktitle = {Proceedings of the 2014 {{Conference}} on {{Empirical Methods}} in {{Natural Language Processing}} ({{EMNLP}})},
+  author = {Pennington, Jeffrey and Socher, Richard and Manning, Christopher},
+  year = {2014},
+  pages = {1532--1543},
+  publisher = {Association for Computational Linguistics},
+  address = {Doha, Qatar},
+  doi = {10.3115/v1/D14-1162},
+  urldate = {2025-09-13},
+  abstract = {Recent methods for learning vector space representations of words have succeeded in capturing fine-grained semantic and syntactic regularities using vector arithmetic, but the origin of these regularities has remained opaque. We analyze and make explicit the model properties needed for such regularities to emerge in word vectors. The result is a new global logbilinear regression model that combines the advantages of the two major model families in the literature: global matrix factorization and local context window methods. Our model efficiently leverages statistical information by training only on the nonzero elements in a word-word cooccurrence matrix, rather than on the entire sparse matrix or on individual context windows in a large corpus. The model produces a vector space with meaningful substructure, as evidenced by its performance of 75\% on a recent word analogy task. It also outperforms related models on similarity tasks and named entity recognition.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\5NR7YAB8\Pennington et al. - 2014 - Glove Global Vectors for Word Representation.pdf}
+}
+
+
+@article{bojanowskiEnrichingWordVectors2017,
+  title = {Enriching {{Word Vectors}} with {{Subword Information}}},
+  author = {Bojanowski, Piotr and Grave, Edouard and Joulin, Armand and Mikolov, Tomas},
+  year = {2017},
+  month = dec,
+  journal = {Transactions of the Association for Computational Linguistics},
+  volume = {5},
+  pages = {135--146},
+  issn = {2307-387X},
+  doi = {10.1162/tacl_a_00051},
+  urldate = {2025-09-13},
+  abstract = {Continuous word representations, trained on large unlabeled corpora are useful for many natural language processing tasks. Popular models that learn such representations ignore the morphology of words, by assigning a distinct vector to each word. This is a limitation, especially for languages with large vocabularies and many rare words. In this paper, we propose a new approach based on the skipgram model, where each word is represented as a bag of character n-grams. A vector representation is associated to each character n-gram; words being represented as the sum of these representations. Our method is fast, allowing to train models on large corpora quickly and allows us to compute word representations for words that did not appear in the training data. We evaluate our word representations on nine different languages, both on word similarity and analogy tasks. By comparing to recently proposed morphological word representations, we show that our vectors achieve state-of-the-art performance on these tasks.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\MHE828S4\Bojanowski et al. - 2017 - Enriching Word Vectors with Subword Information.pdf}
+}
+
+@inproceedings{petersDeepContextualizedWord2018,
+  title = {Deep {{Contextualized Word Representations}}},
+  booktitle = {Proceedings of the 2018 {{Conference}} of the {{North American Chapter}} of           the {{Association}} for {{Computational Linguistics}}: {{Human Language}}           {{Technologies}}, {{Volume}} 1 ({{Long Papers}})},
+  author = {Peters, Matthew and Neumann, Mark and Iyyer, Mohit and Gardner, Matt and Clark, Christopher and Lee, Kenton and Zettlemoyer, Luke},
+  year = {2018},
+  pages = {2227--2237},
+  publisher = {Association for Computational Linguistics},
+  address = {New Orleans, Louisiana},
+  doi = {10.18653/v1/N18-1202},
+  urldate = {2025-09-13},
+  abstract = {We introduce a new type of deep contextualized word representation that models both (1) complex characteristics of word use (e.g., syntax and semantics), and (2) how these uses vary across linguistic contexts (i.e., to model polysemy). Our word vectors are learned functions of the internal states of a deep bidirectional language model (biLM), which is pretrained on a large text corpus. We show that these representations can be easily added to existing models and significantly improve the state of the art across six challenging NLP problems, including question answering, textual entailment and sentiment analysis. We also present an analysis showing that exposing the deep internals of the pre-trained network is crucial, allowing downstream models to mix different types of semi-supervision signals.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\5Z6NW4R9\Peters et al. - 2018 - Deep Contextualized Word Representations.pdf}
+}
+
+@inproceedings{roberts2013structural,
+  title={The structural topic model and applied social science},
+  author={Roberts, Margaret E and Stewart, Brandon M and Tingley, Dustin and Airoldi, Edoardo M and others},
+  booktitle={Advances in neural information processing systems workshop on topic models: computation, application, and evaluation},
+  volume={4},
+  number={1},
+  pages={1--20},
+  year={2013},
+  organization={Lake Tahoe, UT}
+}
+
+@article{grootendorst2022bertopic,
+  title={BERTopic: Neural topic modeling with a class-based TF-IDF procedure},
+  author={Grootendorst, Maarten},
+  journal={arXiv preprint arXiv:2203.05794},
+  year={2022}
+}
+
+@article{reisenbichlerTopicModelingMarketing2019,
+  title = {Topic Modeling in Marketing: Recent Advances and Research Opportunities},
+  shorttitle = {Topic Modeling in Marketing},
+  author = {Reisenbichler, Martin and Reutterer, Thomas},
+  year = {2019},
+  month = apr,
+  journal = {Journal of Business Economics},
+  volume = {89},
+  number = {3},
+  pages = {327--356},
+  issn = {0044-2372, 1861-8928},
+  doi = {10.1007/s11573-018-0915-7},
+  urldate = {2025-09-13},
+  abstract = {Using a probabilistic approach for exploring latent patterns in high-dimensional co-occurrence data, topic models offer researchers a flexible and open framework for soft-clustering large data sets. In recent years, there has been a growing interest among marketing scholars and practitioners to adopt topic models in various marketing application domains. However, to this date, there is no comprehensive overview of this rapidly evolving field. By analyzing a set of 61 published papers along with conceptual contributions, we systematically review this highly heterogeneous area of research. In doing so, we characterize extant contributions employing topic models in marketing along the dimensions data structures and retrieval of input data, implementation and extensions of basic topic models, and model performance evaluation. Our findings confirm that there is considerable progress done in various marketing sub-areas. However, there is still scope for promising future research, in particular with respect to integrating multiple, dynamic data sources, including time-varying covariates and the combination of exploratory topic models with powerful predictive marketing models.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\VADZ73QU\Reisenbichler et Reutterer - 2019 - Topic modeling in marketing recent advances and research opportunities.pdf}
+}
+
+@article{balech2019,
+	title = {NLP text mining V4.0 - une introduction - cours programme doctoral},
+	author = {Balech, Sophie and Benavent, Christophe},
+	year = {2019},
+	date = {2019},
+	doi = {10.13140/RG.2.2.34248.06405},
+	url = {http://rgdoi.net/10.13140/RG.2.2.34248.06405},
+	note = {Publisher: Unpublished},
+	langid = {en}
+}
+
+@article{albalawiUsingTopicModeling2020,
+  title = {Using {{Topic Modeling Methods}} for {{Short-Text Data}}: {{A Comparative Analysis}}},
+  shorttitle = {Using {{Topic Modeling Methods}} for {{Short-Text Data}}},
+  author = {Albalawi, Rania and Yeap, Tet Hin and Benyoucef, Morad},
+  year = {2020},
+  month = jul,
+  journal = {Frontiers in Artificial Intelligence},
+  volume = {3},
+  pages = {42},
+  issn = {2624-8212},
+  doi = {10.3389/frai.2020.00042},
+  urldate = {2025-09-16},
+  abstract = {With the growth of online social network platforms and applications, large amounts of textual user-generated content are created daily in the form of comments, reviews, and short-text messages. As a result, users often find it challenging to discover useful information or more on the topic being discussed from such content. Machine learning and natural language processing algorithms are used to analyze the massive amount of textual social media data available online, including topic modeling techniques that have gained popularity in recent years. This paper investigates the topic modeling subject and its common application areas, methods, and tools. Also, we examine and compare five frequently used topic modeling methods, as applied to short textual social data, to show their benefits practically in detecting important topics. These methods are latent semantic analysis, latent Dirichlet allocation, non-negative matrix factorization, random projection, and principal component analysis. Two textual datasets were selected to evaluate the performance of included topic modeling methods based on the topic quality and some standard statistical evaluation metrics, like recall, precision, F-score, and topic coherence. As a result, latent Dirichlet allocation and non-negative matrix factorization methods delivered more meaningful extracted topics and obtained good results. The paper sheds light on some common topic modeling methods in a short-text context and provides direction for researchers who seek to apply these methods.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\G6KQ6D8D\Albalawi et al. - 2020 - Using Topic Modeling Methods for Short-Text Data A Comparative Analysis.pdf}
+}
+
+@article{anMarketingInsightsReviews2023,
+  title = {Marketing {{Insights}} from {{Reviews Using Topic Modeling}} with {{BERTopic}} and {{Deep Clustering Network}}},
+  author = {An, Yusung and Oh, Hayoung and Lee, Joosik},
+  year = {2023},
+  month = aug,
+  journal = {Applied Sciences},
+  volume = {13},
+  number = {16},
+  pages = {9443},
+  issn = {2076-3417},
+  doi = {10.3390/app13169443},
+  urldate = {2025-09-16},
+  abstract = {The feedback shared by consumers on e-commerce platforms holds immense value in mar-keting, as it offers insights into their opinions and preferences, which are readily accessible. How-ever, analyzing a large volume of reviews manually is impractical. Therefore, automating the extrac-tion of essential insights from these data can provide more comprehensive and efficient information. This research focuses on leveraging clustering algorithms to automate the extraction of consumer intentions, related products, and the pros and cons of products from review data. To achieve this, a review dataset was created by performing web crawling on the Naver Shopping platform. The find-ings are expected to contribute to a more precise understanding of consumer sentiments, enabling marketers to make informed decisions across a wide range of products and services.},
+  copyright = {https://creativecommons.org/licenses/by/4.0/},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\2BAUYQEC\An et al. - 2023 - Marketing Insights from Reviews Using Topic Modeling with BERTopic and Deep Clustering Network.pdf}
+}
+
+@article{eggerTopicModelingComparison2022,
+  title = {A {{Topic Modeling Comparison Between LDA}}, {{NMF}}, {{Top2Vec}}, and {{BERTopic}} to {{Demystify Twitter Posts}}},
+  author = {Egger, Roman and Yu, Joanne},
+  year = {2022},
+  month = may,
+  journal = {Frontiers in Sociology},
+  volume = {7},
+  pages = {886498},
+  issn = {2297-7775},
+  doi = {10.3389/fsoc.2022.886498},
+  urldate = {2025-09-16},
+  abstract = {The richness of social media data has opened a new avenue for social science research to gain insights into human behaviors and experiences. In particular, emerging data-driven approaches relying on topic models provide entirely new perspectives on interpreting social phenomena. However, the short, text-heavy, and unstructured nature of social media content often leads to methodological challenges in both data collection and analysis. In order to bridge the developing field of computational science and empirical social research, this study aims to evaluate the performance of four topic modeling techniques; namely latent Dirichlet allocation (LDA), non-negative matrix factorization (NMF), Top2Vec, and BERTopic. In view of the interplay between human relations and digital media, this research takes Twitter posts as the reference point and assesses the performance of different algorithms concerning their strengths and weaknesses in a social science context. Based on certain details during the analytical procedures and on quality issues, this research sheds light on the efficacy of using BERTopic and NMF to analyze Twitter data.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\IAVZR5VV\Egger et Yu - 2022 - A Topic Modeling Comparison Between LDA, NMF, Top2Vec, and BERTopic to Demystify Twitter Posts.pdf}
+}
+
+@article{fresnedaStructuralTopicModelling2021,
+  title = {Structural Topic Modelling Segmentation: A Segmentation Method Combining Latent Content and Customer Context},
+  shorttitle = {Structural Topic Modelling Segmentation},
+  author = {Fresneda, Jorge E. and Burnham, Thomas A. and Hill, Chelsey H.},
+  year = {2021},
+  month = may,
+  journal = {Journal of Marketing Management},
+  volume = {37},
+  number = {7-8},
+  pages = {792--812},
+  issn = {0267-257X, 1472-1376},
+  doi = {10.1080/0267257X.2021.1880464},
+  urldate = {2025-09-16},
+  abstract = {This research introduces a method for segmenting customers using Structural Topic Modelling (STM), a text analysis tool capable of capturing topical content and topical prevalence differences across customers while incorporating metadata. This approach is particularly suitable for contexts in which textual data is either a critical component or is the only data available for segmentation. The ability to incorporate metadata by using STM provides better clustering solutions and supports richer segment profiles than can be produced with typical topic modelling approaches. We empirically illustrate the application of this method in two contexts: 1) a context in which related metadata is readily available; and 2) a context in which metadata is virtually non-existent. The second context exemplifies how ad-hoc generated metadata can increase the utility of the method for identifying distinct segments.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\RP376FNE\Fresneda et al. - 2021 - Structural topic modelling segmentation a segmentation method combining latent content and customer.pdf}
+}
+
+@article{papadiaComparisonDifferentTopic2023,
+  title = {A {{Comparison}} of {{Different Topic Modeling Methods}} through a {{Real Case Study}} of {{Italian Customer Care}}},
+  author = {Papadia, Gabriele and Pacella, Massimo and Perrone, Massimiliano and Giliberti, Vincenzo},
+  year = {2023},
+  month = feb,
+  journal = {Algorithms},
+  volume = {16},
+  number = {2},
+  pages = {94},
+  issn = {1999-4893},
+  doi = {10.3390/a16020094},
+  urldate = {2025-09-16},
+  abstract = {The paper deals with the analysis of conversation transcriptions between customers and agents in a call center of a customer care service. The objective is to support the analysis of text transcription of human-to-human conversations, to obtain reports on customer problems and complaints, and on the way an agent has solved them. The aim is to provide customer care service with a high level of efficiency and user satisfaction. To this aim, topic modeling is considered since it facilitates insightful analysis from large documents and datasets, such as a summarization of the main topics and topic characteristics. This paper presents a performance comparison of four topic modeling algorithms: (i) Latent Dirichlet Allocation (LDA); (ii) Non-negative Matrix Factorization (NMF); (iii) Neural-ProdLDA (Neural LDA) and Contextualized Topic Models (CTM). The comparison study is based on a database containing real conversation transcriptions in Italian Natural Language. Experimental results and different topic evaluation metrics are analyzed in this paper to determine the most suitable model for the case study. The gained knowledge can be exploited by practitioners to identify the optimal strategy and to perform and evaluate topic modeling on Italian natural language transcriptions of human-to-human conversations. This work can be an asset for grounding applications of topic modeling and can be inspiring for similar case studies in the domain of customer care quality.},
+  copyright = {https://creativecommons.org/licenses/by/4.0/},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\EHQALLWZ\Papadia et al. - 2023 - A Comparison of Different Topic Modeling Methods through a Real Case Study of Italian Customer Care.pdf}
+}
+
+@article{vaswani2017attention,
+  title={Attention is all you need},
+  author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+  journal={Advances in neural information processing systems},
+  volume={30},
+  year={2017}
+}
+
+@article{chatterjiHowPeopleUse,
+  title = {How {{People Use ChatGPT}}},
+  author = {Chatterji, Aaron and Cunningham, Tom and Deming, David and Hitzig, Zoe and Ong, Christopher and Shan, Carl and Wadman, Kevin},
+  abstract = {Despite the rapid adoption of LLM chatbots, little is known about how they are used. We document the growth of ChatGPT’s consumer product from its launch in November 2022 through July 2025, when it had been adopted by around 10\% of the world’s adult population. Early adopters were disproportionately male but the gender gap has narrowed dramatically, and we find higher growth rates in lower-income countries. Using a privacy-preserving automated pipeline, we classify usage patterns within a representative sample of ChatGPT conversations. We find steady growth in work-related messages but even faster growth in non-work-related messages, which have grown from 53\% to more than 70\% of all usage. Work usage is more common for educated users in highly-paid professional occupations. We classify messages by conversation topic and find that “Practical Guidance,” “Seeking Information,” and “Writing” are the three most common topics and collectively account for nearly 80\% of all conversations. Writing dominates work-related tasks, highlighting chatbots’ unique ability to generate digital outputs compared to traditional search engines. Computer programming and self-expression both represent relatively small shares of use. Overall, we find that ChatGPT provides economic value through decision support, which is especially important in knowledge-intensive jobs.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\BF8QKCE9\Chatterji et al. - How People Use ChatGPT.pdf},
+  year={2025}
+}
+
+@article{ghojoghAttentionMechanismTransformers,
+  title = {Attention {{Mechanism}}, {{Transformers}}, {{BERT}}, and {{GPT}}: {{Tutorial}} and {{Survey}}},
+  author = {Ghojogh, Benyamin and Ghodsi, Ali},
+  abstract = {This is a tutorial and survey paper on the attention mechanism, transformers, BERT, and GPT. We first explain attention mechanism, sequenceto-sequence model without and with attention, self-attention, and attention in different areas such as natural language processing and computer vision. Then, we explain transformers which do not use any recurrence. We explain all the parts of encoder and decoder in the transformer, including positional encoding, multihead self-attention and cross-attention, and masked multihead attention. Thereafter, we introduce the Bidirectional Encoder Representations from Transformers (BERT) and Generative Pre-trained Transformer (GPT) as the stacks of encoders and decoders of transformer, respectively. We explain their characteristics and how they work.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\FDD8M4MG\Ghojogh et Ghodsi - Attention Mechanism, Transformers, BERT, and GPT Tutorial and Survey.pdf}
+}
+
+@article{hendrycks2021measuring,
+  title={Measuring massive multitask language understanding},
+  author={Hendrycks, Dan and Burns, Collin and Basart, Steven and Zou, Andy and Mazeika, Mantas and Song, Dawn and Steinhardt, Jacob},
+  journal={arXiv preprint arXiv:2009.03300},
+  year={2021}
+}
+
+@article{rein2023gpqa,
+  title={GPQA: A graduate-level google-proof Q&A benchmark},
+  author={Rein, David and Hou, Betty Li and Stickland, Asa Cooper and Petty, Jackson and Pang, Richard Yuanzhe and Dirani, Julien and Michael, Julian and Bowman, Samuel R},
+  journal={arXiv preprint arXiv:2311.12022},
+  year={2023}
+}
+
+@article{mialon2023gaia,
+  title={GAIA: a benchmark for General AI Assistants},
+  author={Mialon, Grégoire and Fourrier, Clémentine and Swift, Craig and Wolf, Thomas and LeCun, Yann and Scialom, Thomas},
+  journal={arXiv preprint arXiv:2311.12983},
+  year={2023}
+}
+
+@article{qin2023tool,
+  title={Tool learning with foundation models},
+  author={Qin, Yujia and Liang, Shihao and Ye, Yining and Zhu, Kunlun and Yan, Lan and Lu, Yaxi and Lin, Yankai and Cong, Xin and Tang, Xiangru and Qian, Bill and others},
+  journal={arXiv preprint arXiv:2304.14354},
+  year={2023}
+}
+
+@article{yang2018hotpotqa,
+  title={HotpotQA: A dataset for diverse, explainable multi-hop question answering},
+  author={Yang, Zhilin and Qi, Peng and Zhang, Saizheng and Bengio, Yoshua and Cohen, William W and Salakhutdinov, Ruslan and Manning, Christopher D},
+  journal={arXiv preprint arXiv:1809.09600},
+  year={2018}
+}
+
+@article{openai2024o1,
+  title={Learning to Reason with LLMs},
+  author={OpenAI},
+  journal={OpenAI Blog},
+  year={2024},
+  url={https://openai.com/research/learning-to-reason-with-llms}
+}
+
+@article{es2024ragas,
+  title={RAGAS: Automated evaluation of retrieval augmented generation},
+  author={Es, Shahul and James, Jithin and Espinosa-Anke, Luis and Schockaert, Steven},
+  journal={arXiv preprint arXiv:2309.15217},
+  year={2024}
+}
+@article{mikolov2013,
+	title = {Efficient Estimation of Word Representations in Vector Space},
+	author = {Mikolov, Tomas and Chen, Kai and Corrado, Greg and Dean, Jeffrey},
+	year = {2013},
+	month = {09},
+	date = {2013-09-06},
+	url = {http://arxiv.org/abs/1301.3781},
+	note = {Issue: arXiv:1301.3781
+arXiv: 1301.3781 [cs]}
+}
+
+@article{firth1957,
+	title = {A synopsis of linguistic theory 1930-55.},
+	author = {Firth, J. R.},
+	year = {1957},
+	date = {1957},
+	journal = {Studies in Linguistic Analysis (special volume of the Philological Society)},
+	pages = {1{\textendash}32},
+	volume = {1952-59}
+}
+
+@article{lewis2020retrieval,
+  title={Retrieval-augmented generation for knowledge-intensive nlp tasks},
+  author={Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and K{\"u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rockt{\"a}schel, Tim and others},
+  journal={Advances in neural information processing systems},
+  volume={33},
+  pages={9459--9474},
+  year={2020}
+}
+@article{lecun2015,
+	title = {Deep learning},
+	author = {LeCun, Yann and Bengio, Yoshua and Hinton, Geoffrey},
+	year = {2015},
+	month = {05},
+	date = {2015-05-28},
+	journal = {Nature},
+	pages = {436--444},
+	volume = {521},
+	number = {7553},
+	doi = {10.1038/nature14539},
+	url = {https://www.nature.com/articles/nature14539},
+	langid = {en}
+}
+
+@article{jordan2015,
+	title = {Machine learning: Trends, perspectives, and prospects},
+	author = {Jordan, M. I. and Mitchell, T. M.},
+	year = {2015},
+	month = {07},
+	date = {2015-07-17},
+	journal = {Science},
+	pages = {255--260},
+	volume = {349},
+	number = {6245},
+	doi = {10.1126/science.aaa8415},
+	url = {https://www.science.org/doi/10.1126/science.aaa8415},
+	langid = {en}
+}
+
+@inproceedings{goodfellow2014,
+author = {Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+title = {Generative adversarial nets},
+year = {2014},
+publisher = {MIT Press},
+address = {Cambridge, MA, USA},
+abstract = {We propose a new framework for estimating generative models via an adversarial process, in which we simultaneously train two models: a generative model G that captures the data distribution, and a discriminative model D that estimates the probability that a sample came from the training data rather than G. The training procedure for G is to maximize the probability of D making a mistake. This framework corresponds to a minimax two-player game. In the space of arbitrary functions G and D, a unique solution exists, with G recovering the training data distribution and D equal to ½ everywhere. In the case where G and D are defined by multilayer perceptrons, the entire system can be trained with backpropagation. There is no need for any Markov chains or unrolled approximate inference networks during either training or generation of samples. Experiments demonstrate the potential of the framework through qualitative and quantitative evaluation of the generated samples.},
+booktitle = {Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 2},
+pages = {2672–2680},
+numpages = {9},
+location = {Montreal, Canada},
+series = {NIPS'14}
+}
+
+@article{brown2020,
+  title={Language models are few-shot learners},
+  author={Brown, Tom and Mann, Benjamin and Ryder, Nick and Subbiah, Melanie and Kaplan, Jared D and Dhariwal, Prafulla and Neelakantan, Arvind and Shyam, Pranav and Sastry, Girish and Askell, Amanda and others},
+  journal={Advances in neural information processing systems},
+  volume={33},
+  pages={1877--1901},
+  year={2020}
+}
+
+@article{rumelhart1986,
+  title={Learning representations by back-propagating errors},
+  author={Rumelhart, David E and Hinton, Geoffrey E and Williams, Ronald J},
+  journal={nature},
+  volume={323},
+  number={6088},
+  pages={533--536},
+  year={1986},
+  publisher={Nature Publishing Group UK London}
+}
+
+@article{salton1975vector,
+  title={A vector space model for automatic indexing},
+  author={Salton, Gerard and Wong, Anita and Yang, Chung-Shu},
+  journal={Communications of the ACM},
+  volume={18},
+  number={11},
+  pages={613--620},
+  year={1975},
+  publisher={ACM New York, NY, USA}
+}
+
+@article{bengio2003neural,
+  title={A neural probabilistic language model},
+  author={Bengio, Yoshua and Ducharme, R{\'e}jean and Vincent, Pascal and Jauvin, Christian},
+  journal={Journal of machine learning research},
+  volume={3},
+  number={Feb},
+  pages={1137--1155},
+  year={2003}
+}
+
+
+@article{wei2022emergent,title	= {Emergent abilities of large language models},author	= {Barret Zoph and Colin Raffel and Dale Schuurmans and Dani Yogatama and Denny Zhou and Don Metzler and Ed H. Chi and Jason Wei and Jeff Dean and Liam B. Fedus and Maarten Paul Bosma and Oriol Vinyals and Percy Liang and Sebastian Borgeaud and Tatsunori B. Hashimoto and Yi Tay},year	= {2022},journal	= {TMLR}}
+
+
+@misc{weiChainofThoughtPromptingElicits2023a,
+  title = {Chain-of-{{Thought Prompting Elicits Reasoning}} in {{Large Language Models}}},
+  author = {Wei, Jason and Wang, Xuezhi and Schuurmans, Dale and Bosma, Maarten and Ichter, Brian and Xia, Fei and Chi, Ed and Le, Quoc and Zhou, Denny},
+  year = {2023},
+  month = jan,
+  number = {arXiv:2201.11903},
+  eprint = {2201.11903},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2201.11903},
+  urldate = {2025-10-08},
+  abstract = {We explore how generating a chain of thought---a series of intermediate reasoning steps---significantly improves the ability of large language models to perform complex reasoning. In particular, we show how such reasoning abilities emerge naturally in sufficiently large language models via a simple method called chain-ofthought prompting, where a few chain of thought demonstrations are provided as exemplars in prompting. Experiments on three large language models show that chain-of-thought prompting improves performance on a range of arithmetic, commonsense, and symbolic reasoning tasks. The empirical gains can be striking. For instance, prompting a PaLM 540B with just eight chain-of-thought exemplars achieves state-of-the-art accuracy on the GSM8K benchmark of math word problems, surpassing even finetuned GPT-3 with a verifier.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language},
+  file = {C:\Users\Olivier\Zotero\storage\WVLMJAYX\Wei et al. - 2023 - Chain-of-Thought Prompting Elicits Reasoning in Large Language Models.pdf}
+}
+
+@misc{liuLongGenBenchLongcontextGeneration2024,
+  title = {{{LongGenBench}}: {{Long-context Generation Benchmark}}},
+  shorttitle = {{{LongGenBench}}},
+  author = {Liu, Xiang and Dong, Peijie and Hu, Xuming and Chu, Xiaowen},
+  year = {2024},
+  month = oct,
+  number = {arXiv:2410.04199},
+  eprint = {2410.04199},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2410.04199},
+  urldate = {2025-10-08},
+  abstract = {Current long-context benchmarks primarily focus on retrieval-based tests, requiring Large Language Models (LLMs) to locate specific information within extensive input contexts, such as the needle-in-a-haystack (NIAH) benchmark. Long-context generation refers to the ability of a language model to generate coherent and contextually accurate text that spans across lengthy passages or documents. While recent studies show strong performance on NIAH and other retrieval-based long-context benchmarks, there is a significant lack of benchmarks for evaluating long-context generation capabilities. To bridge this gap and offer a comprehensive assessment, we introduce a synthetic benchmark, LongGenBench, which is designed to evaluate the long-context generation capabilities of large language models (LLMs), with a particular focus on consistency in logical flow. LongGenBench redesigning the format of questions and necessitating that LLMs respond with a single, cohesive long-context answer. Upon extensive evaluation using LongGenBench, we observe that: (1) both API accessed and open source models exhibit performance degradation in long-context generation scenarios, ranging from 1.2\% to 47.1\%; (2) different series of LLMs exhibit varying trends of performance degradation, with the GEMINI1.5-FLASH model showing the least degradation among API accessed models, and the QWEN2 series exhibiting the least degradation in LongGenBench among open source models. The code is available at https://github. com/Dominic789654/LongGenBench.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Computation and Language},
+  file = {C:\Users\Olivier\Zotero\storage\996AFK29\Liu et al. - 2024 - LongGenBench Long-context Generation Benchmark.pdf}
+}
+
+@article{liuLostMiddle2023,
+  title = {Lost in the Middle: How Language Models Use Long Contexts},
+  author = {Liu, Nelson F. and Tamkin, Alex and Schärli, Nathanael and others},
+  journal = {arXiv preprint arXiv:2307.03172},
+  year = {2023},
+  url = {https://arxiv.org/abs/2307.03172}
+}
+
+@inproceedings{hendrycks2021mmlu,
+  title     = {Measuring Massive Multitask Language Understanding},
+  author    = {Hendrycks, Dan and Burns, Collin and Basart, Steven and Zou, Andy and Mazeika, Mantas and Song, Dawn and Steinhardt, Jacob},
+  booktitle = {Proceedings of the International Conference on Learning Representations (ICLR)},
+  year      = {2021},
+  url       = {https://openreview.net/pdf?id=d7KBjmI3GmQ}
+}
+
+@article{rein2023gpqa,
+  title   = {{GPQA}: A Graduate-Level Google-Proof Q\&A Benchmark},
+  author  = {Rein, David and Hou, Betty Li and Stickland, Asa Cooper and Petty, Jackson and Pang, Richard Yuanzhe and Dirani, Julien and Michael, Julian and Bowman, Samuel R.},
+  journal = {arXiv preprint arXiv:2311.12022},
+  year    = {2023},
+  url     = {https://arxiv.org/abs/2311.12022}
+}
+
+@article{mialon2023gaia,
+  title   = {{GAIA}: a Benchmark for General {AI} Assistants},
+  author  = {Mialon, Gr{\'e}goire and Fourrier, Cl{\'e}mentine and Swift, Craig and Wolf, Thomas and LeCun, Yann and Scialom, Thomas},
+  journal = {arXiv preprint arXiv:2311.12983},
+  year    = {2023},
+  url     = {https://arxiv.org/abs/2311.12983}
+}
+
+@article{balunovic2025matharena,
+  title={Matharena: Evaluating llms on uncontaminated math competitions},
+  author={Balunovi{\'c}, Mislav and Dekoninck, Jasper and Petrov, Ivo and Jovanovi{\'c}, Nikola and Vechev, Martin},
+  journal={arXiv preprint arXiv:2505.23281},
+  year={2025}
+}
+
+@inproceedings{thakur2021beir,
+  title     = {{BEIR}: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models},
+  author    = {Thakur, Nandan and Reimers, Nils and R{\"u}ckl{\'e}, Andreas and Srivastava, Abhishek and Gurevych, Iryna},
+  booktitle = {NeurIPS 2021 Datasets and Benchmarks Track},
+  year      = {2021},
+  url       = {https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/65b9eea6e1cc6bb9f0cd2a47751a186f-Paper-round2.pdf}
+}
+
+@article{santhanam2021lotte,
+  title   = {{LoTTE}: Long-Tail Topic-stratified Evaluation for {IR}},
+  author  = {Santhanam, Keshav and Oguz, Barlas and Min, Sewon and Chen, Wen-tau Yih and Boyd-Graber, Jordan and Zettlemoyer, Luke and Lewis, Mike},
+  journal = {arXiv preprint arXiv:2112.01488},
+  year    = {2021},
+  url     = {https://arxiv.org/abs/2112.01488}
+}
+
+@article{beltagy2019scibert,
+  title={SciBERT: A pretrained language model for scientific text},
+  author={Beltagy, Iz and Lo, Kyle and Cohan, Arman},
+  journal={arXiv preprint arXiv:1903.10676},
+  year={2019}
+}
+
+@article{hartmannMoreFeelingAccuracy2023a,
+  title = {More than a {{Feeling}}: {{Accuracy}} and {{Application}} of {{Sentiment Analysis}}},
+  shorttitle = {More than a {{Feeling}}},
+  author = {Hartmann, Jochen and Heitmann, Mark and Siebert, Christian and Schamp, Christina},
+  year = {2023},
+  month = mar,
+  journal = {International Journal of Research in Marketing},
+  volume = {40},
+  number = {1},
+  pages = {75--87},
+  issn = {01678116},
+  doi = {10.1016/j.ijresmar.2022.05.005},
+  urldate = {2025-10-09},
+  abstract = {Sentiment is fundamental to human communication. Countless marketing applications mine opinions from social media communication, news articles, customer feedback, or corporate communication. Various sentiment analysis methods are available and new ones have recently been proposed. Lexicons can relate individual words and expressions to sentiment scores. In contrast, machine learning methods are more complex to interpret, but promise higher accuracy, i.e., fewer false classifications. We propose an empirical framework and quantify these trade-offs for different types of research questions, data characteristics, and analytical resources to enable informed method decisions contingent on the application context. Based on a meta-analysis of 272 datasets and 12 million sentimentlabeled text documents, we find that the recently proposed transfer learning models indeed perform best, but can perform worse than popular leaderboard benchmarks suggest. We quantify the accuracy-interpretability trade-off, showing that, compared to widely established lexicons, transfer learning models on average classify more than 20 percentage points more documents correctly. To form realistic performance expectations, additional context variables, most importantly the desired number of sentiment classes and the text length, should be taken into account. We provide a pre-trained sentiment analysis model (called SiEBERT) with open-source scripts that can be applied as easily as an off-the-shelf lexicon.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\HH88X7WI\Hartmann et al. - 2023 - More than a Feeling Accuracy and Application of Sentiment Analysis.pdf}
+}
+
+@inproceedings{devlin2019bert,
+  title={Bert: Pre-training of deep bidirectional transformers for language understanding},
+  author={Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  booktitle={Proceedings of the 2019 conference of the North American chapter of the association for computational linguistics: human language technologies, volume 1 (long and short papers)},
+  pages={4171--4186},
+  year={2019}
+}
+
+@article{yao2023react,
+  title={ReAct: Synergizing Reasoning and Acting in Language Models},
+  author={Yao, Shunyu and Zhao, Jeffrey and Yu, Dian and Du, Nan and Shafran, Izhak and Narasimhan, Karthik and Cao, Yuan},
+  booktitle={International Conference on Learning Representations},
+  year={2023},
+  url={https://react-lm.github.io/}
+}
+
+@article{wang2024survey,
+  title={A Survey on Large Language Model based Autonomous Agents},
+  author={Wang, Lei and Ma, Chen and Feng, Xueyang and Zhang, Zeyu and Yang, Hao and Zhang, Jingsen and Chen, Zhi-Yuan and Tang, Jiakai and Chen, Xu and Lin, Yankai and Zhao, Wayne Xin and Wei, Zhewei and Wen, Ji-Rong},
+  journal={Frontiers of Computer Science},
+  year={2024},
+  doi={10.1007/s11704-024-40231-1}
+}
+
+@article{luo2025largelanguage,
+  title={Large Language Model Agent: A Survey on Methodology, Applications and Challenges},
+  author={Luo, Junyu and Zhang, Weizhi and Yuan, Ye and Zhao, Yusheng and Yang, Junwei and Gu, Yiyang and Wu, Bohan and Chen, Binqi and Qiao, Ziyue and Long, Qingqing and Tu, Rongcheng and Zhao, Hanqing and Tao, Dacheng and Yu, Philip S. and Zhang, Ming},
+  journal={arXiv preprint arXiv:2503.21460},
+  year={2025},
+  url={https://github.com/luo-junyu/Awesome-Agent-Papers}
+}
+
+@article{vatsal2024survey,
+  title   = {A Survey of Prompt Engineering Methods in Large Language Models for Different NLP Tasks},
+  author  = {Vatsal, Shubham and Dubey, Harsh},
+  journal = {arXiv preprint arXiv:2407.12994},
+  year    = {2024},
+  url     = {https://arxiv.org/abs/2407.12994}
+}
+
+@article{sahoo2025systematic,
+  title   = {A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications},
+  author  = {Sahoo, Pranab and Singh, Ayush Kumar and Saha, Sriparna and Jain, Vinija and Mondal, Samrat and Chadha, Aman},
+  journal = {arXiv preprint arXiv:2402.07927},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2402.07927}
+}
+
+@article{schulhoff2025promptreport,
+  title   = {The Prompt Report: A Systematic Survey of Prompt Engineering Techniques},
+  author  = {Schulhoff, Sander and Ilie, Michael and Balepur, Nishant and Kahadze, Konstantine and Liu, Amanda and Si, Chenglei and Li, Yinheng and Gupta, Aayush and Han, HyoJung and others},
+  journal = {arXiv preprint arXiv:2406.06608},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2406.06608}
+}
+
+@inproceedings{zhou2023lmhpe,
+  title     = {Large Language Models Are Human-Level Prompt Engineers},
+  author    = {Zhou, Yongchao and Muresanu, Andrei Ioan and Han, Ziwen and Paster, Keiran and Pitis, Silviu and Chan, Harris and Ba, Jimmy},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  url       = {https://arxiv.org/abs/2211.01910}
+}
+
+@inproceedings{jin2025apeer,
+  title     = {APEER: Automatic Prompt Engineering Enhances Large Language Model Reranking},
+  author    = {Jin, Can and Peng, Hongwu and Zhao, Shiyu and Wang, Zhenting and Xu, Wujiang and Han, Ligong and Zhao, Jiahui and Zhong, Kai and Rajasekaran, Sanguthevar and Metaxas, Dimitris N.},
+  booktitle = {Companion Proceedings of the ACM Web Conference 2025 (WWW Companion ’25)},
+  year      = {2025},
+  pages     = {1--10},
+  publisher = {ACM},
+  doi       = {10.1145/3701716.3717574},
+  url       = {https://arxiv.org/abs/2406.14449}
+}
+
+@misc{kapoorAIAgentsThat2024,
+  title = {{{AI Agents That Matter}}},
+  author = {Kapoor, Sayash and Stroebl, Benedikt and Siegel, Zachary S. and Nadgir, Nitya and Narayanan, Arvind},
+  year = {2024},
+  month = jul,
+  number = {arXiv:2407.01502},
+  eprint = {2407.01502},
+  primaryclass = {cs},
+  publisher = {arXiv},
+  doi = {10.48550/arXiv.2407.01502},
+  urldate = {2025-10-09},
+  abstract = {AI agents are an exciting new research direction, and agent development is driven by benchmarks. Our analysis of current agent benchmarks and evaluation practices reveals several shortcomings that hinder their usefulness in real-world applications. First, there is a narrow focus on accuracy without attention to other metrics. As a result, SOTA agents are needlessly complex and costly, and the community has reached mistaken conclusions about the sources of accuracy gains. Our focus on cost in addition to accuracy motivates the new goal of jointly optimizing the two metrics. We design and implement one such optimization, showing its potential to greatly reduce cost while maintaining accuracy. Second, the benchmarking needs of model and downstream developers have been conflated, making it hard to identify which agent would be best suited for a particular application. Third, many agent benchmarks have inadequate holdout sets, and sometimes none at all. This has led to agents that are fragile because they take shortcuts and overfit to the benchmark in various ways. We prescribe a principled framework for avoiding overfitting. Finally, there is a lack of standardization in evaluation practices, leading to a pervasive lack of reproducibility. We hope that the steps we introduce for addressing these shortcomings will spur the development of agents that are useful in the real world and not just accurate on benchmarks.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Artificial Intelligence,Computer Science - Machine Learning},
+  file = {C:\Users\Olivier\Zotero\storage\MGYYEJ8E\Kapoor et al. - 2024 - AI Agents That Matter.pdf}
+}
+
+@article{Tosi2025,
+  title={Comparing Generative AI Literature Reviews Versus Human-Led Systematic Literature Reviews: A Case Study on Big Data Research},
+  author={Tosi, Davide},
+  journal={IEEE Access},
+  year={2025},
+  publisher={IEEE}
+}
+
+@article{Li2025,
+  title = {Enhancing Systematic Literature Reviews with Generative Artificial Intelligence: Development, Applications, and Performance Evaluation},
+  author = {Li, Ying and Datta, Surabhi and {Rastegar-Mojarad}, Majid and Lee, Kyeryoung and Paek, Hunki and Glasgow, Julie and Liston, Chris and He, Long and Wang, Xiaoyan and Xu, Yingxin},
+  year = {2025},
+  month = feb,
+  journal = {Journal of the American Medical Informatics Association},
+  volume = {32},
+  number = {4},
+  eprint = {https://academic.oup.com/jamia/article-pdf/32/4/616/62195702/ocaf030.pdf},
+  pages = {616--625},
+  issn = {1527-974X},
+  doi = {10.1093/jamia/ocaf030},
+  abstract = {We developed and validated a large language model (LLM)-assisted system for conducting systematic literature reviews in health technology assessment (HTA) submissions.We developed a five-module system using abstracts acquired from PubMed: (1) literature search query setup; (2) study protocol setup using population, intervention/comparison, outcome, and study type (PICOs) criteria; (3) LLM-assisted abstract screening; (4) LLM-assisted data extraction; and (5) data summarization. The system incorporates a human-in-the-loop design, allowing real-time PICOs criteria adjustment. This is achieved by collecting information on disagreements between the LLM and human reviewers regarding inclusion/exclusion decisions and their rationales, enabling informed PICOs refinement. We generated four evaluation sets including relapsed and refractory multiple myeloma (RRMM) and advanced melanoma to evaluate the LLM's performance in three key areas: (1) recommending inclusion/exclusion decisions during abstract screening, (2) providing valid rationales for abstract exclusion, and (3) extracting relevant information from included abstracts.The system demonstrated relatively high performance across all evaluation sets. For abstract screening, it achieved an average sensitivity of 90\%, F1 score of 82, accuracy of 89\%, and Cohen's {$\kappa$} of 0.71, indicating substantial agreement between human reviewers and LLM-based results. In identifying specific exclusion rationales, the system attained accuracies of 97\% and 84\%, and F1 scores of 98 and 89 for RRMM and advanced melanoma, respectively. For data extraction, the system achieved an F1 score of 93.Results showed high sensitivity, Cohen's {$\kappa$}, and PABAK for abstract screening, and high F1 scores for data extraction. This human-in-the-loop AI-assisted SLR system demonstrates the potential of GPT-4's in context learning capabilities by eliminating the need for manually annotated training data. In addition, this LLM-based system offers subject matter experts greater control through prompt adjustment and real-time feedback, enabling iterative refinement of PICOs criteria based on performance metrics.The system demonstrates potential to streamline systematic literature reviews, potentially reducing time, cost, and human errors while enhancing evidence generation for HTA submissions.}
+}
+
+@article{Joos2025,
+  title = {Cutting {{Through}} the {{Clutter}}: {{The Potential}} of {{LLMs}} for {{Efficient Filtration}} in {{Systematic Literature Reviews}}},
+  author = {Joos, Lucas and Keim, Daniel A and Fischer, Maximilian T},
+  year = {2025},
+  abstract = {Systematic literature reviews (SLRs) are essential but labor-intensive due to high publication volumes and inefficient keywordbased filtering. To streamline this process, we evaluate Large Language Models (LLMs) for enhancing efficiency and accuracy in corpus filtration while minimizing manual effort. Our open-source tool LLMSurver presents a visual interface to utilize LLMs for literature filtration, evaluate the results, and refine queries in an interactive way. We assess the real-world performance of our approach in filtering over 8.3k articles during a recent survey construction, comparing results with human efforts. The findings show that recent LLM models can reduce filtering time from weeks to minutes. A consensus scheme ensures recall rates {$>$}98.8\%, surpassing typical human error thresholds and improving selection accuracy. This work advances literature review methodologies and highlights the potential of responsible human-AI collaboration in academic research.},
+  langid = {english},
+  file = {C:\Users\Olivier\Zotero\storage\Z6QQJLF8\Joos et al. - 2025 - Cutting Through the Clutter The Potential of LLMs for Efficient Filtration in Systematic Literature.pdf}
+}
+
+
+@article{LauGolder2025,
+  title={Comparison of Elicit AI and Traditional Literature Searching in Evidence Syntheses Using Four Case Studies},
+  author={Lau, Oscar and Golder, Su},
+  journal={Cochrane Evidence Synthesis and Methods},
+  volume={3},
+  number={6},
+  pages={e70050},
+  year={2025},
+  publisher={Wiley Online Library}
+}
+
+@article{vanDijk2023,
+  title={Artificial intelligence in systematic reviews: promising when appropriately used},
+  author={van Dijk, Sanne HB and Brusse-Keizer, Marjolein GJ and Bucsan, Charlotte C and van der Palen, Job and Doggen, Carine JM and Lenferink, Anke},
+  journal={BMJ open},
+  volume={13},
+  number={7},
+  pages={e072254},
+  year={2023},
+  publisher={British Medical Journal Publishing Group}
+}
+
+@article{Luccioni2024,
+  title={Light bulbs have energy ratings—so why can’t AI chatbots?},
+  author={Luccioni, Sasha and Gamazaychikov, Boris and Hooker, Sara and Pierrard, R{\'e}gis and Strubell, Emma and Jernite, Yacine and Wu, Carole-Jean},
+  journal={Nature},
+  volume={632},
+  number={8026},
+  pages={736--738},
+  year={2024},
+  publisher={Nature Publishing Group UK London}
+}
+
+@article{Kobis2025,
+  title={Delegation to Artificial Intelligence can increase dishonest behaviour},
+  author={K{\"o}bis, Nils and Rahwan, Zoe and Rilla, Raluca and Supriyatno, Bramantyo Ibrahim and Bersch, Clara and Ajaj, Tamer and Bonnefon, Jean-Fran{\c{c}}ois and Rahwan, Iyad},
+  journal={Nature},
+  pages={1--9},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
+}
+
+@article{Baumann2025,
+  title={Large Language Model Hacking: Quantifying the Hidden Risks of Using LLMs for Text Annotation},
+  author={Baumann, Joachim and R{\"o}ttger, Paul and Urman, Aleksandra and Wendsj{\"o}, Albert and Plaza-del-Arco, Flor Miriam and Gruber, Johannes B and Hovy, Dirk},
+  journal={arXiv preprint arXiv:2509.08825},
+  year={2025}
+}
+
+@article{Qiu2025,
+  title={Completing A Systematic Review in Hours instead of Months with Interactive AI Agents},
+  author={Qiu, Rui and Chen, Shijie and Su, Yu and Yen, Po-Yin and Shen, Han-Wei},
+  journal={arXiv preprint arXiv:2504.14822},
+  year={2025}
+}
+
+@article{Tomczy2024,
+author = {Przemysław Tomczyk and Philipp Brüggemann and Niklas Mergner and Maria Petrescu},
+title ={Are AI tools better than traditional tools in literature searching? Evidence from E-commerce research},
+
+journal = {Journal of Librarianship and Information Science},
+volume = {0},
+number = {0},
+pages = {09610006241295802},
+year = {0},
+doi = {10.1177/09610006241295802},
+
+URL = { 
+    
+        https://doi.org/10.1177/09610006241295802
+    
+    
+
+},
+eprint = { 
+    
+        https://doi.org/10.1177/09610006241295802
+    
+    
+
+}
+,
+    abstract = { This article examines the potential implications of Artificial Intelligence (AI) for literature search, comparing AI-based tools to conventional research methods. It also addresses the scarcity of academic literature on specific AI tools for research writing, posing four critical questions regarding accuracy, quality, uniqueness, and qualified uniqueness. Employing Algorithmic Theory and Data Dependency Theory, this project scrutinizes AI performance in algorithms, machine learning models, and data quality. Testing nine e-commerce topics using Scopus, Web of Science, Elicit, and SciSpace, the authors conclude that while conventional methods excel in accuracy and quality, AI tools show promise in uniqueness, complementing literature reviews. The findings also emphasize the judicious integration of AI tools and advocate for further research into new applications and diverse fields. Ultimately, this research offers highly relevant insights into leveraging AI tools to enhance conventional literature search practices in research and professional domains. }
+}

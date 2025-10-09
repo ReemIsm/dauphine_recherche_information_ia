@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="cours_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cours_files/libs/quarto-html/tabby.min.js"></script>
+<script src="cours_files/libs/quarto-html/popper.min.js"></script>
+<script src="cours_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="cours_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="cours_files/libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.6.42">
+
+  <meta name="author" content="Olivier Caron">
+  <title>Méthodes de recherche appliquée</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="cours_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="cours_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for citations */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+      margin-bottom: 0em;
+    }
+    .hanging-indent div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }  </style>
+  <link rel="stylesheet" href="cours_files/libs/revealjs/dist/theme/quarto-7305b09eb733fa85903ef661c69bedac.css">
+  <link href="cours_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="cours_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="cours_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="cours_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="cours_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="cours_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="ubd_bg1.png" data-background-position="center" data-background-size="cover" class="quarto-title-block center">
+  <h1 class="title">Méthodes de recherche appliquée</h1>
+  <p class="subtitle">Outils, atouts et limites</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Olivier Caron 
+</div>
+        <p class="quarto-title-affiliation">
+            Paris Dauphine - PSL
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="lexplosion-chatgpt-en-chiffres-juillet-2025-chatterjihowpeopleuse" class="slide level2" style="font-size:0.7em">
+<h2>L’explosion ChatGPT en chiffres (Juillet 2025) <span class="citation" data-cites="chatterjiHowPeopleUse">(<a href="#/références" role="doc-biblioref" onclick="">Chatterji et al. 2025</a>)</span></h2>
+<p>Pour comprendre pourquoi ce cours est essentiel, il faut saisir deux choses : l’échelle du phénomène et la mutation de ses usages.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="léchelle-un-phénomène-de-masse">L’échelle : un phénomène de masse</h3>
+<ul>
+<li><strong>700 millions</strong> d’utilisateurs actifs par semaine.</li>
+<li><strong>18 milliards</strong> de messages échangés chaque semaine.</li>
+<li><strong>x5.8</strong> : Croissance du volume de messages en un an (Juin 2024-2025).</li>
+<li><strong>🎯 Cible jeune</strong> : <strong>46%</strong> des messages proviennent des <strong>18-25 ans</strong>.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="la-tendance-de-fond-de-la-création-à-la-recherche">La tendance de fond : de la création à la recherche</h3>
+<p>En un an, les usages ont basculé :</p>
+<ul>
+<li>✍️ <strong>L’écriture</strong> (créer, résumer) a vu sa part baisser de 36% à <strong>24%</strong>.</li>
+<li>🔎 <strong>La recherche d’infos</strong> a explosé, passant de 14% à <strong>24%</strong>.</li>
+</ul>
+<p><strong>Les trois usages majoritaires (près de 80% du total) sont :</strong></p>
+<p><br>
+</p>
+<ol type="1">
+<li><strong>📚 Guide pratique</strong> (29%)</li>
+<li><strong>🔎 Recherche d’infos</strong> (24%)</li>
+<li><strong>✍️ Écriture</strong> (24%)</li>
+</ol>
+</div></div>
+<div title="L'implication pour ce cours">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>L’implication pour ce cours</strong></p>
+</div>
+<div class="callout-content">
+<p>En moins de deux ans, ChatGPT est passé d’un outil de “création de contenu” à un <strong>concurrent direct de Google pour la recherche d’information</strong>, en particulier chez les jeunes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contexte-après-les-deux-premières-séances" class="slide level2" style="font-size:0.9em">
+<h2>Contexte après les deux premières séances</h2>
+<h3 id="vos-acquis">Vos acquis :</h3>
+<p><br>
+</p>
+<ol type="1">
+<li><strong>Évaluation de l’information</strong> : vous savez distinguer une source scientifique d’une source qui l’est moins et en évaluer la crédibilité.</li>
+</ol>
+<p><br>
+</p>
+<ol start="2" type="1">
+<li><strong>Compréhension de la production scientifique</strong> : vous comprenez la structure d’un article, la question de recherche, les hypothèses, les résultats, les différents journaux…</li>
+</ol>
+<p><br>
+</p>
+<ol start="3" type="1">
+<li><strong>Maîtrise des outils traditionnels</strong> : vous pouvez utiliser les bases de données académiques comme Scopus ou la recherche Google Scholar.</li>
+</ol>
+</section>
+<section id="un-petit-sondage-à-main-levée" class="slide level2" style="font-size:0.8em">
+<h2>Un petit sondage à main levée…</h2>
+<p>Qui a déjà entendu parler de…</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="applications-produits">Applications / produits</h3>
+<div>
+<ul>
+<li class="fragment"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/ChatGPT-Logo.svg" alt="ChatGPT" width="40" style="vertical-align:middle;"> <strong>ChatGPT</strong> ?</li>
+<li class="fragment"><img src="images/m-boxed-rainbow.png" alt="Mistral" width="40" style="vertical-align:middle;"> <strong>Mistral</strong> ?</li>
+<li class="fragment"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20AI%20logo.svg" alt="Claude" width="40" style="vertical-align:middle;"> <strong>Claude</strong> ?</li>
+<li class="fragment"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Google-gemini-icon.svg" alt="Gemini" width="40" style="vertical-align:middle;"> <strong>Gemini</strong> ?</li>
+<li class="fragment"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/DeepSeek-icon.svg" alt="DeepSeek" width="40" style="vertical-align:middle;"> <strong>DeepSeek</strong> ?</li>
+<li class="fragment"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Qwen%20logo.svg" alt="Qwen" width="40" style="vertical-align:middle;"> <strong>Qwen</strong> ?</li>
+</ul>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="concepts">Concepts</h3>
+<div>
+<ul>
+<li class="fragment">LLMs ? (Large Language Models)</li>
+<li class="fragment">Tokens ?</li>
+<li class="fragment">Embeddings ?</li>
+<li class="fragment">RAG (Retrieval-Augmented Generation) ?</li>
+<li class="fragment">Fine-tuning ?</li>
+<li class="fragment">Context window ?</li>
+<li class="fragment">Attention / Transformers ?</li>
+<li class="fragment">Few-shot / Zero-shot ?</li>
+<li class="fragment">Chain-of-thought ?</li>
+</ul>
+</div>
+</div></div>
+<div class="fragment">
+<div title="Notre objectif aujourd'hui" style="font-size:0.8em">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Notre objectif aujourd’hui</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Passer de la simple connaissance des <strong>produits</strong>…</li>
+<li>… à la compréhension des <strong>concepts</strong>.</li>
+<li>Pour les utiliser de manière <strong>critique</strong> et <strong>efficace</strong>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pour-commencer-de-quoi-parle-t-on" class="slide level2" style="font-size:0.65em">
+<h2>Pour commencer : de quoi parle-t-on ?</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ol type="1">
+<li class="fragment"><p><strong>Intelligence Artificielle (IA)</strong> : Le grand domaine qui vise à reproduire des comportements “intelligents”.</p></li>
+<li class="fragment"><p><strong>Machine Learning (ML)</strong> : Une branche de l’IA où la machine <strong>apprend par l’exemple</strong>. <span class="citation" data-cites="jordan2015">(<a href="#/références" role="doc-biblioref" onclick="">Jordan and Mitchell 2015</a>)</span></p></li>
+<li class="fragment"><p><strong>Réseaux de Neurones</strong> : La technique de ML inspirée du cerveau, qui est la base du Deep Learning. L’apprentissage repose sur des connexions pondérées entre neurones artificiels. <span class="citation" data-cites="rumelhart1986">(<a href="#/références" role="doc-biblioref" onclick="">Rumelhart, Hinton, and Williams 1986</a>)</span></p></li>
+<li class="fragment"><p><strong>Deep Learning (DL)</strong> : Utilise des réseaux de neurones <strong>profonds</strong> (avec de nombreuses couches) <span class="citation" data-cites="lecun2015">(<a href="#/références" role="doc-biblioref" onclick="">LeCun, Bengio, and Hinton 2015</a>)</span>.</p></li>
+<li class="fragment"><p><strong>IA Générative</strong> : La branche du DL qui se spécialise dans la <strong>création de nouveau contenu</strong> (texte, images…) <span class="citation" data-cites="goodfellow2014">(<a href="#/références" role="doc-biblioref" onclick="">Goodfellow et al. 2014</a>)</span></p></li>
+<li class="fragment"><p><strong>LLMs</strong> : Type particulier de modèle de deep learning entraîné sur d’immenses corpus textuels <span class="citation" data-cites="brown2020">(<a href="#/références" role="doc-biblioref" onclick="">Brown et al. 2020</a>)</span></p></li>
+</ol>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-right">
+<figure>
+<p><img data-src="images/clipboard-1479625210.png" class="quarto-figure quarto-figure-right" style="width:75.0%"></p>
+</figure>
+</div>
+</div><div class="fragment">
+<p>Ajuster le modèle pour qu’il <strong>colle aux données</strong> (réduire l’erreur), sans “apprendre par cœur” (éviter le <strong>sur-apprentissage</strong>).</p>
+</div>
+</div>
+<div class="footer">
+<p>Illustration de Caprasi, C. (2023). <em>Artificial Intelligence, Machine Learning, Deep Learning, GenAI and more.</em> <em>Women in Technology - Medium.</em> <a href="https://medium.com/womenintechnology/ai-c3412c5aa0ac" class="uri">https://medium.com/womenintechnology/ai-c3412c5aa0ac</a></p>
+</div>
+</section>
+<section>
+<section id="comprendre-comment-fonctionnent-les-llms" class="title-slide slide level1 center" data-background-color="#4285F4">
+<h1>Comprendre comment fonctionnent les LLMs</h1>
+
+</section>
+<section id="la-limite-du-sac-de-mots-bag-of-words" class="slide level2" style="font-size:0.9em">
+<h2>La limite du “sac de mots” (Bag-of-Words)</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>L’approche <strong>Bag-of-Words</strong> se contente de compter les mots, mais ignore leur sens et leur ordre.</p>
+<ul>
+<li><p><strong>Le problème</strong> : le modèle ne comprend pas que des mots sont sémantiquement proches.</p></li>
+<li><p><strong>Exemple</strong> : pour lui, “<strong>roi</strong>” est aussi éloigné de “<strong>reine</strong>” que de “<strong>camion</strong>”.</p></li>
+<li><p><strong>Le défi</strong> : Comment la machine peut-elle apprendre que “<strong>excellent</strong>” est proche de “<strong>superbe</strong>” ?</p></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/clipboard-2788205366.png"></p>
+</div></div>
+</section>
+<section id="lidée-de-lembedding-représenter-des-concepts-par-des-nombres" class="slide level2" style="font-size:0.6em">
+<h2>L’idée de l’embedding : représenter des concepts par des nombres</h2>
+<p>Avant de voir comment une machine comprend les <em>mots</em>, imaginons comment représenter une <em>personne</em> en chiffres. C’est le principe de l’<strong>embedding</strong> (ou “plongement”).</p>
+<div class="columns">
+<div class="column fragment" style="width:33%;">
+<h3 id="une-seule-dimension"><strong>1. Une seule dimension</strong></h3>
+<p>Un test peut donner un score unique, par exemple sur l’axe introversion/extraversion. Ce score devient la première coordonnée du “vecteur de personnalité”.</p>
+<p><img data-src="images/clipboard-3216074280.png" alt="Un seul trait de personnalité représenté sur un axe et comme un vecteur à une dimension."></p>
+</div><div class="column fragment" style="width:33%;">
+<h3 id="ajouter-de-la-complexité"><strong>2. Ajouter de la complexité</strong></h3>
+<p>On change d’échelle : on normalise les valeurs pour s’intéresser uniquement à la direction du vecteur (qui porte le sens), pas à sa longueur.</p>
+<p><img data-src="images/clipboard-3689757641.png"></p>
+</div><div class="column fragment" style="width:33%;">
+<h3 id="vers-n-dimensions"><strong>3. Vers N dimensions</strong></h3>
+<p>Les tests comme le <em>Big Five</em> utilisent au moins 5 dimensions. En machine learning, on peut en avoir des milliers. La personnalité devient un <strong>vecteur de nombres</strong>, chaque valeur représentant un score.</p>
+<p><img data-src="images/clipboard-1397202871.png" alt="Résultats d'un test de personnalité Big Five avec cinq scores."></p>
+</div></div>
+<div class="fragment" title="L'idée fondamentale de l'embedding">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>L’idée fondamentale de l’embedding</strong></p>
+</div>
+<div class="callout-content">
+<p>Un concept complexe (une personne, un mots, des phrases) peut être représenté par un <strong>vecteur numérique</strong>.</p>
+<p><strong>Avantage</strong> : les machines peuvent <strong>mesurer les similarités</strong> en comparant ces vecteurs.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<p>Source des illustrations Word2Vec: Alammar, J. (2019). <em>The Illustrated Word2Vec</em>. <a href="https://jalammar.github.io/illustrated-word2vec/" class="uri">https://jalammar.github.io/illustrated-word2vec/</a></p>
+</div>
+</section>
+<section id="comment-la-machine-compare-les-personnalités" class="slide level2" style="font-size:0.6em">
+<h2>Comment la machine “compare” les personnalités ?</h2>
+<p>Maintenant que chaque personne est un vecteur de nombres, on peut utiliser un outil mathématique simple pour calculer à quel point elles sont “proches” en termes de personnalité : la <strong>similarité cosinus</strong>.</p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<h3 id="lintuition-langle">1. <strong>L’intuition : l’angle</strong> 📐</h3>
+<p>L’idée n’est pas de mesurer la distance entre les points, mais plutôt l’<strong>angle</strong> entre les flèches (vecteurs).</p>
+<ul>
+<li><strong>Angle faible</strong> (directions similaires) ➞ <strong>Score de similarité élevé</strong>.</li>
+<li><strong>Angle grand</strong> (directions opposées) ➞ <strong>Score de similarité faible/négatif</strong>.</li>
+</ul>
+<p><img data-src="images/clipboard-1326301173.png" alt="Vecteurs de personnalité dans un espace à 2 dimensions."></p>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="le-calcul-en-action">2. <strong>Le calcul en action</strong></h3>
+<p>La fonction <code>cosine_similarity</code> nous donne un score entre -1 (opposés) et 1 (identiques).</p>
+<p><img data-src="images/clipboard-139449525.png"> <img data-src="images/clipboard-2770573251.png"></p>
+<p>On voit que <strong>Jay</strong> est bien plus <strong>similaire</strong> à la <strong>Personne #1</strong> qu’à la <strong>Personne #2</strong>, que ce soit avec 2 ou 5 dimensions !</p>
+</div></div>
+<div class="fragment">
+<div class="callout callout-note callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>L’avantage clé</strong></p>
+</div>
+<div class="callout-content">
+<p>Peu importe le nombre de dimensions (2, 5, plusieurs centaines ou milliers pour les modèles de langue !), la <strong>similarité cosinus</strong> nous donne un <strong>score unique et fiable</strong> pour quantifier la ressemblance entre deux concepts. C’est la base de nombreuses applications : moteurs de recommandation, recherche sémantique… et bien plus encore.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="la-révolution-word2vec-le-sens-par-le-contexte" class="slide level2" style="font-size:0.65em">
+<h2>La révolution Word2Vec : le sens par le contexte</h2>
+<blockquote>
+<p><em>“You shall know a word by the company it keeps”</em> <span class="citation" data-cites="firth1957">(<a href="#/références" role="doc-biblioref" onclick="">Firth 1957</a>)</span></p>
+</blockquote>
+<p>Un mot prend son sens des mots qui l’entourent <span class="citation" data-cites="harris1954distributional">(<a href="#/références" role="doc-biblioref" onclick="">Harris 1954</a>)</span>.<br>
+Cette idée inspire les modèles d’<strong>embeddings</strong>, où chaque mot est représenté par un vecteur numérique.</p>
+<ul>
+<li><span class="citation" data-cites="bengio2003neural">Bengio et al. (<a href="#/références" role="doc-biblioref" onclick="">2003</a>)</span> ont proposé le premier modèle neuronal apprenant ces représentations de mots.<br>
+</li>
+<li><span class="citation" data-cites="mikolov2013">Mikolov et al. (<a href="#/références" role="doc-biblioref" onclick="">2013</a>)</span> ont simplifié cette approche avec <strong>Word2Vec</strong>, rendant l’apprentissage des vecteurs rapide et efficace.</li>
+</ul>
+<p>Le résultat : les mots apparaissant dans des contextes similaires finissent par avoir des vecteurs proches dans l’espace sémantique.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-840659499.png" class="quarto-figure quarto-figure-center" style="width:80.0%" alt="Illustration CBOW vs Skip-gram"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>Même si leurs idées sont proches, Harris et Firth ne disent pas la même chose. En résumé :</p>
+<ul>
+<li><p><strong>Harris</strong> a fourni la <strong>méthode technique</strong> : son hypothèse distributionnelle est une technique formelle basée sur les statistiques de cooccurrence des mots.</p></li>
+<li><p><strong>Firth</strong> a fourni le <strong>cadre philosophique</strong> : sa théorie contextuelle du sens est plus large, considérant le sens comme l’usage d’un mot dans une situation sociale.</p></li>
+</ul>
+<p>On les cite souvent ensemble car Harris justifie la méthode statistique de Word2Vec, tandis que Firth donne l’intuition fondamentale que le contexte est la clé du sens.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="visualiser-un-embedding-13" class="slide level2" style="font-size:0.8em">
+<h2>Visualiser un embedding 1/3</h2>
+<p><img data-src="images/clipboard-96365688.png"></p>
+</section>
+<section id="visualiser-un-embedding-23" class="slide level2" style="font-size:0.8em">
+<h2>Visualiser un embedding 2/3</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-3895743696.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<div class="footer">
+<p>Source : <em>Transformers, the tech behind LLMs</em> - <em>Deep Learning, Chapter 5.</em><br>
+<a href="https://www.youtube.com/watch?v=wjZofJX0v4M">Vidéo Youtube</a></p>
+</div>
+</section>
+<section id="visualiser-un-embedding-33" class="slide level2" style="font-size:0.8em">
+<h2>Visualiser un embedding 3/3</h2>
+<p>Chaque mot est représenté par un <strong>vecteur de nombres</strong> (par ex. 50 ou 300 dimensions). Pris séparément, ces valeurs n’ont pas de sens pour nous. Mais en comparant plusieurs mots, on voit apparaître des <strong>motifs de similarité</strong>.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><em>man</em> et <em>woman</em> → vecteurs proches.</li>
+<li><em>king</em> et <em>queen</em> → partagent des dimensions → idée de <strong>royauté</strong>.</li>
+<li><em>boy</em> et <em>girl</em> → proches sur d’autres dimensions → idée de <strong>jeunesse</strong>.</li>
+<li><em>water</em> → se distingue nettement des mots “personnes”.</li>
+</ul>
+<p>💡 Les embeddings capturent des <strong>régularités invisibles</strong>, uniquement à partir des contextes.</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/clipboard-1098495211.png"></p>
+</div></div>
+</section>
+<section id="analogies-vectorielles" class="slide level2" style="font-size:0.6em">
+<h2>Analogies vectorielles</h2>
+<p>Les vecteurs de mots se combinent algébriquement. Ce n’est pas magique : la <strong>géométrie des vecteurs</strong> encode des relations sémantiques et syntaxiques.</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><em>V(roi) - V(homme) + V(femme) ≈ V(reine)</em></li>
+<li><em>V(Paris) - V(France) + V(Italie) ≈ V(Rome)</em></li>
+</ul>
+<p>👉 Avec des bibliothèques comme <strong>Gensim en python</strong> ou <strong>word2vec en R</strong>, on peut réellement calculer ces analogies et retrouver les mots les plus proches.</p>
+</div><div class="column" style="width:60%;">
+<p><img data-src="images/clipboard-4149333522.png"></p>
+</div></div>
+<h3 id="applications-concrètes-possibles-pour-une-revue-de-littérature">Applications concrètes possibles pour une revue de littérature</h3>
+<div>
+<ul>
+<li class="fragment"><p>Formuler sa recherche comme une <strong>vraie question</strong>, pas juste une liste de mots-clés.</p></li>
+<li class="fragment"><p>“Scanner” 100 abstracts en 1 minute pour en extraire les <strong>méthodologies et conclusions</strong>.</p></li>
+<li class="fragment"><p>Se faire recommander des articles sémantiquement proches d’articles identifiés comme <strong>fondateurs</strong>.</p></li>
+<li class="fragment"><p>Et surtout comprendre la <strong>logique interne</strong> de la plupart outils IA utilisés ensuite.</p></li>
+</ul>
+</div>
+</section>
+<section id="applications-embeddings-slr-master-dauphine" class="slide level2" style="font-size:1em">
+<h2>Applications Embeddings (SLR + Master Dauphine)</h2>
+<p>Démo <code>images_interactives</code></p>
+</section>
+<section id="le-mécanisme-dattention-vaswani2017attention" class="slide level2" style="font-size:0.70em">
+<h2>Le mécanisme d’attention <span class="citation" data-cites="vaswani2017attention">(<a href="#/références" role="doc-biblioref" onclick="">Vaswani et al. 2017</a>)</span></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>L’idée fondamentale des Transformers est simple : pour comprendre un mot, le modèle doit <strong>porter son attention</strong> sur les autres mots importants de la phrase.</p>
+<p>Imaginez que pour chaque mot, on fasse un éclairage 🔦 sur les autres termes qui lui donnent son sens.</p>
+<p><br>
+<br>
+</p>
+<p><strong>Exemple :</strong></p>
+<blockquote>
+<p><code>"Le livreur a déposé le colis devant la porte, car il était trop lourd."</code></p>
+</blockquote>
+<p><br>
+</p>
+<p>Pour comprendre le mot <strong>“il”</strong>, le modèle va apprendre à porter son attention sur :</p>
+<ul>
+<li><strong>“colis”</strong> (très forte attention : c’est l’antécédent le plus probable !)</li>
+<li><strong>“livreur”</strong> (un peu d’attention : c’est un autre acteur, mais moins pertinent pour “il”)</li>
+<li><strong>“lourd”</strong> (attention moyenne : c’est une caractéristique qui justifie le “il”)</li>
+</ul>
+</div><div class="column" style="width:40%;">
+<p><img data-src="images/clipboard-3690532316.png" style="width:100.0%"><br>
+</p>
+</div></div>
+<div title="La grande différence">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>La grande différence</strong></p>
+</div>
+<div class="callout-content">
+<p>Contrairement à Word2Vec qui regarde une petite fenêtre fixe, l’<strong>attention</strong> permet de créer des liens sémantiques entre des mots <strong>même très éloignés</strong> dans la phrase. Le modèle apprend quelles parties du contexte sont les plus pertinentes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pour-aller-plus-loin-les-transformers-3blue1brown-grant-sanderson" class="slide level2" style="font-size:0.7em">
+<h2>Pour aller plus loin : les Transformers (<a href="https://www.youtube.com/c/3blue1brown">3Blue1Brown (Grant Sanderson)</a>)</h2>
+<p>Ces deux vidéos sont fortement recommandées pour une compréhension visuelle et approfondie des concepts clés des Transformers.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="larchitecture-transformers">L’architecture “Transformers”</h3>
+<p>Cette vidéo offre une vue d’ensemble de l’architecture Transformer, le moteur des grands modèles de langage modernes.</p>
+<p><br>
+<br>
+</p>
+<iframe data-external="1" src="https://www.youtube.com/embed/wjZofJX0v4M" width="500" height="275" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div><div class="column" style="width:50%;">
+<h3 id="le-mécanisme-dattention">Le mécanisme d’Attention</h3>
+<p>Cette seconde vidéo se concentre sur le concept crucial de l’attention, permettant au modèle de “comprendre” le contexte.</p>
+<p><br>
+<br>
+</p>
+<iframe data-external="1" src="https://www.youtube.com/embed/eMlx5fFNoYc" width="500" height="275" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+</div></div>
+</section>
+<section id="comment-un-llm-apprend-il-le-jeu-du-mot-suivant" class="slide level2" style="font-size:0.7em">
+<h2>Comment un LLM apprend-il ? Le jeu du mot suivant</h2>
+<p>L’entraînement d’un LLM comme GPT-4 repose sur un principe simple, répété des milliards de fois sur un corpus gigantesque.</p>
+<p><strong>La tâche : prédire le token le plus probable.</strong></p>
+<ol type="1">
+<li><p>On lui donne un début de phrase (un “prompt”) :</p>
+<p><code>"Le client a contacté le service après-vente car son produit était..."</code></p></li>
+<li><p>Le modèle calcule une distribution de probabilité sur l’ensemble de son vocabulaire pour le mot suivant.</p>
+<ul>
+<li><code>défectueux</code> : 15% de probabilité</li>
+<li><code>cassé</code> : 12% de probabilité</li>
+<li><code>livré</code> : 5% de probabilité</li>
+<li><code>incroyable</code>: 0.1% de probabilité</li>
+<li><code>manger</code> : 0.0001% de probabilité</li>
+<li><code>...</code></li>
+</ul></li>
+</ol>
+<div title="De la prédiction à l'émergence des capacités">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>De la prédiction à l’émergence des capacités</strong></p>
+</div>
+<div class="callout-content">
+<p>En répétant ce “jeu” des milliards de fois, le modèle apprend les régularités du langage : grammaire, faits, styles d’écriture, voire certaines capacités de raisonnement <strong>émergentes</strong> <span class="citation" data-cites="wei2022emergent">(<a href="#/références" role="doc-biblioref" onclick="">Zoph et al. 2022</a>)</span>.<br>
+Ce type d’apprentissage, fondé sur la prédiction à partir de texte brut, est appelé <strong>auto-supervision</strong> (<em>self-supervised learning</em>).</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualisation-de-gpt-3-3blue1brown-grant-sanderson" class="slide level2" style="font-size:0.7em">
+<h2>Visualisation de GPT-3 (<a href="https://www.youtube.com/c/3blue1brown">3Blue1Brown (Grant Sanderson)</a>)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-3467065954.gif" class="quarto-figure quarto-figure-center" style="width:90.0%"></p>
+</figure>
+</div>
+</section>
+<section id="quel-llm-choisir-quelques-concepts-clés" class="slide level2" style="font-size:0.6em">
+<h2>Quel LLM choisir ? Quelques concepts clés</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="pourquoi-ces-concepts-sont-cruciaux">Pourquoi ces concepts sont cruciaux ?</h3>
+<ul>
+<li>Ils expliquent <strong>pourquoi</strong> certains outils excellent dans certaines tâches</li>
+<li>Ils vous aident à <strong>choisir le bon outil</strong> pour votre besoin</li>
+<li>Ils vous permettent d’<strong>anticiper les limites</strong> avant de les rencontrer</li>
+<li>Ils constituent le vocabulaire de base pour comprendre les nouveautés à venir</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="quelques-concepts-clés">Quelques concepts clés</h3>
+<ol type="1">
+<li><strong>Fenêtre de contexte</strong> : La mémoire de travail de l’IA</li>
+<li><strong>RAG</strong> : l’IA accède à des informations externes</li>
+<li><strong>Fine-tuning</strong> : comment spécialiser/adapter un modèle</li>
+<li><strong>Agents</strong> : l’IA qui agit de manière autonome en utilisant des outils</li>
+</ol>
+</div></div>
+<div class="fragment" title="Comment évaluer les performances des LLMs ?">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Comment évaluer les performances des LLMs ?</strong></p>
+</div>
+<div class="callout-content">
+<p>Il existe une <strong>multiplicité de benchmarks</strong>, chacun ciblant des compétences différentes (connaissances, raisonnement, recherche d’info, agenticité, etc.).<br>
+Exemples représentatifs et <strong>vérifiés</strong> :</p>
+<ul>
+<li><strong>MMLU</strong> - 57 matières académiques, QCM de culture générale et spécialisée <span class="citation" data-cites="hendrycks2021mmlu">(<a href="#/références" role="doc-biblioref" onclick="">Hendrycks et al. 2021</a>)</span>.<br>
+</li>
+<li><strong>GPQA</strong> - Questions de niveau doctorat en physique/chimie/biologie, « Google-proof » <span class="citation" data-cites="rein2023gpqa">(<a href="#/références" role="doc-biblioref" onclick="">Rein et al. 2023</a>)</span>.<br>
+</li>
+<li><strong>GAIA</strong> - Benchmark d’<strong>agents</strong> pour questions “réelles” nécessitant outils, web et multimodalité <span class="citation" data-cites="mialon2023gaia">(<a href="#/références" role="doc-biblioref" onclick="">Mialon et al. 2023</a>)</span>.<br>
+</li>
+<li><strong>MathArena</strong> - Plateforme/leaderboard évaluant le <strong>raisonnement mathématique</strong> sur concours/récents (IMO, etc.) <span class="citation" data-cites="balunovic2025matharena">(<a href="#/références" role="doc-biblioref" onclick="">Balunović et al. 2025</a>)</span>.<br>
+</li>
+<li><strong>BEIR</strong> - Évaluation <strong>IR</strong> (recherche d’info) hétérogène, 18 datasets, zéro-shot <span class="citation" data-cites="thakur2021beir">(<a href="#/références" role="doc-biblioref" onclick="">Thakur et al. 2021</a>)</span>.<br>
+</li>
+<li><strong>LoTTE</strong> - Évaluation IR sur <strong>sujets long-tail</strong> (StackExchange), complément de BEIR <span class="citation" data-cites="santhanam2021lotte">(<a href="#/références" role="doc-biblioref" onclick="">Santhanam et al. 2021</a>)</span>.</li>
+</ul>
+<p>💡 Interprétez toujours les scores <strong>par rapport à la tâche ciblée</strong> : un bon score MMLU ne garantit pas de bonnes performances en <strong>recherche d’articles</strong> (IR/RAG), et inversement.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="le-problème-des-benchmarks-des-llm-et-des-agents" class="slide level2" style="font-size:0.7em">
+<h2>Le problème des benchmarks des LLM et des agents</h2>
+<blockquote>
+<p><em>“Today’s benchmarks measure what is easy to measure, not what matters.”</em><br>
+<span class="citation" data-cites="kapoorAIAgentsThat2024">(<a href="#/références" role="doc-biblioref" onclick="">Kapoor et al. 2024</a>)</span></p>
+</blockquote>
+<ul>
+<li>Les benchmarks actuels donnent souvent une <strong>image trop flatteuse</strong> des performances des agents IA.<br>
+</li>
+<li>Ils ne mesurent pas toujours les éléments essentiels comme :
+<ul>
+<li>le <strong>coût réel</strong> (temps, tokens),</li>
+<li>la <strong>robustesse</strong> face à des variations imprévues,</li>
+<li>la <strong>reproductibilité</strong> des résultats.</li>
+</ul></li>
+<li>Ce qui brille dans un leaderboard n’est pas forcément ce qui <strong>fonctionne dans la vraie vie</strong>.</li>
+</ul>
+<p><br>
+<br>
+<br>
+</p>
+<p>Une vidéo intéressante sur ce sujet ⬇️</p>
+<div class="footer">
+<p>« En fait, les LLMs ne stagnent pas du tout » - <em>Vidéo de Micode avec Grégoire Mialon et Clémentine Fourrier</em>.<br>
+<a href="https://www.youtube.com/watch?v=biZX5cnQ_UU" class="uri">https://www.youtube.com/watch?v=biZX5cnQ_UU</a></p>
+</div>
+</section>
+<section id="la-fenêtre-de-contexte-la-mémoire-limitée-des-llms" class="slide level2" style="font-size:0.7em">
+<h2>1. La fenêtre de contexte : la mémoire limitée des LLMs</h2>
+<blockquote>
+<p><em>“Language models struggle to use information located in the middle of long contexts, a phenomenon known as ‘lost in the middle’.”</em> <span class="citation" data-cites="liuLostMiddle2023">(<a href="#/références" role="doc-biblioref" onclick="">Liu et al. 2023</a>)</span></p>
+</blockquote>
+<p>La <strong>fenêtre de contexte</strong> correspond à la quantité maximale de texte qu’un LLM peut traiter en une seule fois<br>
+(prompt + réponse), mesurée en <strong>tokens</strong>. Les capacités des LLMs évoluent très vite.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/lost_in_the_middle.PNG" class="quarto-figure quarto-figure-center" style="width:70.0%"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/fiction_benchmark_context.PNG" class="quarto-figure quarto-figure-center" style="width:100.0%"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="rag" class="slide level2" style="font-size:0.7em">
+<h2>2. RAG</h2>
+<p>Le <strong>Retrieval-Augmented Generation</strong> combine recherche et génération.</p>
+<ol type="1">
+<li>Le LLM <strong>cherche</strong> d’abord des informations dans une base externe (web, PDFs, articles…).</li>
+<li>Il <strong>injecte</strong> ces informations dans son contexte.</li>
+<li>Il <strong>génère</strong> une réponse basée sur ces sources.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/clipboard-813454391.png" class="quarto-figure quarto-figure-center" style="width:80.0%"></p>
+</figure>
+</div>
+<div class="footer">
+<p>Illustration d’<strong>Akriti Upadhyay</strong> - <em>Efficient Information Retrieval with RAG Workflow</em> (Medium, 2023).<br>
+<a href="https://medium.com/@akriti.upadhyay/efficient-information-retrieval-with-rag-workflow-afdfc2619171" class="uri">https://medium.com/@akriti.upadhyay/efficient-information-retrieval-with-rag-workflow-afdfc2619171</a></p>
+</div>
+</section>
+<section id="transfer-learning-et-fine-tuning" class="slide level2" style="font-size:0.68em;">
+<h2>3. Transfer learning et fine-tuning</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<blockquote>
+<p><em>« Technique consistant à spécialiser un modèle d’IA pré-entraîné à l’accomplissement d’une tâche spécifique. »</em> (<a href="https://www.cnil.fr/fr/definition/ajustement-fine-tuning">CNIL</a>)</p>
+</blockquote>
+<ul>
+<li><strong>Transfer learning</strong> = concept général : réutiliser un modèle pré-entraîné pour une tâche ou un domaine cible.</li>
+<li><strong>Fine-tuning</strong> = méthode concrète de transfer learning : ré-entraîner (partiellement ou totalement) les poids du modèle sur des données spécifiques.</li>
+</ul>
+<h3 id="exemples-illustratifs">Exemples illustratifs</h3>
+<ul>
+<li><p><strong>SciBERT</strong> : Modèle BERT <span class="citation" data-cites="devlin2019bert">(<a href="#/références" role="doc-biblioref" onclick="">Devlin et al. 2019</a>)</span> pré-entraîné et affiné sur des articles scientifiques pour mieux traiter le texte biomédical <span class="citation" data-cites="beltagy2019scibert">(<a href="#/références" role="doc-biblioref" onclick="">Beltagy, Lo, and Cohan 2019</a>)</span>.</p></li>
+<li><p><strong>SiEBERT</strong> : Fine-tuning l’analyse de sentiment Modèle généraliste affiné sur <strong>272 jeux de données</strong> en anglais pour créer un classificateur robuste <span class="citation" data-cites="hartmannMoreFeelingAccuracy2023a">(<a href="#/références" role="doc-biblioref" onclick="">Hartmann et al. 2023</a>)</span>.</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/finetuning.webp" class="quarto-figure quarto-figure-right" style="width:80.0%"><br>
+<img data-src="images/clipboard-3401288997.png" class="quarto-figure quarto-figure-right" style="width:80.0%"></p>
+</div></div>
+</section>
+<section id="les-agents-lia-qui-agit-de-manière-autonome" class="slide level2" style="font-size:0.6em">
+<h2>4. Les Agents : l’IA qui agit de manière autonome</h2>
+<blockquote>
+<p><em>“An autonomous agent is a system situated within and a part of an environment that senses that environment and acts on it, over time, in pursuit of its own agenda and so as to effect what it senses in the future.”</em> - Franklin &amp; Graesser (1997)</p>
+</blockquote>
+<ul>
+<li>Un <strong>agent IA</strong> combine <strong>raisonnement</strong>, <strong>action</strong> et <strong>interaction avec un environnement</strong>.<br>
+</li>
+<li>Les <strong>LLM agents</strong> représentent une évolution : ils planifient, mémorisent, utilisent des outils, collaborent et s’adaptent.</li>
+<li>Ils constituent une brique centrale pour l’automatisation avancée de tâches, y compris pour la revue de littérature ou la recherche scientifique.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="de-lémergence-à-la-structuration-des-agents-llm">De l’émergence à la structuration des agents LLM</h3>
+<ul>
+<li><strong>2022</strong> : apparition des premiers agents combinant raisonnement et action <span class="citation" data-cites="yao2023react">(<a href="#/références" role="doc-biblioref" onclick="">Yao et al. 2023</a>)</span><br>
+</li>
+<li><strong>2023</strong> : diffusion grand public avec les premières implémentations autonomes<br>
+</li>
+<li><strong>2024–2025</strong> : agents dotés de mémoire, coordination et rôles spécialisés <span class="citation" data-cites="wang2024survey luo2025largelanguage">(<a href="#/références" role="doc-biblioref" onclick="">Wang et al. 2024</a>; <a href="#/références" role="doc-biblioref" onclick="">Luo et al. 2025</a>)</span></li>
+</ul>
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Pour aller plus loin</strong></p>
+</div>
+<div class="callout-content">
+<ul>
+<li>Une liste actualisée des travaux est disponible ici : <a href="https://github.com/luo-junyu/Awesome-Agent-Papers">Awesome Agent Papers</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="images/Role-of-LLM-agents-at-a-glance.jpg" style="width:100.0%"></p>
+</div></div>
+<div class="footer">
+<p>Illustration de <em>Data Science Dojo</em> - “LLM Agents to Empower Language Models”.<br>
+<a href="https://datasciencedojo.com/blog/llm-agents-to-empower-language-models/" class="uri">https://datasciencedojo.com/blog/llm-agents-to-empower-language-models/</a></p>
+</div>
+</section>
+<section id="le-coût-des-llms" class="slide level2" style="font-size:0.6em">
+<h2>Le coût des LLMs</h2>
+<h3 id="modèles-et-abonnements-en-octobre-2025">Modèles et abonnements en octobre 2025</h3>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Service</th>
+<th style="text-align: right;">Prix public</th>
+<th>Ce que ça débloque / note</th>
+<th>Lien</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>ChatGPT Free</strong></td>
+<td style="text-align: right;"><strong>0 €</strong></td>
+<td>Accès de base</td>
+<td><a href="https://openai.com/chatgpt/pricing">Site</a></td>
+</tr>
+<tr class="even">
+<td><strong>ChatGPT Plus</strong></td>
+<td style="text-align: right;"><strong>~20 $/mois</strong> <em>(facturé en devise locale, TVA selon pays)</em></td>
+<td>Accès élargi aux modèles (GPT-4/o1), fonctionnalités avancées</td>
+<td><a href="https://openai.com/chatgpt/pricing">Site</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Claude Pro</strong></td>
+<td style="text-align: right;"><strong>17 $/mois (annuel)</strong> ou <strong>20 $/mois</strong> <em>(HT)</em></td>
+<td>Plus d’usage, modèles Claude 3.x/4.x, fonctionnalités pro</td>
+<td><a href="https://www.claude.com/pricing">Site</a></td>
+</tr>
+<tr class="even">
+<td><strong>Perplexity Pro</strong></td>
+<td style="text-align: right;"><strong>20 $/mois</strong></td>
+<td>Recherche avancée, modèles premium, import de fichiers</td>
+<td><a href="https://www.perplexity.ai/enterprise/pricing">Site</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Google AI Pro (Gemini)</strong></td>
+<td style="text-align: right;"><strong>21,99 €/mois</strong></td>
+<td>Gemini 2.5 Pro, NotebookLM, 2 To, Deep Research</td>
+<td><a href="https://one.google.com/about/google-ai-plans/">Site</a></td>
+</tr>
+<tr class="even">
+<td><strong>Mistral – Le Chat Pro</strong></td>
+<td style="text-align: right;"><strong>17,99 €/mois</strong> <em>(7,19 € pour étudiants, 12 mois)</em></td>
+<td>Version Pro de “Le Chat”</td>
+<td><a href="https://mistral.ai/pricing">Site</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Elicit Plus</strong></td>
+<td style="text-align: right;"><strong>10 $/mois (annuel)</strong> ou <strong>12 $/mois</strong></td>
+<td>Extraction/synthèse, export de données</td>
+<td><a href="https://elicit.com/pricing">Site</a></td>
+</tr>
+<tr class="even">
+<td><strong>Elicit Pro</strong></td>
+<td style="text-align: right;"><strong>à partir de 42 $/mois (annuel)</strong></td>
+<td>Workflows RL/SLR, quotas plus importants</td>
+<td><a href="https://elicit.com/pricing">Site</a></td>
+</tr>
+<tr class="odd">
+<td><strong>DeepSeek (API)</strong></td>
+<td style="text-align: right;"><strong>0,028 $/M tokens (cache hit)</strong> - <strong>0,28 $/M (miss)</strong> - <strong>0,42 $/M output</strong></td>
+<td></td>
+<td><a href="https://api-docs.deepseek.com/quick_start/pricing">Site</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="lart-du-prompt-engineering---exemple-pour-revue-de-littérature" class="slide level2" style="font-size:0.8em">
+<h2>L’art du Prompt Engineering - exemple pour revue de littérature</h2>
+<div>
+<ul>
+<li class="fragment"><p><strong>Donner un rôle clair</strong> → aide l’IA à adopter une “posture experte”<br>
+<em>Montré comme une bonne pratique dans plusieurs études de synthèse</em> <span class="citation" data-cites="vatsal2024survey sahoo2025systematic">(<a href="#/références" role="doc-biblioref" onclick="">Vatsal and Dubey 2024</a>; <a href="#/références" role="doc-biblioref" onclick="">Sahoo et al. 2025</a>)</span></p></li>
+<li class="fragment"><p><strong>Montrer un exemple</strong> (<em>few-shot prompting</em>) → augmente fortement la qualité et la cohérence des réponses<br>
+<em>Effet mesuré dans des benchmarks sur des tâches complexes</em> <span class="citation" data-cites="vatsal2024survey">(<a href="#/références" role="doc-biblioref" onclick="">Vatsal and Dubey 2024</a>)</span></p></li>
+<li class="fragment"><p><strong>Demander un raisonnement étape par étape</strong> (<em>chain-of-thought</em>) → réduit les erreurs factuelles et améliore la profondeur<br>
+<em>Résultats solides dans les grandes revues sur le prompt engineering</em> <span class="citation" data-cites="schulhoff2025promptreport">(<a href="#/références" role="doc-biblioref" onclick="">Schulhoff et al. 2025</a>)</span></p></li>
+<li class="fragment"><p><strong>Spécifier le format de sortie</strong> → favorise des réponses exploitables directement (tableaux, résumés structurés)<br>
+<em>Particulièrement efficace dans les tâches d’extraction d’informations</em> <span class="citation" data-cites="jin2025apeer">(<a href="#/références" role="doc-biblioref" onclick="">Jin et al. 2025</a>)</span></p></li>
+</ul>
+</div>
+</section>
+<section id="outils-utiles-pour-la-revue-de-littérature" class="slide level2" style="font-size:0.6em">
+<h2>Outils utiles pour la revue de littérature</h2>
+<p>Bien sûr il existe les LLMs bien connus comme ChatGPT, Claude, Gemini, Mistral, etc. mais certains autres outils spécialisés :</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Outil</th>
+<th>Fonction principale</th>
+<th>Cas d’usage typique</th>
+<th>Lien</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Perplexity.ai</strong></td>
+<td>Moteur de recherche conversationnel (RAG)</td>
+<td>Obtenir une vue d’ensemble rapide et sourcée sur un sujet</td>
+<td><a href="https://www.perplexity.ai">perplexity.ai</a></td>
+</tr>
+<tr class="even">
+<td><strong>Elicit</strong></td>
+<td>Recherche sémantique et extraction automatique d’informations clés</td>
+<td>Construire une bibliographie structurée, extraire méthodologies et résultats</td>
+<td><a href="https://elicit.com">elicit.com</a></td>
+</tr>
+<tr class="odd">
+<td><strong>NotebookLM</strong></td>
+<td>Analyse de documents personnels (RAG)</td>
+<td>Interroger vos propres articles PDF et croiser les résultats</td>
+<td><a href="https://notebooklm.google">notebooklm.google</a></td>
+</tr>
+<tr class="even">
+<td><strong>Scite.ai</strong></td>
+<td>Analyse de la qualité des citations (soutient / mentionne / conteste)</td>
+<td>Évaluer la robustesse des articles et des théories</td>
+<td><a href="https://www.scite.ai">scite.ai</a></td>
+</tr>
+<tr class="odd">
+<td><strong>Connected Papers</strong></td>
+<td>Visualisation des liens entre articles</td>
+<td>Explorer le réseau scientifique autour d’un article de départ</td>
+<td><a href="https://www.connectedpapers.com">connectedpapers.com</a></td>
+</tr>
+<tr class="even">
+<td><strong>Consensus</strong></td>
+<td>Synthèse de résultats à partir d’articles scientifiques</td>
+<td>Obtenir des réponses à des questions précises</td>
+<td><a href="https://consensus.app">consensus.app</a></td>
+</tr>
+<tr class="odd">
+<td><strong>ArtiRev</strong></td>
+<td>Plateforme académique française pour les revues de littérature</td>
+<td>Identifier et organiser les articles d’un champ de recherche</td>
+<td><a href="https://artirev.fr">artirev.fr</a></td>
+</tr>
+<tr class="even">
+<td><strong>Litmaps</strong></td>
+<td>Cartographie dynamique de la littérature</td>
+<td>Visualiser et suivre l’évolution d’un champ de recherche dans le temps</td>
+<td><a href="https://www.litmaps.com">litmaps.com</a></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="démonstrations---thèmes-possibles" class="slide level2" style="font-size:0.9em">
+<h2>DÉMONSTRATIONS - Thèmes possibles</h2>
+<ol type="1">
+<li>Comment l’usage de l’intelligence artificielle générative transforme-t-il la relation entre marques et consommateurs ?<br>
+</li>
+<li>Dans quelle mesure les influenceurs sur les réseaux sociaux façonnent-ils les comportements de consommation des adolescents ?<br>
+</li>
+<li>Comment les consommateurs perçoivent-ils les campagnes de communication promouvant la responsabilité environnementale des marques ?<br>
+</li>
+<li>Quels sont les effets du télétravail et du digital nomadisme sur la communication interne et la culture organisationnelle ?<br>
+</li>
+<li>Comment la marque employeur influence-t-elle la perception et l’engagement des candidats à l’ère de la digitalisation et des nouvelles attentes sociétales ?<br>
+</li>
+<li>Pour une marque, est-ce pertinent d’endosser via sa communication des combats portés par des mouvements sociaux (féminisme, antiracisme, écologie radicale, etc.) ?<br>
+</li>
+<li>Est-ce que tous les bad buzz provoquent des crises de réputation de marque ?</li>
+</ol>
+</section>
+<section id="le-risque-majeur-hallucinations-et-références-fantômes" class="slide level2 smaller">
+<h2>Le risque majeur : hallucinations et références fantômes</h2>
+<p>Le problème le plus documenté des LLM est leur tendance à <strong>inventer des informations crédibles</strong> (hallucinations) et à <strong>fabriquer des références</strong> qui semblent plausibles mais sont inexistantes <span class="citation" data-cites="Tosi2025">(<a href="#/références" role="doc-biblioref" onclick="">Tosi 2025</a>)</span>.</p>
+<div>
+<ul>
+<li class="fragment"><strong>Références fantômes</strong> : un article a rapporté qu’un outil IA a généré une référence bibliographique complètement inventée lors d’une revue de littérature systématique (SLR) <span class="citation" data-cites="Tosi2025">(<a href="#/références" role="doc-biblioref" onclick="">Tosi 2025</a>)</span>.</li>
+<li class="fragment"><strong>Conclusions erronées</strong> : la synthèse produite par l’IA peut être inexacte, déformer les conclusions des sources originales ou manquer de nuances et d’analyse critique <span class="citation" data-cites="Li2025 Tosi2025">(<a href="#/références" role="doc-biblioref" onclick="">Li et al. 2025</a>; <a href="#/références" role="doc-biblioref" onclick="">Tosi 2025</a>)</span>.</li>
+<li class="fragment"><strong>Dépendance au prompt</strong> : de légères variations dans la formulation d’une requête (le “prompt”) peuvent radicalement changer la qualité, la pertinence et même la véracité des résultats obtenus <span class="citation" data-cites="Baumann2025">(<a href="#/références" role="doc-biblioref" onclick="">Baumann et al. 2025</a>)</span>.</li>
+</ul>
+</div>
+<div class="callout-alert fragment" title="Parade obligatoire : la vérification systématique">
+<div>
+<ol type="1">
+<li class="fragment"><strong>Vérifier chaque source</strong> : un DOI, un titre ou un auteur doit correspondre à une publication réelle et accessible.</li>
+<li class="fragment"><strong>Consulter l’article original</strong> avant de citer ou de s’approprier une conclusion synthétisée par une IA.</li>
+<li class="fragment">Privilégier les outils basés sur un <strong>corpus fermé (RAG)</strong>, qui citent leurs sources <strong>OU</strong> LLM + article en contexte.</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="le-risque-caché-le-llm-hacking" class="slide level2 smaller">
+<h2>Le risque caché : Le <em>LLM Hacking</em></h2>
+<p>Le <em>“LLM Hacking”</em> décrit comment la sensibilité extrême des IA aux prompts permet, intentionnellement ou non, d’obtenir des <strong>conclusions statistiques erronées</strong> à partir des mêmes données <span class="citation" data-cites="Baumann2025">(<a href="#/références" role="doc-biblioref" onclick="">Baumann et al. 2025</a>)</span>.</p>
+<blockquote>
+<p>En testant quelques configurations de modèles ou de prompts, il devient possible de présenter presque n’importe quel résultat comme statistiquement significatif.</p>
+</blockquote>
+<div>
+<ul>
+<li class="fragment"><strong>Faux positifs</strong> : sur des hypothèses où il n’existe en réalité aucun effet, il est possible de <strong>fabriquer un résultat statistiquement significatif</strong> (p &lt; 0.05) dans <strong>94,4 %</strong> des cas en choisissant la bonne combinaison modèle/prompt <span class="citation" data-cites="Baumann2025">(<a href="#/références" role="doc-biblioref" onclick="">Baumann et al. 2025</a>)</span>.</li>
+<li class="fragment"><strong>Inversion des résultats (erreur de type S)</strong> : il est possible de trouver un effet significatif dans la <strong>direction opposée</strong> à la réalité dans <strong>68,3 %</strong> des cas <span class="citation" data-cites="Baumann2025">(<a href="#/références" role="doc-biblioref" onclick="">Baumann et al. 2025</a>)</span>.</li>
+<li class="fragment"><strong>Indétectable a posteriori</strong> : une analyse manipulée via le <em>prompting</em> peut sembler méthodologiquement rigoureuse, rendant la fraude presque impossible à détecter pour un évaluateur externe.</li>
+</ul>
+</div>
+<div class="fragment" title="Implication">
+<div class="callout callout-warning callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Implication</strong></p>
+</div>
+<div class="callout-content">
+<p>La reproductibilité scientifique est menacée. Sans une transparence totale sur les prompts et modèles testés, les résultats d’une recherche assistée par IA peuvent être non fiables.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="biais-silencieux-et-couverture-limitée" class="slide level2" style="font-size:0.8em">
+<h2>Biais “silencieux” et “couverture” limitée</h2>
+<p>Un LLM n’est <strong>jamais neutre</strong>. Il amplifie les biais des données sur lesquelles il a été entraîné.</p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<h3 id="biais">Biais</h3>
+<p><br>
+</p>
+<ul>
+<li><strong>Biais de corpus</strong> : surreprésentation de la recherche anglo-saxonne et des paradigmes scientifiques dominants, au risque de créer une <strong>monoculture intellectuelle</strong>.</li>
+<li><strong>Biais de popularité</strong> : tendance à privilégier les articles très cités. Un outil IA a ainsi manqué <strong>100 % des 32 études primaires</strong> d’une revue systématique, ne sélectionnant que des articles plus anciens et trois fois plus cités en moyenne que ceux de la sélection humaine <span class="citation" data-cites="Tosi2025">(<a href="#/références" role="doc-biblioref" onclick="">Tosi 2025</a>)</span>.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="couverture">Couverture</h3>
+<p><br>
+</p>
+<ul>
+<li><strong>Connaissances datées</strong> : l’IA ne connaît rien au-delà de sa date de “cut-off” (pas toujours rendue publique).</li>
+<li><strong>L’angle mort des paywalls</strong> : l’accès est limité aux textes en libre accès (résumés, pre-prints), ignorant une part massive de la littérature scientifique.</li>
+<li><strong>Couverture inégale des disciplines</strong> : les domaines riches en données textuelles sont mieux couverts.</li>
+</ul>
+</div></div>
+</section>
+<section id="enjeux-éthiques-et-responsabilité-académique" class="slide level2" style="font-size:0.65em">
+<h2>Enjeux éthiques et responsabilité académique</h2>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p>L’utilisation de l’IA engage la responsabilité du chercheur bien au-delà de la simple citation.</p>
+<ul>
+<li class="fragment" data-fragment-index="1">
+<strong>Confidentialité des données</strong> : ne <strong>jamais</strong> soumettre de données de recherche sensibles, confidentielles ou non publiées sur des services d’IA publics.
+</li>
+<li class="fragment" data-fragment-index="2">
+<strong>Risque de déresponsabilisation morale</strong> : déléguer une tâche à une IA, surtout via des instructions vagues, peut <strong>augmenter les comportements malhonnêtes</strong>. Les agents IA sont bien plus enclins à suivre des instructions contraires à l’éthique que les humains <span class="citation" data-cites="Kobis2025">(<a href="#/références" role="doc-biblioref" onclick="">Köbis et al. 2025</a>)</span>.
+</li>
+<li class="fragment" data-fragment-index="3">
+<strong>Transparence et paternité</strong> : toujours <strong>déclarer l’utilisation d’outils d’IA</strong> dans la section méthodologique. Un agent conversationnel ne peut être crédité comme auteur.
+</li>
+<li class="fragment" data-fragment-index="4">
+<strong>Empreinte environnementale</strong> : l’entraînement et l’utilisation des LLM consomment une quantité d’énergie considérable. La question de l’étiquetage énergétique des modèles d’IA commence à se poser <span class="citation" data-cites="Luccioni2024">(<a href="#/références" role="doc-biblioref" onclick="">Luccioni et al. 2024</a>)</span>.
+</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/ai_energy_footpring_20models.PNG" class="fragment quarto-figure quarto-figure-center" data-fragment-index="4"></p>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="quel-gain-de-temps-avec-les-llms" class="slide level2 smaller">
+<h2>Quel gain de temps avec les LLMs ?</h2>
+<p>L’argument principal en faveur de l’IA est une accélération radicale du processus de recherche. Le schéma ci-contre montre comment l’IA s’intègre dans les étapes les plus chronophages d’une revue systématique.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment"><strong>Filtrage accéléré</strong> : un outil comme <strong>ASReview</strong> a permis de réduire de <strong>77 %</strong> le temps de sélection (<em>screening</em>) des résumés dans une revue systématique <span class="citation" data-cites="vanDijk2023">(<a href="#/références" role="doc-biblioref" onclick="">Dijk et al. 2023</a>)</span>.</li>
+<li class="fragment"><strong>Synthèse en temps record</strong> : dans des études contrôlées, des agents IA interactifs (<strong>InsightAgent</strong>) ont permis à des cliniciens de réaliser une revue systématique complète en <strong>environ 1h30</strong> <span class="citation" data-cites="Qiu2025">(<a href="#/références" role="doc-biblioref" onclick="">Qiu et al. 2025</a>)</span>.</li>
+<li class="fragment"><strong>De plusieurs jour à quelques minutes</strong> : le filtrage de plus de 8 300 articles a été réalisé en <strong>moins de 10 minutes</strong> par une architecture multi-LLM <span class="citation" data-cites="Joos2025">(<a href="#/références" role="doc-biblioref" onclick="">Joos, Keim, and Fischer 2025</a>)</span>.</li>
+</ul>
+</div>
+<div class="fragment" title="Le rôle de l'IA">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Le rôle de l’IA</strong></p>
+</div>
+<div class="callout-content">
+<p>L’IA est un <strong>accélérateur de recherche</strong> qui automatise les tâches répétitives, mais ne remplace pas le jugement humain pour la planification et l’analyse critique.</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="column fragment" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/slr_planning_conducting_reporting.PNG" style="width:100.0%"></p>
+<figcaption><span class="citation" data-cites="Tosi2025">Tosi (<a href="#/références" role="doc-biblioref" onclick="">2025</a>)</span></figcaption>
+</figure>
+</div>
+</div></div>
+</section>
+<section id="le-match-précision-contre-complétude-rappel" class="slide level2" style="font-size:0.7em">
+<h2>Le match : précision contre complétude (rappel)</h2>
+<p>Pour évaluer un outil de recherche, deux métriques sont essentielles.</p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<h3 id="le-rappel-recall-sensibilité"><strong>Le Rappel (Recall / Sensibilité)</strong></h3>
+<p><em>La capacité à trouver <strong>tous</strong> les documents pertinents.</em></p>
+<ul>
+<li><strong>Question</strong> : ai-je raté des articles importants ?</li>
+<li><strong>Objectif</strong> : être exhaustif. 100 % = aucun article pertinent manqué.</li>
+<li><strong>Risque</strong> : un faible rappel mène à des conclusions biaisées.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<h3 id="la-précision-precision"><strong>La Précision (Precision)</strong></h3>
+<p><em>La capacité à ne retourner <strong>que</strong> des documents pertinents.</em></p>
+<ul>
+<li><strong>Question</strong> : combien de “bruit” dois-je trier ?</li>
+<li><strong>Objectif</strong> : être pertinent. 100 % = tous les résultats sont utiles.</li>
+<li><strong>Risque</strong> : une faible précision fait perdre du temps.</li>
+</ul>
+</div></div>
+<div class="callout-alert fragment" title="Le Compromis">
+<p>Un outil très exhaustif (<strong>haut rappel</strong>) ramène souvent beaucoup de bruit (<strong>basse précision</strong>). Un outil très ciblé (<strong>haute précision</strong>) peut omettre des références importantes (<strong>bas rappel</strong>).</p>
+</div>
+<div class="fragment" title="Évidence empirique">
+<div class="callout callout-note callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Évidence empirique</strong></p>
+</div>
+<div class="callout-content">
+<p>Comparativement aux IA testées (<strong>Elicit, SciSpace</strong>), <strong>WoS/Scopus</strong> obtiennent de meilleurs taux de <strong>précision/qualité</strong>, l’IA ramenant plus de références <strong>uniques</strong> mais souvent <strong>moins bien classées</strong> <span class="citation" data-cites="Tomczy2024">(<a href="#/références" role="doc-biblioref" onclick="">Tomczyk et al.</a>)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="un-bilan-nuancé-quant-aux-performances" class="slide level2" style="font-size:0.7em">
+<h2>Un bilan nuancé quant aux performances</h2>
+<p>Les performances des IA varient énormément selon les outils et les méthodes.</p>
+<div class="columns">
+<div class="column fragment" style="width:50%;">
+<h4 id="des-performances-parfois-excellentes">des performances parfois excellentes…</h4>
+<ul>
+<li><strong>Consensus multi-LLM</strong> : en faisant voter plusieurs modèles d’IA, une étude a atteint un <strong>rappel de 98,8 %</strong>, un taux d’erreur inférieur à celui d’un humain <span class="citation" data-cites="Joos2025">(<a href="#/références" role="doc-biblioref" onclick="">Joos, Keim, and Fischer 2025</a>)</span>.</li>
+<li><strong>Systèmes interactifs supervisés</strong> : avec l’aide d’un expert, un outil peut atteindre <strong>98,5 % de rappel</strong> <span class="citation" data-cites="Qiu2025">(<a href="#/références" role="doc-biblioref" onclick="">Qiu et al. 2025</a>)</span>.</li>
+</ul>
+</div><div class="column fragment" style="width:50%;">
+<h4 id="mais-des-échecs-critiques-et-des-biais-tenaces.">…mais des échecs critiques et des biais tenaces.</h4>
+<ul>
+<li><strong>Elicit</strong> n’a atteint en moyenne qu’un <strong>rappel de 39,5 %</strong> sur quatre études de cas, le rendant insuffisant pour une revue systématique exhaustive <span class="citation" data-cites="LauGolder2025">(<a href="#/références" role="doc-biblioref" onclick="">Lau and Golder 2025</a>)</span>.</li>
+<li>Dans une autre étude, un outil IA a <strong>totalement manqué les 32 études primaires</strong> d’une revue, à cause d’un fort biais de popularité <span class="citation" data-cites="Tosi2025">(<a href="#/références" role="doc-biblioref" onclick="">Tosi 2025</a>)</span>.</li>
+</ul>
+</div></div>
+<div class="callout-alert fragment" title="Le compromis fondamental">
+<p>L’IA peut <strong>précisément</strong> omettre l’essentiel. Sans supervision humaine et validation croisée, le gain de temps peut se payer par une perte de pertinence et d’exhaustivité.</p>
+</div>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<p>L’IA ne remplace pas le chercheur, elle transforme son rôle.</p>
+<div>
+<ul>
+<li class="fragment">l’IA est un <strong>levier de productivité</strong> majeur, mais non dénué de risques importants.</li>
+<li class="fragment">la <strong>vigilance critique</strong> (biais, hallucinations, hacking) et la <strong>vérification humaine</strong> sont incontournables.</li>
+<li class="fragment">choisir <strong>le bon outil pour la bonne tâche</strong> est essentiel (exploration vs.&nbsp;synthèse vs.&nbsp;filtrage).</li>
+<li class="fragment">l’avenir est à la <strong>collaboration homme-machine</strong>, où l’expertise humaine guide la puissance de l’IA.</li>
+</ul>
+</div>
+</section>
+<section id="références" class="slide level2 smaller scrollable">
+<h2>Références</h2>
+
+<script> window._input_file = "---\n" + "title: \"Méthodes de recherche appliquée\"\n" + "subtitle: \"Outils, atouts et limites\"\n" + "author:\n" + "  - name: \"Olivier Caron\"\n" + "    affiliations: \"Paris Dauphine - PSL\"\n" + "format:\n" + "  ubd-revealjs:\n" + "    self-contained: false\n" + "    chalkboard: true\n" + "    transition: fade\n" + "    auto-stretch: false\n" + "    width: 1250\n" + "    height: 760\n" + "    toc: false\n" + "    toc-depth: 1\n" + "    code-block-height: 700px\n" + "    logo: \"images/logo_dauphine.png\"\n" + "execute:\n" + "  echo: true\n" + "bibliography: refs.bib\n" + "revealjs-plugins:\n" + "  - editable\n" + "filters:\n" + "  - editable\n" + "editor: \n" + "  markdown: \n" + "    wrap: 72\n" + "---\n" + "\n" + "## L'explosion ChatGPT en chiffres (Juillet 2025) [@chatterjiHowPeopleUse] {style=\"font-size:0.7em\"}\n" + "\n" + "Pour comprendre pourquoi ce cours est essentiel, il faut saisir deux\n" + "choses : l'échelle du phénomène et la mutation de ses usages.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\"}\n" + "### L'échelle : un phénomène de masse\n" + "\n" + "-   **700 millions** d'utilisateurs actifs par semaine.\n" + "-   **18 milliards** de messages échangés chaque semaine.\n" + "-   **x5.8** : Croissance du volume de messages en un an (Juin\n" + "    2024-2025).\n" + "-   **🎯 Cible jeune** : **46%** des messages proviennent des **18-25\n" + "    ans**.\n" + ":::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "### La tendance de fond : de la création à la recherche\n" + "\n" + "En un an, les usages ont basculé :\n" + "\n" + "-   ✍️ **L'écriture** (créer, résumer) a vu sa part baisser de 36% à\n" + "    **24%**.\n" + "-   🔎 **La recherche d'infos** a explosé, passant de 14% à **24%**.\n" + "\n" + "**Les trois usages majoritaires (près de 80% du total) sont :**\n" + "\n" + "\\n" + "\n" + "1.  **📚 Guide pratique** (29%)\n" + "2.  **🔎 Recherche d'infos** (24%)\n" + "3.  **✍️ Écriture** (24%)\n" + ":::\n" + ":::::\n" + "\n" + "::: {.callout-tip title=\"L'implication pour ce cours\"}\n" + "En moins de deux ans, ChatGPT est passé d'un outil de \"création de\n" + "contenu\" à un **concurrent direct de Google pour la recherche\n" + "d'information**, en particulier chez les jeunes.\n" + ":::\n" + "\n" + "## Contexte après les deux premières séances {style=\"font-size:0.9em\"}\n" + "\n" + "### Vos acquis :\n" + "\n" + "\\n" + "\n" + "1.  **Évaluation de l'information** : vous savez distinguer une source\n" + "    scientifique d'une source qui l'est moins et en évaluer la\n" + "    crédibilité.\n" + "\n" + "\\n" + "\n" + "2.  **Compréhension de la production scientifique** : vous comprenez la\n" + "    structure d'un article, la question de recherche, les hypothèses,\n" + "    les résultats, les différents journaux...\n" + "\n" + "\\n" + "\n" + "3.  **Maîtrise des outils traditionnels** : vous pouvez utiliser les\n" + "    bases de données académiques comme Scopus ou la recherche Google\n" + "    Scholar.\n" + "\n" + "## Un petit sondage à main levée... {style=\"font-size:0.8em\"}\n" + "\n" + "Qui a déjà entendu parler de...\n" + "\n" + "::::::: columns\n" + ":::: {.column width=\"50%\"}\n" + "### Applications / produits\n" + "\n" + "::: incremental\n" + "-   <img src=\"https://commons.wikimedia.org/wiki/Special:FilePath/ChatGPT-Logo.svg\" alt=\"ChatGPT\" width=\"40\" style=\"vertical-align:middle;\"/>\n" + "    **ChatGPT** ?\n" + "-   <img src=\"images/m-boxed-rainbow.png\" alt=\"Mistral\" width=\"40\" style=\"vertical-align:middle;\"/>\n" + "    **Mistral** ?\n" + "-   <img src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20AI%20logo.svg\" alt=\"Claude\" width=\"40\" style=\"vertical-align:middle;\"/>\n" + "    **Claude** ?\n" + "-   <img src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Google-gemini-icon.svg\" alt=\"Gemini\" width=\"40\" style=\"vertical-align:middle;\"/>\n" + "    **Gemini** ?\n" + "-   <img src=\"https://commons.wikimedia.org/wiki/Special:FilePath/DeepSeek-icon.svg\" alt=\"DeepSeek\" width=\"40\" style=\"vertical-align:middle;\"/>\n" + "    **DeepSeek** ?\n" + "-   <img src=\"https://commons.wikimedia.org/wiki/Special:FilePath/Qwen%20logo.svg\" alt=\"Qwen\" width=\"40\" style=\"vertical-align:middle;\"/>\n" + "    **Qwen** ?\n" + ":::\n" + "::::\n" + "\n" + ":::: {.column .fragment width=\"50%\"}\n" + "### Concepts\n" + "\n" + "::: incremental\n" + "-   LLMs ? (Large Language Models)\n" + "-   Tokens ?\n" + "-   Embeddings ?\n" + "-   RAG (Retrieval-Augmented Generation) ?\n" + "-   Fine-tuning ?\n" + "-   Context window ?\n" + "-   Attention / Transformers ?\n" + "-   Few-shot / Zero-shot ?\n" + "-   Chain-of-thought ?\n" + ":::\n" + "::::\n" + ":::::::\n" + "\n" + ":::: fragment\n" + "::: {.callout-note title=\"Notre objectif aujourd'hui\" style=\"font-size:0.8em\"}\n" + "-   Passer de la simple connaissance des **produits**…\n" + "-   … à la compréhension des **concepts**.\n" + "-   Pour les utiliser de manière **critique** et **efficace**.\n" + ":::\n" + "::::\n" + "\n" + "## Pour commencer : de quoi parle-t-on ? {style=\"font-size:0.65em\"}\n" + "\n" + "::::::: columns\n" + ":::: {.column width=\"50%\"}\n" + "::: incremental\n" + "1.  **Intelligence Artificielle (IA)** : Le grand domaine qui vise à\n" + "    reproduire des comportements \"intelligents\".\n" + "\n" + "2.  **Machine Learning (ML)** : Une branche de l'IA où la machine\n" + "    **apprend par l'exemple**. [@jordan2015]\n" + "\n" + "3.  **Réseaux de Neurones** : La technique de ML inspirée du cerveau,\n" + "    qui est la base du Deep Learning. L'apprentissage repose sur des\n" + "    connexions pondérées entre neurones artificiels. [@rumelhart1986]\n" + "\n" + "4.  **Deep Learning (DL)** : Utilise des réseaux de neurones\n" + "    **profonds** (avec de nombreuses couches) [@lecun2015].\n" + "\n" + "5.  **IA Générative** : La branche du DL qui se spécialise dans la\n" + "    **création de nouveau contenu** (texte, images...) [@goodfellow2014]\n" + "\n" + "6.  **LLMs** : Type particulier de modèle de deep learning entraîné sur\n" + "    d’immenses corpus textuels [@brown2020]\n" + ":::\n" + "::::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "![](images/clipboard-1479625210.png){fig-align=\"right\" width=\"75%\"}\n" + ":::\n" + "\n" + "::: fragment\n" + "Ajuster le modèle pour qu'il **colle aux données** (réduire l'erreur),\n" + "sans \"apprendre par cœur\" (éviter le **sur-apprentissage**).\n" + ":::\n" + ":::::::\n" + "\n" + "::: footer\n" + "Illustration de Caprasi, C. (2023). *Artificial Intelligence, Machine\n" + "Learning, Deep Learning, GenAI and more.* *Women in Technology -\n" + "Medium.* <https://medium.com/womenintechnology/ai-c3412c5aa0ac>\n" + ":::\n" + "\n" + "# Comprendre comment fonctionnent les LLMs {background-color=\"#4285F4\"}\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## La limite du \"sac de mots\" (Bag-of-Words) {style=\"font-size:0.9em\"}\n" + "\n" + "::::: columns\n" + "::: {.column width=\"40%\"}\n" + "L'approche **Bag-of-Words** se contente de compter les mots, mais ignore\n" + "leur sens et leur ordre.\n" + "\n" + "-   **Le problème** : le modèle ne comprend pas que des mots sont\n" + "    sémantiquement proches.\n" + "\n" + "-   **Exemple** : pour lui, \"**roi**\" est aussi éloigné de \"**reine**\"\n" + "    que de \"**camion**\".\n" + "\n" + "-   **Le défi** : Comment la machine peut-elle apprendre que\n" + "    \"**excellent**\" est proche de \"**superbe**\" ?\n" + ":::\n" + "\n" + "::: {.column width=\"60%\"}\n" + "![](images/clipboard-2788205366.png)\n" + ":::\n" + ":::::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## L’idée de l’embedding : représenter des concepts par des nombres {style=\"font-size:0.6em\"}\n" + "\n" + "Avant de voir comment une machine comprend les *mots*, imaginons comment\n" + "représenter une *personne* en chiffres. C’est le principe de\n" + "l’**embedding** (ou \"plongement\").\n" + "\n" + ":::::: columns\n" + "::: {.column width=\"33%\" .fragment}\n" + "\n" + "### **1. Une seule dimension**\n" + "\n" + "Un test peut donner un score unique, par exemple sur l’axe\n" + "introversion/extraversion. Ce score devient la première coordonnée du\n" + "\"vecteur de personnalité\".\n" + "\n" + "![](images/clipboard-3216074280.png){fig-alt=\"Un seul trait de personnalité représenté sur un axe et comme un vecteur à une dimension.\"}\n" + ":::\n" + "\n" + "::: {.column width=\"33%\" .fragment}\n" + "### **2. Ajouter de la complexité**\n" + "\n" + "On change d'échelle : on normalise les valeurs pour s'intéresser\n" + "uniquement à la direction du vecteur (qui porte le sens), pas à sa\n" + "longueur.\n" + "\n" + "![](images/clipboard-3689757641.png)\n" + ":::\n" + "\n" + "::: {.column width=\"33%\" .fragment}\n" + "### **3. Vers N dimensions**\n" + "\n" + "Les tests comme le *Big Five* utilisent au moins 5 dimensions. En\n" + "machine learning, on peut en avoir des milliers. La personnalité devient\n" + "un **vecteur de nombres**, chaque valeur représentant un score.\n" + "\n" + "![](images/clipboard-1397202871.png){fig-alt=\"Résultats d'un test de personnalité Big Five avec cinq scores.\"}\n" + ":::\n" + "::::::\n" + "\n" + "::: {.callout-tip title=\"L'idée fondamentale de l'embedding\" .fragment}\n" + "Un concept complexe (une personne, un mots, des phrases) peut être\n" + "représenté par un **vecteur numérique**.\n" + "\n" + "**Avantage** : les machines peuvent **mesurer les similarités** en\n" + "comparant ces vecteurs.\n" + ":::\n" + "\n" + "::: footer\n" + "Source des illustrations Word2Vec: Alammar, J. (2019). *The Illustrated\n" + "Word2Vec*. <https://jalammar.github.io/illustrated-word2vec/>\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Comment la machine \"compare\" les personnalités ? {style=\"font-size:0.6em\"}\n" + "\n" + "Maintenant que chaque personne est un vecteur de nombres, on peut\n" + "utiliser un outil mathématique simple pour calculer à quel point elles\n" + "sont \"proches\" en termes de personnalité : la **similarité cosinus**.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\" .fragment}\n" + "### 1. **L'intuition : l'angle** 📐\n" + "\n" + "L'idée n'est pas de mesurer la distance entre les points, mais plutôt\n" + "l'**angle** entre les flèches (vecteurs).\n" + "\n" + "-   **Angle faible** (directions similaires) ➞ **Score de similarité\n" + "    élevé**.\n" + "-   **Angle grand** (directions opposées) ➞ **Score de similarité\n" + "    faible/négatif**.\n" + "\n" + "![](images/clipboard-1326301173.png){fig-alt=\"Vecteurs de personnalité dans un espace à 2 dimensions.\"}\n" + ":::\n" + "\n" + "::: {.column width=\"50%\" .fragment}\n" + "### 2. **Le calcul en action**\n" + "\n" + "La fonction `cosine_similarity` nous donne un score entre -1 (opposés)\n" + "et 1 (identiques).\n" + "\n" + "![](images/clipboard-139449525.png) ![](images/clipboard-2770573251.png)\n" + "\n" + "On voit que **Jay** est bien plus **similaire** à la **Personne #1**\n" + "qu'à la **Personne #2**, que ce soit avec 2 ou 5 dimensions !\n" + ":::\n" + ":::::\n" + "\n" + "::: {.callout-note appearance=\"simple\" .fragment}\n" + "### L'avantage clé\n" + "\n" + "Peu importe le nombre de dimensions (2, 5, plusieurs centaines ou\n" + "milliers pour les modèles de langue !), la **similarité cosinus** nous\n" + "donne un **score unique et fiable** pour quantifier la ressemblance\n" + "entre deux concepts. C’est la base de nombreuses applications : moteurs\n" + "de recommandation, recherche sémantique… et bien plus encore.\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## La révolution Word2Vec : le sens par le contexte {style=\"font-size:0.65em\"}\n" + "\n" + "> *\"You shall know a word by the company it keeps\"* [@firth1957]\n" + "\n" + "Un mot prend son sens des mots qui l’entourent\n" + "[@harris1954distributional].\\n" + "Cette idée inspire les modèles d’**embeddings**, où chaque mot est\n" + "représenté par un vecteur numérique.\n" + "\n" + "-   @bengio2003neural ont proposé le premier\n" + "    modèle neuronal apprenant ces représentations de mots.\\n" + "-   @mikolov2013 ont simplifié cette\n" + "    approche avec **Word2Vec**, rendant l’apprentissage des vecteurs\n" + "    rapide et efficace.\n" + "\n" + "Le résultat : les mots apparaissant dans des contextes similaires\n" + "finissent par avoir des vecteurs proches dans l’espace sémantique.\n" + "\n" + "![](images/clipboard-840659499.png){fig-alt=\"Illustration CBOW vs Skip-gram\"\n" + "fig-align=\"center\" width=\"80%\"}\n" + "\n" + "::: notes\n" + "Même si leurs idées sont proches, Harris et Firth ne disent pas la même\n" + "chose. En résumé :\n" + "\n" + "-   **Harris** a fourni la **méthode technique** : son hypothèse\n" + "    distributionnelle est une technique formelle basée sur les\n" + "    statistiques de cooccurrence des mots.\n" + "\n" + "-   **Firth** a fourni le **cadre philosophique** : sa théorie\n" + "    contextuelle du sens est plus large, considérant le sens comme\n" + "    l'usage d'un mot dans une situation sociale.\n" + "\n" + "On les cite souvent ensemble car Harris justifie la méthode statistique\n" + "de Word2Vec, tandis que Firth donne l'intuition fondamentale que le\n" + "contexte est la clé du sens.\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Visualiser un embedding 1/3 {style=\"font-size:0.8em\"}\n" + "\n" + "![](images/clipboard-96365688.png)\n" + "\n" + "## Visualiser un embedding 2/3 {style=\"font-size:0.8em\"}\n" + "\n" + "![](images/clipboard-3895743696.png){fig-align=\"center\"}\n" + "\n" + "::: footer\n" + "Source : *Transformers, the tech behind LLMs* - *Deep Learning, Chapter\n" + "5.*\\n" + "[Vidéo Youtube](https://www.youtube.com/watch?v=wjZofJX0v4M)\n" + ":::\n" + "\n" + "## Visualiser un embedding 3/3 {style=\"font-size:0.8em\"}\n" + "\n" + "Chaque mot est représenté par un **vecteur de nombres** (par ex. 50 ou\n" + "300 dimensions). Pris séparément, ces valeurs n’ont pas de sens pour\n" + "nous. Mais en comparant plusieurs mots, on voit apparaître des **motifs\n" + "de similarité**.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"40%\"}\n" + "-   *man* et *woman* → vecteurs proches.\n" + "-   *king* et *queen* → partagent des dimensions → idée de **royauté**.\n" + "-   *boy* et *girl* → proches sur d’autres dimensions → idée de\n" + "    **jeunesse**.\n" + "-   *water* → se distingue nettement des mots “personnes”.\n" + "\n" + "💡 Les embeddings capturent des **régularités invisibles**, uniquement à\n" + "partir des contextes.\n" + ":::\n" + "\n" + "::: {.column width=\"60%\"}\n" + "![](images/clipboard-1098495211.png)\n" + ":::\n" + ":::::\n" + "\n" + "## Analogies vectorielles {style=\"font-size:0.6em\"}\n" + "\n" + "Les vecteurs de mots se combinent algébriquement. Ce n’est pas magique :\n" + "la **géométrie des vecteurs** encode des relations sémantiques et\n" + "syntaxiques.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"40%\"}\n" + "-   *V(roi) - V(homme) + V(femme) ≈ V(reine)*\n" + "-   *V(Paris) - V(France) + V(Italie) ≈ V(Rome)*\n" + "\n" + "👉 Avec des bibliothèques comme **Gensim en python** ou **word2vec en\n" + "R**, on peut réellement calculer ces analogies et retrouver les mots les\n" + "plus proches.\n" + ":::\n" + "\n" + "::: {.column width=\"60%\"}\n" + "![](images/clipboard-4149333522.png)\n" + ":::\n" + ":::::\n" + "\n" + "### Applications concrètes possibles pour une revue de littérature\n" + "\n" + "::: incremental\n" + "-   Formuler sa recherche comme une **vraie question**, pas juste une\n" + "    liste de mots-clés.\n" + "\n" + "-   \"Scanner\" 100 abstracts en 1 minute pour en extraire les\n" + "    **méthodologies et conclusions**.\n" + "\n" + "-   Se faire recommander des articles sémantiquement proches d'articles\n" + "    identifiés comme **fondateurs**.\n" + "\n" + "-   Et surtout comprendre la **logique interne** de la plupart outils IA\n" + "    utilisés ensuite.\n" + ":::\n" + "\n" + "## Applications Embeddings (SLR + Master Dauphine) {style=\"font-size:1em\"}\n" + "\n" + "Démo `images_interactives`\n" + "\n" + "## Le mécanisme d'attention [@vaswani2017attention] {style=\"font-size:0.70em\"}\n" + "\n" + "::::: columns\n" + "::: {.column width=\"60%\"}\n" + "L'idée fondamentale des Transformers est simple : pour comprendre un\n" + "mot, le modèle doit **porter son attention** sur les autres mots\n" + "importants de la phrase.\n" + "\n" + "Imaginez que pour chaque mot, on fasse un éclairage 🔦 sur les autres\n" + "termes qui lui donnent son sens.\n" + "\n" + "\\n" + "\\n" + "\n" + "**Exemple :**\n" + "\n" + "> `\"Le livreur a déposé le colis devant la porte, car il était trop lourd.\"`\n" + "\n" + "\\n" + "\n" + "Pour comprendre le mot **\"il\"**, le modèle va apprendre à porter son\n" + "attention sur :\n" + "\n" + "-   **\"colis\"** (très forte attention : c'est l'antécédent le plus\n" + "    probable !)\n" + "-   **\"livreur\"** (un peu d'attention : c'est un autre acteur, mais\n" + "    moins pertinent pour \"il\")\n" + "-   **\"lourd\"** (attention moyenne : c'est une caractéristique qui\n" + "    justifie le \"il\")\n" + ":::\n" + "\n" + "::: {.column width=\"40%\"}\n" + "![](images/clipboard-3690532316.png){width=\"100%\"}\\n" + ":::\n" + ":::::\n" + "\n" + "::: {.callout-tip title=\"La grande différence\"}\n" + "Contrairement à Word2Vec qui regarde une petite fenêtre fixe,\n" + "l'**attention** permet de créer des liens sémantiques entre des mots\n" + "**même très éloignés** dans la phrase. Le modèle apprend quelles parties\n" + "du contexte sont les plus pertinentes.\n" + ":::\n" + "\n" + "## Pour aller plus loin : les Transformers ([3Blue1Brown (Grant Sanderson)](https://www.youtube.com/c/3blue1brown)) {style=\"font-size:0.7em\"}\n" + "\n" + "Ces deux vidéos sont fortement recommandées pour une compréhension\n" + "visuelle et approfondie des concepts clés des Transformers.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\"}\n" + "### L'architecture \"Transformers\"\n" + "\n" + "Cette vidéo offre une vue d'ensemble de l'architecture Transformer, le\n" + "moteur des grands modèles de langage modernes.\n" + "\n" + "\\n" + "\\n" + "\n" + "\n" + ":::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "### Le mécanisme d'Attention\n" + "\n" + "Cette seconde vidéo se concentre sur le concept crucial de l'attention,\n" + "permettant au modèle de \"comprendre\" le contexte.\n" + "\n" + "\\n" + "\\n" + "\n" + "\n" + ":::\n" + ":::::\n" + "\n" + "## Comment un LLM apprend-il ? Le jeu du mot suivant {style=\"font-size:0.7em\"}\n" + "\n" + "L'entraînement d'un LLM comme GPT-4 repose sur un principe simple,\n" + "répété des milliards de fois sur un corpus gigantesque.\n" + "\n" + "**La tâche : prédire le token le plus probable.**\n" + "\n" + "1.  On lui donne un début de phrase (un \"prompt\") :\n" + "\n" + "    `\"Le client a contacté le service après-vente car son produit était...\"`\n" + "\n" + "2.  Le modèle calcule une distribution de probabilité sur l'ensemble de\n" + "    son vocabulaire pour le mot suivant.\n" + "\n" + "    -   `défectueux` : 15% de probabilité\n" + "    -   `cassé` : 12% de probabilité\n" + "    -   `livré` : 5% de probabilité\n" + "    -   `incroyable`: 0.1% de probabilité\n" + "    -   `manger` : 0.0001% de probabilité\n" + "    -   `...`\n" + "\n" + "::: {.callout-tip title=\"De la prédiction à l'émergence des capacités\"}\n" + "En répétant ce \"jeu\" des milliards de fois, le modèle apprend les\n" + "régularités du langage : grammaire, faits, styles d’écriture, voire\n" + "certaines capacités de raisonnement **émergentes** [@wei2022emergent].\\n" + "Ce type d’apprentissage, fondé sur la prédiction à partir de texte brut,\n" + "est appelé **auto-supervision** (*self-supervised learning*).\n" + ":::\n" + "\n" + "## Visualisation de GPT-3 ([3Blue1Brown (Grant Sanderson)](https://www.youtube.com/c/3blue1brown)) {style=\"font-size:0.7em\"}\n" + "\n" + "![](images/clipboard-3467065954.gif){fig-align=\"center\" width=\"90%\"}\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Quel LLM choisir ? Quelques concepts clés {style=\"font-size:0.6em\"}\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\"}\n" + "### Pourquoi ces concepts sont cruciaux ?\n" + "\n" + "-   Ils expliquent **pourquoi** certains outils excellent dans certaines\n" + "    tâches\n" + "-   Ils vous aident à **choisir le bon outil** pour votre besoin\n" + "-   Ils vous permettent d'**anticiper les limites** avant de les\n" + "    rencontrer\n" + "-   Ils constituent le vocabulaire de base pour comprendre les\n" + "    nouveautés à venir\n" + ":::\n" + "\n" + "::: {.column width=\"50%\" .fragment}\n" + "### Quelques concepts clés\n" + "\n" + "1.  **Fenêtre de contexte** : La mémoire de travail de l'IA\n" + "2.  **RAG** : l'IA accède à des informations externes\n" + "3.  **Fine-tuning** : comment spécialiser/adapter un modèle\n" + "4.  **Agents** : l'IA qui agit de manière autonome en utilisant des\n" + "    outils\n" + ":::\n" + ":::::\n" + "\n" + "::: {.callout-note title=\"Comment évaluer les performances des LLMs ?\" .fragment}\n" + "Il existe une **multiplicité de benchmarks**, chacun ciblant des\n" + "compétences différentes (connaissances, raisonnement, recherche d’info,\n" + "agenticité, etc.).\\n" + "Exemples représentatifs et **vérifiés** :\n" + "\n" + "-   **MMLU** - 57 matières académiques, QCM de culture générale et\n" + "    spécialisée [@hendrycks2021mmlu].\\n" + "-   **GPQA** - Questions de niveau doctorat en physique/chimie/biologie,\n" + "    « Google-proof » [@rein2023gpqa].\\n" + "-   **GAIA** - Benchmark d’**agents** pour questions “réelles”\n" + "    nécessitant outils, web et multimodalité [@mialon2023gaia].\\n" + "-   **MathArena** - Plateforme/leaderboard évaluant le **raisonnement\n" + "    mathématique** sur concours/récents (IMO, etc.)\n" + "    [@balunovic2025matharena].\\n" + "-   **BEIR** - Évaluation **IR** (recherche d’info) hétérogène, 18\n" + "    datasets, zéro-shot [@thakur2021beir].\\n" + "-   **LoTTE** - Évaluation IR sur **sujets long-tail** (StackExchange),\n" + "    complément de BEIR [@santhanam2021lotte].\n" + "\n" + "💡 Interprétez toujours les scores **par rapport à la tâche ciblée** :\n" + "un bon score MMLU ne garantit pas de bonnes performances en **recherche\n" + "d’articles** (IR/RAG), et inversement.\n" + ":::\n" + "\n" + "## Le problème des benchmarks des LLM et des agents {style=\"font-size:0.7em\"}\n" + "\n" + "> *“Today’s benchmarks measure what is easy to measure, not what\n" + "> matters.”*\\n" + "> [@kapoorAIAgentsThat2024]\n" + "\n" + "-   Les benchmarks actuels donnent souvent une **image trop flatteuse**\n" + "    des performances des agents IA.\\n" + "-   Ils ne mesurent pas toujours les éléments essentiels comme :\n" + "    -   le **coût réel** (temps, tokens),\n" + "    -   la **robustesse** face à des variations imprévues,\n" + "    -   la **reproductibilité** des résultats.\n" + "-   Ce qui brille dans un leaderboard n’est pas forcément ce qui\n" + "    **fonctionne dans la vraie vie**.\n" + "\n" + "\\n" + "\\n" + "\\n" + "\n" + "Une vidéo intéressante sur ce sujet ⬇️\n" + "\n" + "::: footer\n" + "« En fait, les LLMs ne stagnent pas du tout » - *Vidéo de Micode avec\n" + "Grégoire Mialon et Clémentine Fourrier*.\\n" + "<https://www.youtube.com/watch?v=biZX5cnQ_UU>\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## 1. La fenêtre de contexte : la mémoire limitée des LLMs {style=\"font-size:0.7em\"}\n" + "\n" + "> *\"Language models struggle to use information located in the middle of\n" + "> long contexts, a phenomenon known as 'lost in the middle'.\"*\n" + "> [@liuLostMiddle2023]\n" + "\n" + "La **fenêtre de contexte** correspond à la quantité maximale de texte\n" + "qu’un LLM peut traiter en une seule fois\\n" + "(prompt + réponse), mesurée en **tokens**. Les capacités des LLMs\n" + "évoluent très vite.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\"}\n" + "![](images/lost_in_the_middle.PNG){fig-align=\"center\" width=\"70%\"}\n" + ":::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "![](images/fiction_benchmark_context.PNG){fig-align=\"center\"\n" + "width=\"100%\"}\n" + ":::\n" + ":::::\n" + "\n" + "## 2. RAG {style=\"font-size:0.7em\"}\n" + "\n" + "Le **Retrieval-Augmented Generation** combine recherche et génération.\n" + "\n" + "1.  Le LLM **cherche** d'abord des informations dans une base externe\n" + "    (web, PDFs, articles...).\n" + "2.  Il **injecte** ces informations dans son contexte.\n" + "3.  Il **génère** une réponse basée sur ces sources.\n" + "\n" + "![](images/clipboard-813454391.png){fig-align=\"center\" width=\"80%\"}\n" + "\n" + "::: footer\n" + "Illustration d’**Akriti Upadhyay** - *Efficient Information Retrieval\n" + "with RAG Workflow* (Medium, 2023).\\n" + "[https://medium.com/\@akriti.upadhyay/efficient-information-retrieval-with-rag-workflow-afdfc2619171](https://medium.com/@akriti.upadhyay/efficient-information-retrieval-with-rag-workflow-afdfc2619171){.uri}\n" + ":::\n" + "\n" + "## 3. Transfer learning et fine-tuning {style=\"font-size:0.68em;\"}\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\"}\n" + "> *« Technique consistant à spécialiser un modèle d’IA pré-entraîné à\n" + "> l’accomplissement d’une tâche spécifique. »*\n" + "> ([CNIL](https://www.cnil.fr/fr/definition/ajustement-fine-tuning))\n" + "\n" + "-   **Transfer learning** = concept général : réutiliser un modèle\n" + "    pré-entraîné pour une tâche ou un domaine cible.\n" + "-   **Fine-tuning** = méthode concrète de transfer learning :\n" + "    ré-entraîner (partiellement ou totalement) les poids du modèle sur\n" + "    des données spécifiques.\n" + "\n" + "### Exemples illustratifs\n" + "\n" + "-   **SciBERT** : Modèle BERT [@devlin2019bert] pré-entraîné et affiné\n" + "    sur des articles scientifiques pour mieux traiter le texte\n" + "    biomédical [@beltagy2019scibert].\n" + "\n" + "-   **SiEBERT** : Fine-tuning l'analyse de sentiment Modèle généraliste\n" + "    affiné sur **272 jeux de données** en anglais pour créer un\n" + "    classificateur robuste [@hartmannMoreFeelingAccuracy2023a].\n" + ":::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "![](images/finetuning.webp){fig-align=\"right\" width=\"80%\"}\\n" + "![](images/clipboard-3401288997.png){fig-align=\"right\" width=\"80%\"}\n" + ":::\n" + ":::::\n" + "\n" + "## 4. Les Agents : l'IA qui agit de manière autonome {style=\"font-size:0.6em\"}\n" + "\n" + "> *“An autonomous agent is a system situated within and a part of an\n" + "> environment that senses that environment and acts on it, over time, in\n" + "> pursuit of its own agenda and so as to effect what it senses in the\n" + "> future.”* - Franklin & Graesser (1997)\n" + "\n" + "-   Un **agent IA** combine **raisonnement**, **action** et\n" + "    **interaction avec un environnement**.\\n" + "-   Les **LLM agents** représentent une évolution : ils planifient,\n" + "    mémorisent, utilisent des outils, collaborent et s’adaptent.\n" + "-   Ils constituent une brique centrale pour l’automatisation avancée de\n" + "    tâches, y compris pour la revue de littérature ou la recherche\n" + "    scientifique.\n" + "\n" + ":::::: columns\n" + ":::: {.column width=\"50%\"}\n" + "### De l’émergence à la structuration des agents LLM\n" + "\n" + "-   **2022** : apparition des premiers agents combinant raisonnement et\n" + "    action [@yao2023react]\\n" + "-   **2023** : diffusion grand public avec les premières implémentations\n" + "    autonomes\\n" + "-   **2024–2025** : agents dotés de mémoire, coordination et rôles\n" + "    spécialisés [@wang2024survey; @luo2025largelanguage]\n" + "\n" + "::: callout-note\n" + "#### Pour aller plus loin\n" + "\n" + "-   Une liste actualisée des travaux est disponible ici : [Awesome Agent\n" + "    Papers](https://github.com/luo-junyu/Awesome-Agent-Papers).\n" + ":::\n" + "::::\n" + "\n" + "::: {.column width=\"50%\"}\n" + "![](images/Role-of-LLM-agents-at-a-glance.jpg){width=\"100%\"}\n" + ":::\n" + "::::::\n" + "\n" + "::: footer\n" + "Illustration de *Data Science Dojo* - “LLM Agents to Empower Language\n" + "Models”.\\n" + "<https://datasciencedojo.com/blog/llm-agents-to-empower-language-models/>\n" + ":::\n" + "\n" + "## Le coût des LLMs {style=\"font-size:0.6em\"}\n" + "\n" + "### Modèles et abonnements en octobre 2025\n" + "\n" + "| Service | Prix public | Ce que ça débloque / note | Lien |\n" + "|-----------------|--------------------:|-----------------|-----------------|\n" + "| **ChatGPT Free** | **0 €** | Accès de base | [Site](https://openai.com/chatgpt/pricing) |\n" + "| **ChatGPT Plus** | **\~20 \$/mois** *(facturé en devise locale, TVA selon pays)* | Accès élargi aux modèles (GPT-4/o1), fonctionnalités avancées | [Site](https://openai.com/chatgpt/pricing) |\n" + "| **Claude Pro** | **17 \$/mois (annuel)** ou **20 \$/mois** *(HT)* | Plus d’usage, modèles Claude 3.x/4.x, fonctionnalités pro | [Site](https://www.claude.com/pricing) |\n" + "| **Perplexity Pro** | **20 \$/mois** | Recherche avancée, modèles premium, import de fichiers | [Site](https://www.perplexity.ai/enterprise/pricing) |\n" + "| **Google AI Pro (Gemini)** | **21,99 €/mois** | Gemini 2.5 Pro, NotebookLM, 2 To, Deep Research | [Site](https://one.google.com/about/google-ai-plans/) |\n" + "| **Mistral – Le Chat Pro** | **17,99 €/mois** *(7,19 € pour étudiants, 12 mois)* | Version Pro de “Le Chat” | [Site](https://mistral.ai/pricing) |\n" + "| **Elicit Plus** | **10 \$/mois (annuel)** ou **12 \$/mois** | Extraction/synthèse, export de données | [Site](https://elicit.com/pricing) |\n" + "| **Elicit Pro** | **à partir de 42 \$/mois (annuel)** | Workflows RL/SLR, quotas plus importants | [Site](https://elicit.com/pricing) |\n" + "| **DeepSeek (API)** | **0,028 \$/M tokens (cache hit)** - **0,28 \$/M (miss)** - **0,42 \$/M output** |  | [Site](https://api-docs.deepseek.com/quick_start/pricing) |\n" + "\n" + "## L’art du Prompt Engineering - exemple pour revue de littérature {style=\"font-size:0.8em\"}\n" + "\n" + "::: incremental\n" + "-   **Donner un rôle clair** → aide l’IA à adopter une “posture\n" + "    experte”\\n" + "    *Montré comme une bonne pratique dans plusieurs études de synthèse*\n" + "    [@vatsal2024survey; @sahoo2025systematic]\n" + "\n" + "-   **Montrer un exemple** (*few-shot prompting*) → augmente fortement\n" + "    la qualité et la cohérence des réponses\\n" + "    *Effet mesuré dans des benchmarks sur des tâches complexes*\n" + "    [@vatsal2024survey]\n" + "\n" + "-   **Demander un raisonnement étape par étape** (*chain-of-thought*) →\n" + "    réduit les erreurs factuelles et améliore la profondeur\\n" + "    *Résultats solides dans les grandes revues sur le prompt\n" + "    engineering* [@schulhoff2025promptreport]\n" + "\n" + "-   **Spécifier le format de sortie** → favorise des réponses\n" + "    exploitables directement (tableaux, résumés structurés)\\n" + "    *Particulièrement efficace dans les tâches d’extraction\n" + "    d’informations* [@jin2025apeer]\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Outils utiles pour la revue de littérature {style=\"font-size:0.6em\"}\n" + "\n" + "Bien sûr il existe les LLMs bien connus comme ChatGPT, Claude, Gemini,\n" + "Mistral, etc. mais certains autres outils spécialisés :\n" + "\n" + "| Outil | Fonction principale | Cas d’usage typique | Lien |\n" + "|-------------|----------------------|-----------------------|-------------|\n" + "| **Perplexity.ai** | Moteur de recherche conversationnel (RAG) | Obtenir une vue d’ensemble rapide et sourcée sur un sujet | [perplexity.ai](https://www.perplexity.ai) |\n" + "| **Elicit** | Recherche sémantique et extraction automatique d’informations clés | Construire une bibliographie structurée, extraire méthodologies et résultats | [elicit.com](https://elicit.com) |\n" + "| **NotebookLM** | Analyse de documents personnels (RAG) | Interroger vos propres articles PDF et croiser les résultats | [notebooklm.google](https://notebooklm.google) |\n" + "| **Scite.ai** | Analyse de la qualité des citations (soutient / mentionne / conteste) | Évaluer la robustesse des articles et des théories | [scite.ai](https://www.scite.ai) |\n" + "| **Connected Papers** | Visualisation des liens entre articles | Explorer le réseau scientifique autour d’un article de départ | [connectedpapers.com](https://www.connectedpapers.com) |\n" + "| **Consensus** | Synthèse de résultats à partir d’articles scientifiques | Obtenir des réponses à des questions précises | [consensus.app](https://consensus.app) |\n" + "| **ArtiRev** | Plateforme académique française pour les revues de littérature | Identifier et organiser les articles d’un champ de recherche | [artirev.fr](https://artirev.fr) |\n" + "| **Litmaps** | Cartographie dynamique de la littérature | Visualiser et suivre l’évolution d’un champ de recherche dans le temps | [litmaps.com](https://www.litmaps.com) |\n" + "\n" + "## DÉMONSTRATIONS - Thèmes possibles {style=\"font-size:0.9em\"}\n" + "\n" + "1.  Comment l’usage de l’intelligence artificielle générative\n" + "    transforme-t-il la relation entre marques et consommateurs ?\\n" + "2.  Dans quelle mesure les influenceurs sur les réseaux sociaux\n" + "    façonnent-ils les comportements de consommation des adolescents ?\\n" + "3.  Comment les consommateurs perçoivent-ils les campagnes de\n" + "    communication promouvant la responsabilité environnementale des\n" + "    marques ?\\n" + "4.  Quels sont les effets du télétravail et du digital nomadisme sur la\n" + "    communication interne et la culture organisationnelle ?\\n" + "5.  Comment la marque employeur influence-t-elle la perception et\n" + "    l’engagement des candidats à l’ère de la digitalisation et des\n" + "    nouvelles attentes sociétales ?\\n" + "6.  Pour une marque, est-ce pertinent d’endosser via sa communication\n" + "    des combats portés par des mouvements sociaux (féminisme,\n" + "    antiracisme, écologie radicale, etc.) ?\\n" + "7.  Est-ce que tous les bad buzz provoquent des crises de réputation de\n" + "    marque ?\n" + "\n" + "## Le risque majeur : hallucinations et références fantômes {.smaller}\n" + "\n" + "Le problème le plus documenté des LLM est leur tendance à **inventer des\n" + "informations crédibles** (hallucinations) et à **fabriquer des\n" + "références** qui semblent plausibles mais sont inexistantes [@Tosi2025].\n" + "\n" + "::: incremental\n" + "\n" + "-   **Références fantômes** : un article a rapporté qu'un outil IA a\n" + "    généré une référence bibliographique complètement inventée lors\n" + "    d'une revue de littérature systématique (SLR) [@Tosi2025].\n" + "-   **Conclusions erronées** : la synthèse produite par l'IA peut être\n" + "    inexacte, déformer les conclusions des sources originales ou manquer\n" + "    de nuances et d'analyse critique [@Li2025; @Tosi2025].\n" + "-   **Dépendance au prompt** : de légères variations dans la formulation\n" + "    d'une requête (le \"prompt\") peuvent radicalement changer la qualité,\n" + "    la pertinence et même la véracité des résultats obtenus\n" + "    [@Baumann2025].\n" + "    \n" + ":::\n" + "\n" + "::: {.callout-alert title=\"Parade obligatoire : la vérification systématique\" .fragment}\n" + "::: incremental\n" + "1.  **Vérifier chaque source** : un DOI, un titre ou un auteur doit\n" + "    correspondre à une publication réelle et accessible.\n" + "2.  **Consulter l'article original** avant de citer ou de s'approprier\n" + "    une conclusion synthétisée par une IA.\n" + "3.  Privilégier les outils basés sur un **corpus fermé (RAG)**, qui\n" + "    citent leurs sources **OU** LLM + article en contexte.\n" + ":::\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Le risque caché : Le *LLM Hacking* {.smaller}\n" + "\n" + "Le *\"LLM Hacking\"* décrit comment la sensibilité extrême des IA aux\n" + "prompts permet, intentionnellement ou non, d'obtenir des **conclusions\n" + "statistiques erronées** à partir des mêmes données [@Baumann2025].\n" + "\n" + "> En testant quelques configurations de modèles ou de prompts, il\n" + "> devient possible de présenter presque n'importe quel résultat comme\n" + "> statistiquement significatif.\n" + "\n" + "::: incremental\n" + "\n" + "-   **Faux positifs** : sur des hypothèses où il n'existe en réalité\n" + "    aucun effet, il est possible de **fabriquer un résultat\n" + "    statistiquement significatif** (p \< 0.05) dans **94,4 %** des cas\n" + "    en choisissant la bonne combinaison modèle/prompt [@Baumann2025].\n" + "-   **Inversion des résultats (erreur de type S)** : il est possible de\n" + "    trouver un effet significatif dans la **direction opposée** à la\n" + "    réalité dans **68,3 %** des cas [@Baumann2025].\n" + "-   **Indétectable a posteriori** : une analyse manipulée via le\n" + "    *prompting* peut sembler méthodologiquement rigoureuse, rendant la\n" + "    fraude presque impossible à détecter pour un évaluateur externe.\n" + "    \n" + ":::\n" + "\n" + "::: {.callout-warning title=\"Implication\" .fragment}\n" + "La reproductibilité scientifique est menacée. Sans une transparence\n" + "totale sur les prompts et modèles testés, les résultats d'une recherche\n" + "assistée par IA peuvent être non fiables.\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Biais \"silencieux\" et \"couverture\" limitée {style=\"font-size:0.8em\"}\n" + "\n" + "Un LLM n'est **jamais neutre**. Il amplifie les biais des données sur\n" + "lesquelles il a été entraîné.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\" .fragment}\n" + "### Biais\n" + "\n" + "\\n" + "\n" + "-   **Biais de corpus** : surreprésentation de la recherche\n" + "    anglo-saxonne et des paradigmes scientifiques dominants, au risque\n" + "    de créer une **monoculture intellectuelle**.\n" + "-   **Biais de popularité** : tendance à privilégier les articles très\n" + "    cités. Un outil IA a ainsi manqué **100 % des 32 études primaires**\n" + "    d'une revue systématique, ne sélectionnant que des articles plus\n" + "    anciens et trois fois plus cités en moyenne que ceux de la sélection\n" + "    humaine [@Tosi2025].\n" + ":::\n" + "\n" + "::: {.column width=\"50%\" .fragment}\n" + "### Couverture\n" + "\n" + "\\n" + "\n" + "-   **Connaissances datées** : l'IA ne connaît rien au-delà de sa date\n" + "    de \"cut-off\" (pas toujours rendue publique).\n" + "-   **L'angle mort des paywalls** : l'accès est limité aux textes en\n" + "    libre accès (résumés, pre-prints), ignorant une part massive de la\n" + "    littérature scientifique.\n" + "-   **Couverture inégale des disciplines** : les domaines riches en\n" + "    données textuelles sont mieux couverts.\n" + ":::\n" + ":::::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Enjeux éthiques et responsabilité académique {style=\"font-size:0.65em\"}\n" + "\n" + ":::: {.columns}\n" + "::: {.column width=\"40%\"}\n" + "\n" + "L'utilisation de l'IA engage la responsabilité du chercheur bien au-delà\n" + "de la simple citation.\n" + "\n" + "<ul>\n" + "  <li class=\"fragment\" data-fragment-index=\"1\"><strong>Confidentialité des données</strong> : ne <strong>jamais</strong> soumettre de données de recherche sensibles, confidentielles ou non publiées sur des services d'IA publics.</li>\n" + "  <li class=\"fragment\" data-fragment-index=\"2\"><strong>Risque de déresponsabilisation morale</strong> : déléguer une tâche à une IA, surtout via des instructions vagues, peut <strong>augmenter les comportements malhonnêtes</strong>. Les agents IA sont bien plus enclins à suivre des instructions contraires à l'éthique que les humains [@Kobis2025].</li>\n" + "  <li class=\"fragment\" data-fragment-index=\"3\"><strong>Transparence et paternité</strong> : toujours <strong>déclarer l'utilisation d'outils d'IA</strong> dans la section méthodologique. Un agent conversationnel ne peut être crédité comme auteur.</li>\n" + "  <li class=\"fragment\" data-fragment-index=\"4\"><strong>Empreinte environnementale</strong> : l'entraînement et l'utilisation des LLM consomment une quantité d'énergie considérable. La question de l'étiquetage énergétique des modèles d'IA commence à se poser [@Luccioni2024].</li>\n" + "</ul>\n" + "\n" + ":::\n" + "\n" + "::: {.column width=\"60%\"}\n" + "![](images/ai_energy_footpring_20models.PNG){fig-align=\"center\" .fragment data-fragment-index=\"4\"}\n" + ":::\n" + "::::\n" + "\n" + "\n" + "\n" + "## Quel gain de temps avec les LLMs ? {.smaller}\n" + "\n" + "L'argument principal en faveur de l'IA est une accélération radicale du processus de recherche. Le schéma ci-contre montre comment l'IA s'intègre dans les étapes les plus chronophages d'une revue systématique.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\"}\n" + "\n" + "::: incremental \n" + "-   **Filtrage accéléré** : un outil comme **ASReview** a permis de réduire de **77 %** le temps de sélection (*screening*) des résumés dans une revue systématique [@vanDijk2023].\n" + "-   **Synthèse en temps record** : dans des études contrôlées, des agents IA interactifs (**InsightAgent**) ont permis à des cliniciens de réaliser une revue systématique complète en **environ 1h30** [@Qiu2025].\n" + "-   **De plusieurs jour à quelques minutes** : le filtrage de plus de 8 300 articles a été réalisé en **moins de 10 minutes** par une architecture multi-LLM [@Joos2025].\n" + "\n" + ":::\n" + "\n" + "::: {.callout-tip title=\"Le rôle de l'IA\" .fragment}\n" + "L’IA est un **accélérateur de recherche** qui automatise les tâches répétitives, mais ne remplace pas le jugement humain pour la planification et l'analyse critique.\n" + ":::\n" + ":::\n" + "\n" + "::: {.column width=\"50%\" .fragment}\n" + "![@Tosi2025](images/slr_planning_conducting_reporting.PNG){fig-align=\"center\" width=\"100%\"}\n" + ":::\n" + ":::::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Le match : précision contre complétude (rappel) {style=\"font-size:0.7em\"}\n" + "\n" + "Pour évaluer un outil de recherche, deux métriques sont essentielles.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\" .fragment}\n" + "### **Le Rappel (Recall / Sensibilité)**\n" + "\n" + "*La capacité à trouver **tous** les documents pertinents.*\n" + "\n" + "-   **Question** : ai-je raté des articles importants ?\n" + "-   **Objectif** : être exhaustif. 100 % = aucun article pertinent\n" + "    manqué.\n" + "-   **Risque** : un faible rappel mène à des conclusions biaisées.\n" + ":::\n" + "\n" + "::: {.column width=\"50%\" .fragment}\n" + "### **La Précision (Precision)**\n" + "\n" + "*La capacité à ne retourner **que** des documents pertinents.*\n" + "\n" + "-   **Question** : combien de \"bruit\" dois-je trier ?\n" + "-   **Objectif** : être pertinent. 100 % = tous les résultats sont\n" + "    utiles.\n" + "-   **Risque** : une faible précision fait perdre du temps.\n" + ":::\n" + ":::::\n" + "\n" + "::: {.callout-alert title=\"Le Compromis\" .fragment}\n" + "Un outil très exhaustif (**haut rappel**) ramène souvent beaucoup de\n" + "bruit (**basse précision**). Un outil très ciblé (**haute précision**)\n" + "peut omettre des références importantes (**bas rappel**).\n" + ":::\n" + "\n" + "::: {.callout-note title=\"Évidence empirique\" .fragment}\n" + "Comparativement aux IA testées (**Elicit, SciSpace**), **WoS/Scopus** obtiennent de meilleurs taux de **précision/qualité**, l’IA ramenant plus de références **uniques** mais souvent **moins bien classées** [@Tomczy2024].\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Un bilan nuancé quant aux performances {style=\"font-size:0.7em\"}\n" + "\n" + "Les performances des IA varient énormément selon les outils et les\n" + "méthodes.\n" + "\n" + "::::: columns\n" + "::: {.column width=\"50%\" .fragment}\n" + "#### des performances parfois excellentes...\n" + "\n" + "-   **Consensus multi-LLM** : en faisant voter plusieurs modèles d'IA,\n" + "    une étude a atteint un **rappel de 98,8 %**, un taux d'erreur\n" + "    inférieur à celui d'un humain [@Joos2025].\n" + "-   **Systèmes interactifs supervisés** : avec l'aide d'un expert, un\n" + "    outil peut atteindre **98,5 % de rappel** [@Qiu2025].\n" + ":::\n" + "\n" + "::: {.column width=\"50%\" .fragment}\n" + "#### ...mais des échecs critiques et des biais tenaces.\n" + "\n" + "-   **Elicit** n'a atteint en moyenne qu'un **rappel de 39,5 %** sur\n" + "    quatre études de cas, le rendant insuffisant pour une revue\n" + "    systématique exhaustive [@LauGolder2025].\n" + "-   Dans une autre étude, un outil IA a **totalement manqué les 32\n" + "    études primaires** d'une revue, à cause d'un fort biais de\n" + "    popularité [@Tosi2025].\n" + ":::\n" + ":::::\n" + "\n" + "::: {.callout-alert title=\"Le compromis fondamental\" .fragment}\n" + "L’IA peut **précisément** omettre l'essentiel. Sans supervision humaine\n" + "et validation croisée, le gain de temps peut se payer par une perte de\n" + "pertinence et d'exhaustivité.\n" + ":::\n" + "\n" + "------------------------------------------------------------------------\n" + "\n" + "## Conclusion\n" + "\n" + "L'IA ne remplace pas le chercheur, elle transforme son rôle.\n" + "\n" + "::: incremental\n" + "\n" + "-   l’IA est un **levier de productivité** majeur, mais non dénué de\n" + "    risques importants.\n" + "-   la **vigilance critique** (biais, hallucinations, hacking) et la\n" + "    **vérification humaine** sont incontournables.\n" + "-   choisir **le bon outil pour la bonne tâche** est essentiel\n" + "    (exploration vs. synthèse vs. filtrage).\n" + "-   l'avenir est à la **collaboration homme-machine**, où l'expertise\n" + "    humaine guide la puissance de l'IA.\n" + "    \n" + ":::\n" + "\n" + "## Références\n" + ""</script>
+<script> window._input_filename = 'C:\Users\Olivier\Documents\GitHub\dauphine_recherche_information_ia\cours.qmd'</script>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-balunovic2025matharena" class="csl-entry" role="listitem">
+Balunović, Mislav, Jasper Dekoninck, Ivo Petrov, Nikola Jovanović, and Martin Vechev. 2025. <span>“Matharena: Evaluating Llms on Uncontaminated Math Competitions.”</span> <em>arXiv Preprint arXiv:2505.23281</em>.
+</div>
+<div id="ref-Baumann2025" class="csl-entry" role="listitem">
+Baumann, Joachim, Paul Röttger, Aleksandra Urman, Albert Wendsjö, Flor Miriam Plaza-del-Arco, Johannes B Gruber, and Dirk Hovy. 2025. <span>“Large Language Model Hacking: Quantifying the Hidden Risks of Using LLMs for Text Annotation.”</span> <em>arXiv Preprint arXiv:2509.08825</em>.
+</div>
+<div id="ref-beltagy2019scibert" class="csl-entry" role="listitem">
+Beltagy, Iz, Kyle Lo, and Arman Cohan. 2019. <span>“SciBERT: A Pretrained Language Model for Scientific Text.”</span> <em>arXiv Preprint arXiv:1903.10676</em>.
+</div>
+<div id="ref-bengio2003neural" class="csl-entry" role="listitem">
+Bengio, Yoshua, Réjean Ducharme, Pascal Vincent, and Christian Jauvin. 2003. <span>“A Neural Probabilistic Language Model.”</span> <em>Journal of Machine Learning Research</em> 3 (Feb): 1137–55.
+</div>
+<div id="ref-brown2020" class="csl-entry" role="listitem">
+Brown, Tom, Benjamin Mann, Nick Ryder, Melanie Subbiah, Jared D Kaplan, Prafulla Dhariwal, Arvind Neelakantan, et al. 2020. <span>“Language Models Are Few-Shot Learners.”</span> <em>Advances in Neural Information Processing Systems</em> 33: 1877–1901.
+</div>
+<div id="ref-chatterjiHowPeopleUse" class="csl-entry" role="listitem">
+Chatterji, Aaron, Tom Cunningham, David Deming, Zoe Hitzig, Christopher Ong, Carl Shan, and Kevin Wadman. 2025. <span>“How <span>People Use ChatGPT</span>.”</span>
+</div>
+<div id="ref-devlin2019bert" class="csl-entry" role="listitem">
+Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. <span>“Bert: Pre-Training of Deep Bidirectional Transformers for Language Understanding.”</span> In <em>Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers)</em>, 4171–86.
+</div>
+<div id="ref-vanDijk2023" class="csl-entry" role="listitem">
+Dijk, Sanne HB van, Marjolein GJ Brusse-Keizer, Charlotte C Bucsan, Job van der Palen, Carine JM Doggen, and Anke Lenferink. 2023. <span>“Artificial Intelligence in Systematic Reviews: Promising When Appropriately Used.”</span> <em>BMJ Open</em> 13 (7): e072254.
+</div>
+<div id="ref-firth1957" class="csl-entry" role="listitem">
+Firth, J. R. 1957. <span>“A Synopsis of Linguistic Theory 1930-55.”</span> <em>Studies in Linguistic Analysis (Special Volume of the Philological Society)</em> 1952-59: 132.
+</div>
+<div id="ref-goodfellow2014" class="csl-entry" role="listitem">
+Goodfellow, Ian J., Jean Pouget-Abadie, Mehdi Mirza, Bing Xu, David Warde-Farley, Sherjil Ozair, Aaron Courville, and Yoshua Bengio. 2014. <span>“Generative Adversarial Nets.”</span> In <em>Proceedings of the 28th International Conference on Neural Information Processing Systems - Volume 2</em>, 2672–80. NIPS’14. Cambridge, MA, USA: MIT Press.
+</div>
+<div id="ref-harris1954distributional" class="csl-entry" role="listitem">
+Harris, Zellig S. 1954. <span>“Distributional Structure.”</span> <em>Word</em> 10 (2-3): 146–62.
+</div>
+<div id="ref-hartmannMoreFeelingAccuracy2023a" class="csl-entry" role="listitem">
+Hartmann, Jochen, Mark Heitmann, Christian Siebert, and Christina Schamp. 2023. <span>“More Than a <span>Feeling</span>: <span>Accuracy</span> and <span>Application</span> of <span>Sentiment Analysis</span>.”</span> <em>International Journal of Research in Marketing</em> 40 (1): 75–87. <a href="https://doi.org/10.1016/j.ijresmar.2022.05.005">https://doi.org/10.1016/j.ijresmar.2022.05.005</a>.
+</div>
+<div id="ref-hendrycks2021mmlu" class="csl-entry" role="listitem">
+Hendrycks, Dan, Collin Burns, Steven Basart, Andy Zou, Mantas Mazeika, Dawn Song, and Jacob Steinhardt. 2021. <span>“Measuring Massive Multitask Language Understanding.”</span> In <em>Proceedings of the International Conference on Learning Representations (ICLR)</em>. <a href="https://openreview.net/pdf?id=d7KBjmI3GmQ">https://openreview.net/pdf?id=d7KBjmI3GmQ</a>.
+</div>
+<div id="ref-jin2025apeer" class="csl-entry" role="listitem">
+Jin, Can, Hongwu Peng, Shiyu Zhao, Zhenting Wang, Wujiang Xu, Ligong Han, Jiahui Zhao, Kai Zhong, Sanguthevar Rajasekaran, and Dimitris N. Metaxas. 2025. <span>“APEER: Automatic Prompt Engineering Enhances Large Language Model Reranking.”</span> In <em>Companion Proceedings of the ACM Web Conference 2025 (WWW Companion ’25)</em>, 1–10. ACM. <a href="https://doi.org/10.1145/3701716.3717574">https://doi.org/10.1145/3701716.3717574</a>.
+</div>
+<div id="ref-Joos2025" class="csl-entry" role="listitem">
+Joos, Lucas, Daniel A Keim, and Maximilian T Fischer. 2025. <span>“Cutting <span>Through</span> the <span>Clutter</span>: <span>The Potential</span> of <span>LLMs</span> for <span>Efficient Filtration</span> in <span>Systematic Literature Reviews</span>.”</span>
+</div>
+<div id="ref-jordan2015" class="csl-entry" role="listitem">
+Jordan, M. I., and T. M. Mitchell. 2015. <span>“Machine Learning: Trends, Perspectives, and Prospects.”</span> <em>Science</em> 349 (6245): 255–60. <a href="https://doi.org/10.1126/science.aaa8415">https://doi.org/10.1126/science.aaa8415</a>.
+</div>
+<div id="ref-kapoorAIAgentsThat2024" class="csl-entry" role="listitem">
+Kapoor, Sayash, Benedikt Stroebl, Zachary S. Siegel, Nitya Nadgir, and Arvind Narayanan. 2024. <span>“<span>AI Agents That Matter</span>.”</span> arXiv. <a href="https://doi.org/10.48550/arXiv.2407.01502">https://doi.org/10.48550/arXiv.2407.01502</a>.
+</div>
+<div id="ref-Kobis2025" class="csl-entry" role="listitem">
+Köbis, Nils, Zoe Rahwan, Raluca Rilla, Bramantyo Ibrahim Supriyatno, Clara Bersch, Tamer Ajaj, Jean-François Bonnefon, and Iyad Rahwan. 2025. <span>“Delegation to Artificial Intelligence Can Increase Dishonest Behaviour.”</span> <em>Nature</em>, 1–9.
+</div>
+<div id="ref-LauGolder2025" class="csl-entry" role="listitem">
+Lau, Oscar, and Su Golder. 2025. <span>“Comparison of Elicit AI and Traditional Literature Searching in Evidence Syntheses Using Four Case Studies.”</span> <em>Cochrane Evidence Synthesis and Methods</em> 3 (6): e70050.
+</div>
+<div id="ref-lecun2015" class="csl-entry" role="listitem">
+LeCun, Yann, Yoshua Bengio, and Geoffrey Hinton. 2015. <span>“Deep Learning.”</span> <em>Nature</em> 521 (7553): 436–44. <a href="https://doi.org/10.1038/nature14539">https://doi.org/10.1038/nature14539</a>.
+</div>
+<div id="ref-Li2025" class="csl-entry" role="listitem">
+Li, Ying, Surabhi Datta, Majid Rastegar-Mojarad, Kyeryoung Lee, Hunki Paek, Julie Glasgow, Chris Liston, Long He, Xiaoyan Wang, and Yingxin Xu. 2025. <span>“Enhancing Systematic Literature Reviews with Generative Artificial Intelligence: Development, Applications, and Performance Evaluation.”</span> <em>Journal of the American Medical Informatics Association</em> 32 (4): 616–25. <a href="https://doi.org/10.1093/jamia/ocaf030">https://doi.org/10.1093/jamia/ocaf030</a>.
+</div>
+<div id="ref-liuLostMiddle2023" class="csl-entry" role="listitem">
+Liu, Nelson F., Alex Tamkin, Nathanael Schärli, et al. 2023. <span>“Lost in the Middle: How Language Models Use Long Contexts.”</span> <em>arXiv Preprint arXiv:2307.03172</em>. <a href="https://arxiv.org/abs/2307.03172">https://arxiv.org/abs/2307.03172</a>.
+</div>
+<div id="ref-Luccioni2024" class="csl-entry" role="listitem">
+Luccioni, Sasha, Boris Gamazaychikov, Sara Hooker, Régis Pierrard, Emma Strubell, Yacine Jernite, and Carole-Jean Wu. 2024. <span>“Light Bulbs Have Energy Ratings—so Why Can’t AI Chatbots?”</span> <em>Nature</em> 632 (8026): 736–38.
+</div>
+<div id="ref-luo2025largelanguage" class="csl-entry" role="listitem">
+Luo, Junyu, Weizhi Zhang, Ye Yuan, Yusheng Zhao, Junwei Yang, Yiyang Gu, Bohan Wu, et al. 2025. <span>“Large Language Model Agent: A Survey on Methodology, Applications and Challenges.”</span> <em>arXiv Preprint arXiv:2503.21460</em>. <a href="https://github.com/luo-junyu/Awesome-Agent-Papers">https://github.com/luo-junyu/Awesome-Agent-Papers</a>.
+</div>
+<div id="ref-mialon2023gaia" class="csl-entry" role="listitem">
+Mialon, Grégoire, Clémentine Fourrier, Craig Swift, Thomas Wolf, Yann LeCun, and Thomas Scialom. 2023. <span>“<span>GAIA</span>: A Benchmark for General <span>AI</span> Assistants.”</span> <em>arXiv Preprint arXiv:2311.12983</em>. <a href="https://arxiv.org/abs/2311.12983">https://arxiv.org/abs/2311.12983</a>.
+</div>
+<div id="ref-mikolov2013" class="csl-entry" role="listitem">
+Mikolov, Tomas, Kai Chen, Greg Corrado, and Jeffrey Dean. 2013. <span>“Efficient Estimation of Word Representations in Vector Space,”</span> September. <a href="http://arxiv.org/abs/1301.3781">http://arxiv.org/abs/1301.3781</a>.
+</div>
+<div id="ref-Qiu2025" class="csl-entry" role="listitem">
+Qiu, Rui, Shijie Chen, Yu Su, Po-Yin Yen, and Han-Wei Shen. 2025. <span>“Completing a Systematic Review in Hours Instead of Months with Interactive AI Agents.”</span> <em>arXiv Preprint arXiv:2504.14822</em>.
+</div>
+<div id="ref-rein2023gpqa" class="csl-entry" role="listitem">
+Rein, David, Betty Li Hou, Asa Cooper Stickland, Jackson Petty, Richard Yuanzhe Pang, Julien Dirani, Julian Michael, and Samuel R. Bowman. 2023. <span>“<span>GPQA</span>: A Graduate-Level Google-Proof q&amp;a Benchmark.”</span> <em>arXiv Preprint arXiv:2311.12022</em>. <a href="https://arxiv.org/abs/2311.12022">https://arxiv.org/abs/2311.12022</a>.
+</div>
+<div id="ref-rumelhart1986" class="csl-entry" role="listitem">
+Rumelhart, David E, Geoffrey E Hinton, and Ronald J Williams. 1986. <span>“Learning Representations by Back-Propagating Errors.”</span> <em>Nature</em> 323 (6088): 533–36.
+</div>
+<div id="ref-sahoo2025systematic" class="csl-entry" role="listitem">
+Sahoo, Pranab, Ayush Kumar Singh, Sriparna Saha, Vinija Jain, Samrat Mondal, and Aman Chadha. 2025. <span>“A Systematic Survey of Prompt Engineering in Large Language Models: Techniques and Applications.”</span> <em>arXiv Preprint arXiv:2402.07927</em>. <a href="https://arxiv.org/abs/2402.07927">https://arxiv.org/abs/2402.07927</a>.
+</div>
+<div id="ref-santhanam2021lotte" class="csl-entry" role="listitem">
+Santhanam, Keshav, Barlas Oguz, Sewon Min, Wen-tau Yih Chen, Jordan Boyd-Graber, Luke Zettlemoyer, and Mike Lewis. 2021. <span>“<span>LoTTE</span>: Long-Tail Topic-Stratified Evaluation for <span>IR</span>.”</span> <em>arXiv Preprint arXiv:2112.01488</em>. <a href="https://arxiv.org/abs/2112.01488">https://arxiv.org/abs/2112.01488</a>.
+</div>
+<div id="ref-schulhoff2025promptreport" class="csl-entry" role="listitem">
+Schulhoff, Sander, Michael Ilie, Nishant Balepur, Konstantine Kahadze, Amanda Liu, Chenglei Si, Yinheng Li, Aayush Gupta, HyoJung Han, et al. 2025. <span>“The Prompt Report: A Systematic Survey of Prompt Engineering Techniques.”</span> <em>arXiv Preprint arXiv:2406.06608</em>. <a href="https://arxiv.org/abs/2406.06608">https://arxiv.org/abs/2406.06608</a>.
+</div>
+<div id="ref-thakur2021beir" class="csl-entry" role="listitem">
+Thakur, Nandan, Nils Reimers, Andreas Rücklé, Abhishek Srivastava, and Iryna Gurevych. 2021. <span>“<span>BEIR</span>: A Heterogeneous Benchmark for Zero-Shot Evaluation of Information Retrieval Models.”</span> In <em>NeurIPS 2021 Datasets and Benchmarks Track</em>. <a href="https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/65b9eea6e1cc6bb9f0cd2a47751a186f-Paper-round2.pdf">https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/file/65b9eea6e1cc6bb9f0cd2a47751a186f-Paper-round2.pdf</a>.
+</div>
+<div id="ref-Tomczy2024" class="csl-entry" role="listitem">
+Tomczyk, Przemysław, Philipp Brüggemann, Niklas Mergner, and Maria Petrescu. <span>“Are AI Tools Better Than Traditional Tools in Literature Searching? Evidence from e-Commerce Research.”</span> <em>Journal of Librarianship and Information Science</em> 0 (0): 09610006241295802. <a href="https://doi.org/10.1177/09610006241295802">https://doi.org/10.1177/09610006241295802</a>.
+</div>
+<div id="ref-Tosi2025" class="csl-entry" role="listitem">
+Tosi, Davide. 2025. <span>“Comparing Generative AI Literature Reviews Versus Human-Led Systematic Literature Reviews: A Case Study on Big Data Research.”</span> <em>IEEE Access</em>.
+</div>
+<div id="ref-vaswani2017attention" class="csl-entry" role="listitem">
+Vaswani, Ashish, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N Gomez, Łukasz Kaiser, and Illia Polosukhin. 2017. <span>“Attention Is All You Need.”</span> <em>Advances in Neural Information Processing Systems</em> 30.
+</div>
+<div id="ref-vatsal2024survey" class="csl-entry" role="listitem">
+Vatsal, Shubham, and Harsh Dubey. 2024. <span>“A Survey of Prompt Engineering Methods in Large Language Models for Different NLP Tasks.”</span> <em>arXiv Preprint arXiv:2407.12994</em>. <a href="https://arxiv.org/abs/2407.12994">https://arxiv.org/abs/2407.12994</a>.
+</div>
+<div id="ref-wang2024survey" class="csl-entry" role="listitem">
+Wang, Lei, Chen Ma, Xueyang Feng, Zeyu Zhang, Hao Yang, Jingsen Zhang, Zhi-Yuan Chen, et al. 2024. <span>“A Survey on Large Language Model Based Autonomous Agents.”</span> <em>Frontiers of Computer Science</em>. <a href="https://doi.org/10.1007/s11704-024-40231-1">https://doi.org/10.1007/s11704-024-40231-1</a>.
+</div>
+<div id="ref-yao2023react" class="csl-entry" role="listitem">
+Yao, Shunyu, Jeffrey Zhao, Dian Yu, Nan Du, Izhak Shafran, Karthik Narasimhan, and Yuan Cao. 2023. <span>“ReAct: Synergizing Reasoning and Acting in Language Models.”</span> <a href="https://react-lm.github.io/">https://react-lm.github.io/</a>.
+</div>
+<div id="ref-wei2022emergent" class="csl-entry" role="listitem">
+Zoph, Barret, Colin Raffel, Dale Schuurmans, Dani Yogatama, Denny Zhou, Don Metzler, Ed H. Chi, et al. 2022. <span>“Emergent Abilities of Large Language Models.”</span> <em>TMLR</em>.
+</div>
+</div>
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<p><img src="images/logo_dauphine.png" class="slide-logo"></p>
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="cours_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="cours_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/revealeditable/editable.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="cours_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="cours_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'fade',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1250,
+
+        height: 760,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, Revealeditable, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script type="text/javascript">
+      Reveal.on('ready', event => {
+        if (event.indexh === 0) {
+          document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+        }
+      });
+      Reveal.addEventListener('slidechanged', (event) => {
+        if (event.indexh === 0) {
+          Reveal.configure({ slideNumber: null });
+          document.querySelector("div.has-logo > img.slide-logo").style.display = "none";
+        }
+        if (event.indexh === 1) { 
+          Reveal.configure({ slideNumber: 'c/t' });
+          document.querySelector("div.has-logo > img.slide-logo").style.display = null;
+        }
+      });
+    </script>
+    
+
+</body></html>
