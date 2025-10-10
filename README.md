@@ -5,10 +5,9 @@ _Master Marketing & Stratégie — Université Paris Dauphine – PSL_
 
 ## 📘 Description
 
-Ce dépôt accompagne le cours **« Recherche d’information & IA – Savoir utiliser à bon escient les technologies pour collecter et traiter les informations »**, dispensé en amphi dans le cadre du **Master Marketing & Stratégie** à l’Université Paris Dauphine – PSL.  
+Ce dépôt contient les supports et ressources du cours **Recherche d’information & IA**, dispensé dans le cadre du **Master Marketing & Stratégie** à l’Université Paris Dauphine PSL.
 
-L’objectif est de donner aux étudiant·es les **bonnes pratiques pour intégrer l’intelligence artificielle** — notamment les grands modèles de langue (LLM) — dans leurs stratégies de **recherche d’information**, de **veille scientifique** et de **revue de littérature**.
-
+Ce cours a pour objectif d’initier les étudiant·es à l’usage raisonné de l’intelligence artificielle, en particulier des grands modèles de langue (LLM), pour améliorer et accélérer la **recherche d’information académique**, la **veille scientifique** et la **réalisation de revues de littérature**.
 ---
 
 ## 🎯 Objectifs pédagogiques
@@ -36,6 +35,7 @@ L’objectif est de donner aux étudiant·es les **bonnes pratiques pour intégr
 ## 🗂️ Arborescence (éléments importants uniquement)
 
 dauphine_recherche_information_ia/
+
 ├─ README.md
 ├─ cours.qmd                 # source Quarto markdown
 ├─ cours.html                # rendu HTML (page publique)
