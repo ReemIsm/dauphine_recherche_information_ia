@@ -41,7 +41,7 @@ choses : l'échelle du phénomène et la mutation de ses usages.
 -   **18 milliards** de messages échangés chaque semaine.
 -   **x5.8** : Croissance du volume de messages en un an (Juin
     2024-2025).
--   **🎯 Cible jeune** : **46%** des messages proviennent des **18-25
+-   **Cible jeune** : **46%** des messages proviennent des **18-25
     ans**.
 :::
 
@@ -50,17 +50,17 @@ choses : l'échelle du phénomène et la mutation de ses usages.
 
 En un an, les usages ont basculé :
 
--   ✍️ **L'écriture** (créer, résumer) a vu sa part baisser de 36% à
+-   **L'écriture** (créer, résumer) a vu sa part baisser de 36% à
     **24%**.
--   🔎 **La recherche d'infos** a explosé, passant de 14% à **24%**.
+-   **La recherche d'infos** a explosé, passant de 14% à **24%**.
 
 **Les trois usages majoritaires (près de 80% du total) sont :**
 
 \
 
-1.  **📚 Guide pratique** (29%)
-2.  **🔎 Recherche d'infos** (24%)
-3.  **✍️ Écriture** (24%)
+1.  **Guide pratique** (29%)
+2.  **Recherche d'infos** (24%)
+3.  **Écriture** (24%)
 :::
 :::::
 
@@ -355,17 +355,9 @@ contexte est la clé du sens.
 
 ![](images/clipboard-96365688.png)
 
+
+
 ## Visualiser un embedding 2/3 {style="font-size:0.8em"}
-
-![](images/clipboard-3895743696.png){fig-align="center"}
-
-::: footer
-Source : *Transformers, the tech behind LLMs* - *Deep Learning, Chapter
-5.*\
-[Vidéo Youtube](https://www.youtube.com/watch?v=wjZofJX0v4M)
-:::
-
-## Visualiser un embedding 3/3 {style="font-size:0.8em"}
 
 Chaque mot est représenté par un **vecteur de nombres** (par ex. 50 ou
 300 dimensions). Pris séparément, ces valeurs n’ont pas de sens pour
@@ -389,6 +381,16 @@ partir des contextes.
 :::
 :::::
 
+## Visualiser un embedding 3/3 {style="font-size:0.8em"}
+
+![](images/clipboard-3895743696.png){fig-align="center"}
+
+::: footer
+Source : *Transformers, the tech behind LLMs* - *Deep Learning, Chapter
+5.*\
+[Vidéo Youtube](https://www.youtube.com/watch?v=wjZofJX0v4M)
+:::
+
 ## Analogies vectorielles {style="font-size:0.6em"}
 
 Les vecteurs de mots se combinent algébriquement. Ce n’est pas magique :
@@ -400,7 +402,7 @@ syntaxiques.
 -   *V(roi) - V(homme) + V(femme) ≈ V(reine)*
 -   *V(Paris) - V(France) + V(Italie) ≈ V(Rome)*
 
-👉 Avec des bibliothèques comme **Gensim en python** ou **word2vec en
+Avec des bibliothèques comme **Gensim en python** ou **word2vec en
 R**, on peut réellement calculer ces analogies et retrouver les mots les
 plus proches.
 :::
@@ -678,9 +680,8 @@ with RAG Workflow* (Medium, 2023).\
     sur des articles scientifiques pour mieux traiter le texte
     biomédical [@beltagy2019scibert].
 
--   **SiEBERT** : Fine-tuning l'analyse de sentiment Modèle généraliste
-    affiné sur **272 jeux de données** en anglais pour créer un
-    classificateur robuste [@hartmannMoreFeelingAccuracy2023a].
+-   **SiEBERT** : Modèle généraliste affiné sur **272 jeux de données** en anglais pour créer un
+    classificateur robuste (analyse de sentiment) [@hartmannMoreFeelingAccuracy2023a].
 :::
 
 ::: {.column width="50%"}
@@ -694,7 +695,7 @@ with RAG Workflow* (Medium, 2023).\
 > *“An autonomous agent is a system situated within and a part of an
 > environment that senses that environment and acts on it, over time, in
 > pursuit of its own agenda and so as to effect what it senses in the
-> future.”* - Franklin & Graesser (1997)
+> future.”* - [@franklinItAgentJust1997]
 
 -   Un **agent IA** combine **raisonnement**, **action** et
     **interaction avec un environnement**.\
@@ -709,11 +710,11 @@ with RAG Workflow* (Medium, 2023).\
 ### De l’émergence à la structuration des agents LLM
 
 -   **2022** : apparition des premiers agents combinant raisonnement et
-    action [@yao2023react]\
+    action [@yao2023react].
 -   **2023** : diffusion grand public avec les premières implémentations
-    autonomes\
+    autonomes, notamment via [AutoGPT](https://github.com/Significant-Gravitas/AutoGPT).
 -   **2024–2025** : agents dotés de mémoire, coordination et rôles
-    spécialisés [@wang2024survey; @luo2025largelanguage]
+    spécialisés [@wang2024survey; @luo2025largelanguage].
 
 ::: callout-note
 #### Pour aller plus loin
@@ -743,7 +744,7 @@ Models”.\
 | **ChatGPT Free** | **0 €** | Accès de base | [Site](https://openai.com/chatgpt/pricing) |
 | **ChatGPT Plus** | **\~20 \$/mois** *(facturé en devise locale, TVA selon pays)* | Accès élargi aux modèles (GPT-4/o1), fonctionnalités avancées | [Site](https://openai.com/chatgpt/pricing) |
 | **Claude Pro** | **17 \$/mois (annuel)** ou **20 \$/mois** *(HT)* | Plus d’usage, modèles Claude 3.x/4.x, fonctionnalités pro | [Site](https://www.claude.com/pricing) |
-| **Perplexity Pro** | **20 \$/mois** | Recherche avancée, modèles premium, import de fichiers | [Site](https://www.perplexity.ai/enterprise/pricing) |
+| **Perplexity Pro** | **20 $/mois** | Accès à des modèles avancés (OpenAI, Anthropic, etc.), recherche approfondie, limites Pro accrues (300+ recherches/jour), gestion de fichiers & collections | [Site](https://www.perplexity.ai/enterprise/pricing) |
 | **Google AI Pro (Gemini)** | **21,99 €/mois** | Gemini 2.5 Pro, NotebookLM, 2 To, Deep Research | [Site](https://one.google.com/about/google-ai-plans/) |
 | **Mistral – Le Chat Pro** | **17,99 €/mois** *(7,19 € pour étudiants, 12 mois)* | Version Pro de “Le Chat” | [Site](https://mistral.ai/pricing) |
 | **Elicit Plus** | **10 \$/mois (annuel)** ou **12 \$/mois** | Extraction/synthèse, export de données | [Site](https://elicit.com/pricing) |
@@ -776,23 +777,24 @@ Models”.\
 
 ------------------------------------------------------------------------
 
-## Outils utiles pour la revue de littérature {style="font-size:0.6em"}
+## Outils utiles pour la revue de littérature {style="font-size:0.55em"}
 
 Bien sûr il existe les LLMs bien connus comme ChatGPT, Claude, Gemini,
-Mistral, etc. mais certains autres outils spécialisés :
+Mistral, etc. mais certains autres outils spécialisés (et de nombreux autres) :
 
 | Outil | Fonction principale | Cas d’usage typique | Lien |
 |-------------|----------------------|-----------------------|-------------|
-| **Perplexity.ai** | Moteur de recherche conversationnel (RAG) | Obtenir une vue d’ensemble rapide et sourcée sur un sujet | [perplexity.ai](https://www.perplexity.ai) |
+| **Perplexity.ai** | Moteur de recherche conversationnel | Obtenir une vue d’ensemble rapide et sourcée sur un sujet, accéder à des modèles récents et à la recherche web temps réel | [perplexity.ai](https://www.perplexity.ai) |
 | **Elicit** | Recherche sémantique et extraction automatique d’informations clés | Construire une bibliographie structurée, extraire méthodologies et résultats | [elicit.com](https://elicit.com) |
 | **NotebookLM** | Analyse de documents personnels (RAG) | Interroger vos propres articles PDF et croiser les résultats | [notebooklm.google](https://notebooklm.google) |
 | **Scite.ai** | Analyse de la qualité des citations (soutient / mentionne / conteste) | Évaluer la robustesse des articles et des théories | [scite.ai](https://www.scite.ai) |
 | **Connected Papers** | Visualisation des liens entre articles | Explorer le réseau scientifique autour d’un article de départ | [connectedpapers.com](https://www.connectedpapers.com) |
-| **Consensus** | Synthèse de résultats à partir d’articles scientifiques | Obtenir des réponses à des questions précises | [consensus.app](https://consensus.app) |
+| **Consensus** | Synthèse automatisée à partir d’articles scientifiques | Obtenir des réponses à des questions précises basées sur la littérature | [consensus.app](https://consensus.app) |
 | **ArtiRev** | Plateforme académique française pour les revues de littérature | Identifier et organiser les articles d’un champ de recherche | [artirev.fr](https://artirev.fr) |
 | **Litmaps** | Cartographie dynamique de la littérature | Visualiser et suivre l’évolution d’un champ de recherche dans le temps | [litmaps.com](https://www.litmaps.com) |
 
-## DÉMONSTRATIONS - Thèmes possibles {style="font-size:0.9em"}
+
+## DÉMONSTRATIONS - thèmes possibles {style="font-size:0.9em"}
 
 1.  Comment l’usage de l’intelligence artificielle générative
     transforme-t-il la relation entre marques et consommateurs ?\
@@ -846,7 +848,7 @@ références** qui semblent plausibles mais sont inexistantes [@Tosi2025].
 
 ------------------------------------------------------------------------
 
-## Le risque caché : Le *LLM Hacking* {.smaller}
+## Le risque caché : le *LLM Hacking* {.smaller}
 
 Le *"LLM Hacking"* décrit comment la sensibilité extrême des IA aux
 prompts permet, intentionnellement ou non, d'obtenir des **conclusions
@@ -886,9 +888,9 @@ lesquelles il a été entraîné.
 
 ::::: columns
 ::: {.column width="50%" .fragment}
+
 ### Biais
 
-\
 
 -   **Biais de corpus** : surreprésentation de la recherche
     anglo-saxonne et des paradigmes scientifiques dominants, au risque
@@ -903,7 +905,6 @@ lesquelles il a été entraîné.
 ::: {.column width="50%" .fragment}
 ### Couverture
 
-\
 
 -   **Connaissances datées** : l'IA ne connaît rien au-delà de sa date
     de "cut-off" (pas toujours rendue publique).
