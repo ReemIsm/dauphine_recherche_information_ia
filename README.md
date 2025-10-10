@@ -36,7 +36,6 @@ Ce cours a pour objectif d’initier les étudiant·es à l’usage raisonné de
 ## 🗂️ Arborescence (éléments importants uniquement)
 
 dauphine_recherche_information_ia/
-
 ├─ README.md
 ├─ cours.qmd                 # source Quarto markdown
 ├─ cours.html                # rendu HTML (page publique)
