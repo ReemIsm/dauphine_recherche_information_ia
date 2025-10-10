@@ -51,14 +51,18 @@ dauphine_recherche_information_ia/
 ## 🛠️ Utilisation
 
 ### Cloner le dépôt
+```bash
 git clone https://github.com/oliviercaron/dauphine_recherche_information_ia.git
+```
 
 ### Lire le cours
 - Ouvrir `cours.html` dans un navigateur  
 - Ou ouvrir/éditer `cours.qmd` dans Quarto (VS Code, RStudio, etc.)
 
 ### Compiler (avec Quarto)
+```bash
 quarto render cours.qmd
+```
 
 ## ⚖️ Licence & attribution
 
