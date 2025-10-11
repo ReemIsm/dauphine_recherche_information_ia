@@ -1,7 +1,7 @@
 # Recherche d’Information et Intelligence Artificielle  
 _Master Marketing & Stratégie — Université Paris Dauphine – PSL_
 
-# 📎 [Accéder au cours en ligne](https://oliviercaron.github.io/dauphine_recherche_information_ia/cours)
+## 📎 [Accéder au cours en ligne](https://oliviercaron.github.io/dauphine_recherche_information_ia/cours)
 
 ---
 
