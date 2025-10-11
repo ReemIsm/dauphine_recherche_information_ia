@@ -1,6 +1,8 @@
 # Recherche d’Information et Intelligence Artificielle  
 _Master Marketing & Stratégie — Université Paris Dauphine – PSL_
 
+# 📎 [Accéder au cours en ligne](https://oliviercaron.github.io/dauphine_recherche_information_ia/cours)
+
 ---
 
 ## 📘 Description
@@ -64,10 +66,7 @@ git clone https://github.com/oliviercaron/dauphine_recherche_information_ia.git
 quarto render cours.qmd
 ```
 
-## ⚖️ Licence & attribution
+## ⚖️ Licence
 
-Usage pédagogique et personnel.  
-Si vous redistribuez ou modifiez :
-- citez **Olivier Caron** comme auteur,  
-- indiquez clairement les modifications apportées.
+Ce contenu est distribué sous licence [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/).
 
