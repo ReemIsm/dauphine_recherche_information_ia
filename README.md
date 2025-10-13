@@ -1,4 +1,4 @@
-# Recherche d’Information et Intelligence Artificielle  
+# Méthodes de Recherche Appliquée 
 ### Master Marketing & Stratégie - Université Paris Dauphine - PSL
 
 ### 📎 [Accéder au cours en ligne](https://oliviercaron.github.io/dauphine_recherche_information_ia/cours)
@@ -7,7 +7,7 @@
 
 ## 📘 Description
 
-Ce dépôt contient les supports et ressources du cours **Recherche d’information & IA**, dispensé dans le cadre du **Master Marketing & Stratégie** à l’Université Paris Dauphine PSL.
+Ce dépôt contient les supports et ressources du cours **Méthodes de Recherche Appliquée**, dispensé dans le cadre du **Master Marketing & Stratégie** à l’Université Paris Dauphine PSL.
 
 Ce cours a pour objectif d’initier les étudiant·es à l’usage raisonné de l’intelligence artificielle, en particulier des grands modèles de langue (LLM), pour améliorer et accélérer la **recherche d’information académique**, la **veille scientifique** et la **réalisation de revues de littérature**.
 
