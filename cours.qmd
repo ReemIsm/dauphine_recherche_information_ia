@@ -16,6 +16,9 @@ format:
     toc-depth: 1
     code-block-height: 700px
     logo: "images/logo_dauphine.png"
+  pdf:
+    toc: true
+    number-sections: true
 execute:
   echo: true
 bibliography: refs.bib
@@ -579,7 +582,13 @@ est appelé **auto-supervision** (*self-supervised learning*).
 
 ## Visualisation de GPT-3 ([3Blue1Brown (Grant Sanderson)](https://www.youtube.com/c/3blue1brown)) {style="font-size:0.7em"}
 
+::: {.content-visible when-format="html"}
 ![](images/clipboard-3467065954.gif){fig-align="center" width="90%"}
+:::
+
+::: {.content-visible when-format="pdf"}
+![](images/clipboard-3467065954.png){fig-align="center" width="90%"}
+:::
 
 ------------------------------------------------------------------------
 
