@@ -70,6 +70,48 @@ contenu" à un **concurrent direct de Google pour la recherche
 d'information**, en particulier chez les jeunes.
 :::
 
+
+## Ce que les chiffres cachent : sociologie et intentions [@chatterjiHowPeopleUse] {style="font-size:0.65em"}
+
+Derrière les volumes bruts, une transformation plus subtile est à l’œuvre : celle des **profils**, des **motivations** et des **façons d’utiliser** ChatGPT. Ces tendances bousculent plusieurs idées reçues.
+
+::::: columns
+::: {.column width="33%" .fragment}
+### 1. Un outil qui s'invite dans le quotidien
+
+L’usage de ChatGPT s’ancre de plus en plus dans la sphère personnelle.
+
+-   **70 % des conversations** n’ont aucun lien avec le travail.
+-   En un an, cette part est passée de 53 % à 70 %.
+-   Le fossé entre hommes et femmes s’est résorbé : après des débuts à 80 % masculins, l’usage est désormais paritaire (2025).
+
+:::
+::: {.column width="33%" .fragment}
+### 2. Plus mentor que simple exécutant
+
+Les utilisateurs ne cherchent pas seulement un outil, mais un partenaire de réflexion.
+
+-   **49 %** des interactions visent à demander un conseil ou une information utile à la décision.
+-   **40 %** concernent une tâche de production (écrire, coder…).
+-   Le rôle de “conseiller” prend de l’ampleur et est perçu comme **plus pertinent et qualitatif**.
+
+:::
+::: {.column width="33%" .fragment}
+### 3. Les mythes déconstruits
+
+Certains usages très visibles médiatiquement sont en réalité marginaux.
+
+-   La **programmation** ne représente que **4,2 %** des messages.
+-   Le **soutien émotionnel**, à peine **1,9 %**.
+-   Et au travail, dans deux cas sur trois, l’IA sert à **améliorer un contenu existant**, pas à créer de zéro.
+
+:::
+:::::
+
+::: {.callout-note title="En résumé" .fragment}
+ChatGPT s’impose moins comme une “machine à produire” que comme un **compagnon de réflexion et de décision**, présent dans les gestes ordinaires de la vie personnelle et professionnelle.
+:::
+
 ## Contexte après les deux premières séances {style="font-size:0.9em"}
 
 ### Vos acquis :
@@ -146,23 +188,23 @@ Qui a déjà entendu parler de...
 ::::::: columns
 :::: {.column width="50%"}
 ::: incremental
-1.  **Intelligence Artificielle (IA)** : Le grand domaine qui vise à
+1.  **Intelligence Artificielle (IA)** : le grand domaine qui vise à
     reproduire des comportements "intelligents".
 
-2.  **Machine Learning (ML)** : Une branche de l'IA où la machine
+2.  **Machine Learning (ML)** : une branche de l'IA où la machine
     **apprend par l'exemple**. [@jordan2015]
 
-3.  **Réseaux de Neurones** : La technique de ML inspirée du cerveau,
+3.  **Réseaux de Neurones** : la technique de ML inspirée du cerveau,
     qui est la base du Deep Learning. L'apprentissage repose sur des
     connexions pondérées entre neurones artificiels. [@rumelhart1986]
 
-4.  **Deep Learning (DL)** : Utilise des réseaux de neurones
+4.  **Deep Learning (DL)** : utilise des réseaux de neurones
     **profonds** (avec de nombreuses couches) [@lecun2015].
 
-5.  **IA Générative** : La branche du DL qui se spécialise dans la
+5.  **IA Générative** : la branche du DL qui se spécialise dans la
     **création de nouveau contenu** (texte, images...) [@goodfellow2014]
 
-6.  **LLMs** : Type particulier de modèle de deep learning entraîné sur
+6.  **LLMs** : type particulier de modèle de deep learning entraîné sur
     d’immenses corpus textuels [@brown2020]
 :::
 ::::
