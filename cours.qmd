@@ -2,7 +2,7 @@
 title: "Méthodes de recherche appliquée"
 subtitle: "Outils, atouts et limites"
 author:
-  - name: "Olivier Caron"
+  - name: "Reem Ismail & Olivier Caron"
     affiliations: "Paris Dauphine - PSL"
 format:
   ubd-revealjs:
