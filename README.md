@@ -1,7 +1,7 @@
 # Méthodes de Recherche Appliquée 
 ### Master Marketing & Stratégie - Université Paris Dauphine - PSL
 
-### 📎 [Accéder au cours en ligne](https://oliviercaron.github.io/dauphine_recherche_information_ia/cours)
+### 📎 [Accéder au cours en ligne](https://reemism.github.io/dauphine_recherche_information_ia/coursR.html#/title-slide)
 
 ---
 
